@@ -6,3 +6,16 @@ L'idée ici va être de développer une application Java en utilisant le framewo
 
 Cette application aura pour but d'être une API RESTful suivant les principes de HATEOAS.
 Celle-ci permettra également d'interagir avec une base de données PostgreSQL au travers de Spring JPA qui va gérer les entités et les migrations.
+
+## Outils utilisés
+
+Les outils qui furent utilisés ici sont :
+
+- [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/) (*développement de l'application*)
+- [VSCodium](https://vscodium.com/) (*versioning des fichiers ailleurs que dans le projet IntelliJ*)
+
+## Comment démarrer
+
+### Création du projet
+
+Tout d'abord, il a fallut créer le projet, j'ai donc utilisé la [configuration suivante](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.4.3&packaging=jar&jvmVersion=23&groupId=com.marcompiler&artifactId=test-architecture-rest-jpa-oauth2&name=test-architecture-rest-jpa-oauth2&description=Test%20for%20an%20architecture%20with%20JPA%2C%20OAuth2%20and%20REST%20(with%20Postgres%2C%20Keycloak%20and%20Vue.JS%20in%20mind).&packageName=com.marcompiler.test-architecture-rest-jpa-oauth2&dependencies=web,devtools,oauth2-client,hateoas) avec [Spring Initializr](start.spring.io).

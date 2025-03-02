@@ -20,6 +20,6 @@ L'architecture est donc constituée de la façon suivante :
 
 Pour leur implémentation, je me suis servi des tutoriels suivants :
 
-- [Spring Web - API RESTful (HATEOAS)](https://spring.io/guides/tutorials/rest)
-- [Vidéo Spring Boot 3 KeyCloak OAuth2](https://www.youtube.com/watch?v=_0oXZKr97ro&list=PLSVW22jAG8pAXU0th247M7xPCekzeNdrH&index=10)
-- [Repository Spring Security OAuth2 Keycloak Demo](https://github.com/SaiUpadhyayula/spring-security-oauth2-keycloak-demo) (*issu de la vidéo ci-dessus*)
+- [Spring Web - API RESTful (HATEOAS)](https://spring.io/guides/tutorials/rest) (*documentation officielle de Spring*)
+- [Spring Boot 3 KeyCloak OAuth2](https://www.youtube.com/watch?v=_0oXZKr97ro&list=PLSVW22jAG8pAXU0th247M7xPCekzeNdrH&index=10) (*vidéo YouTube*)
+- [Repository Spring Security OAuth2 Keycloak Demo](https://github.com/SaiUpadhyayula/spring-security-oauth2-keycloak-demo) (*repository issu de la vidéo ci-dessus*)
