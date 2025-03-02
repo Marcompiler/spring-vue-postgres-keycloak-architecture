@@ -1,0 +1,12 @@
+
+version: "3.9"
+services:
+  oauth:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: "keycloak-dev"
+    ports:
+      - "8181:8080"
+    command: ["start-dev"]
+    env_file:
+      - .env.keycloak
+    restart: unless-stopped

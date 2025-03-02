@@ -1,0 +1,22 @@
+# Podman (Keycloak) - DEV
+
+Ici se trouve les éléments nécessaires à l'instanciation d'un conteneur Podman Keycloak pour l'**environnement de développement**.
+Par défaut, l'instance Keycloak est accessible à l'adresse <http://localhost:8181>.
+
+La commande à exécuter pour créer/démarrer le conteneur est donc :
+
+```pwsh
+podman compose -f podman-compose.yml up -d
+```
+
+Pour **uniquement** le stopper :
+
+```pwsh
+podman stop keycloak-dev
+```
+
+Pour le stopper **et** détruire :
+
+```pwsh
+podman compose -f podman-compose.yml down
+```
