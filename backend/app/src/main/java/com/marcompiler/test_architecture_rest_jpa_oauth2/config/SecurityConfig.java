@@ -20,7 +20,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 // .csrf(csrf -> csrf.ignoringRequestMatchers("/api/helloworld/**")) // Use it instead if you want to disable CSRF only on certain RequestMapping
                 .authorizeHttpRequests(auth -> auth
-                        //.requestMatchers("/api/public/**").permitAll() // Use it for public endpoints
+                        .requestMatchers("/api/public/**").permitAll() // Use it for public endpoints
                         .anyRequest().authenticated() // All other requests need to be authenticated
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

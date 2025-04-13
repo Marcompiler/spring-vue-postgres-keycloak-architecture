@@ -5,9 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/helloworld")
-@CrossOrigin(origins = "*") // Only for development purposes
 public class HelloWorldController {
-
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public String helloWorld() {
