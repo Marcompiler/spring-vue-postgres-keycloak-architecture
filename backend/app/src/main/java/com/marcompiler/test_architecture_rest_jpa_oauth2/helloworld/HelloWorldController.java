@@ -3,12 +3,25 @@ package com.marcompiler.test_architecture_rest_jpa_oauth2.helloworld;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/api/helloworld")
 public class HelloWorldController {
+
+    private final HelloWorldRepository helloWorldRepository;
+
+    public HelloWorldController(HelloWorldRepository helloWorldRepository) {
+        this.helloWorldRepository = helloWorldRepository;
+    }
+
     @GetMapping
-    @ResponseStatus(HttpStatus.OK)
     public String helloWorld() {
         return "Hello world";
+    }
+
+    @GetMapping("/{id}")
+    public Optional<HelloWorld> getHelloWorldById(@PathVariable Long id) {
+        return helloWorldRepository.findById(id);
     }
 }
