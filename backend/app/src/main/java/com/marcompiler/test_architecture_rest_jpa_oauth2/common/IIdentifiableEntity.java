@@ -6,6 +6,4 @@ package com.marcompiler.test_architecture_rest_jpa_oauth2.common;
  */
 public interface IIdentifiableEntity<T> {
     T getId();
-
-    void setId(T id);
 }
