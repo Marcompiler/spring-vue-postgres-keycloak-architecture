@@ -11,12 +11,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 
 /**
- * Base for all {@link AuditingEntityListener audited} entities with an {@link IdentifiableEntity identity} and a {@link VersionedEntity versioning}.
+ * Base for all {@link AuditingEntityListener audited} entities with an {@link IIdentifiableEntity identity} and a {@link IVersionedEntity versioning}.
  * @param <T> Identity data type.
  */
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class BaseJpaEntity<T> implements IdentifiableEntity<T>, VersionedEntity {
+public abstract class BaseJpaEntity<T> implements IIdentifiableEntity<T>, IVersionedEntity {
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
