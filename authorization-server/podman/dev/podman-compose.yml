@@ -2,11 +2,13 @@
 version: "3.9"
 services:
   oauth:
-    image: quay.io/keycloak/keycloak:latest
-    container_name: "keycloak-dev"
+    image: quay.io/keycloak/keycloak:26.2
+    container_name: "demo-spring_keycloak_vuejs-keycloak"
     ports:
       - "8181:8080"
-    command: ["start-dev"]
+    command: ["start-dev", "--import-realm"]
     env_file:
       - .env.keycloak
+    volumes:
+      - ./import:/opt/keycloak/data/import
     restart: unless-stopped
