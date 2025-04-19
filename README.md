@@ -20,18 +20,20 @@ L'architecture est donc constituée de la façon suivante :
 
 Les outils qui furent utilisés ici sont :
 
-- [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/) (*développement de l'application*)
-- [VSCodium](https://vscodium.com/) (*versioning des fichiers ailleurs que dans le projet IntelliJ*)
-- [HTTPie](https://httpie.io/) (*requêtes HTTP et tests de l'API*)
+- [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/) (_développement de l'application_)
+- [VSCodium](https://vscodium.com/) (_versioning des fichiers ailleurs que dans le projet IntelliJ_)
+- [HTTPie](https://httpie.io/) (_requêtes HTTP et tests de l'API_)
 
 ## Tutoriels utilisés
 
 Pour leur implémentation, je me suis servi des tutoriels suivants :
 
-- [Spring Web - API RESTful (HATEOAS)](https://spring.io/guides/tutorials/rest) (*documentation officielle de Spring*)
-- [Spring Boot 3 KeyCloak OAuth2](https://www.youtube.com/watch?v=_0oXZKr97ro&list=PLSVW22jAG8pAXU0th247M7xPCekzeNdrH&index=10) (*vidéo YouTube*)
-- [Repository Spring Security OAuth2 Keycloak Demo](https://github.com/SaiUpadhyayula/spring-security-oauth2-keycloak-demo) (*repository issu de la vidéo ci-dessus*)
+- [Spring Web - API RESTful (HATEOAS)](https://spring.io/guides/tutorials/rest) (_documentation officielle de Spring_)
+- [Spring Boot 3 KeyCloak OAuth2](https://www.youtube.com/watch?v=_0oXZKr97ro&list=PLSVW22jAG8pAXU0th247M7xPCekzeNdrH&index=10) (_vidéo YouTube_)
+- [Repository Spring Security OAuth2 Keycloak Demo](https://github.com/SaiUpadhyayula/spring-security-oauth2-keycloak-demo) (_repository issu de la vidéo ci-dessus_)
 - [Blog OAuth - Basic SPA - Overview](https://github.com/gary-archer/oauth.blog/blob/master/public/posts/basicspa-overview.mdx)
+- [Tutoriel Vue version 3](https://vuejs.org/tutorial/#step-1)
+- [Keycloak JavaScript adapter](https://www.keycloak.org/securing-apps/javascript-adapter)
 
 ## Parcours de développement
 
@@ -55,3 +57,10 @@ afin d'allier confort et valeurs personnelles.
 
 Une fois que j'ai pu comprendre vraiment l'Authorization Code Flow, j'ai pu commencer à réfléchir sur
 comment entreprendre la partie frontend.
+
+J'ai alors réussi à créer mon application VueJS (_Vue 3_) avec `npm` puis ai décidé de suivre le tutoriel lié
+au framework. Une fois que j'ai eu les bases de Vue, j'ai essayé de trouver comment implémenter Keycloak dans l'application.
+
+Une fois que j'y suis parvenu, ça m'a d'autant plus motivé à continuer : je parvenais désormais à faire communiquer mon SSO
+autant avec mon API qu'avec mon frontend. Je savais alors que je n'avais plus qu'à faire communiquer le frontend avec l'API
+et, là, toutes les pièces du puzzle de base seraient enfin assemblées.
