@@ -1,6 +1,8 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-import keycloak from '../keycloak'
+import TheWelcome from '@/components/TheWelcome.vue'
+import ApiPublicData from '@/components/ApiPublicData.vue'
+import ApiAuthData from '@/components/ApiAuthData.vue'
+import keycloak from '@/keycloak'
 
 function logoutUser() {
   keycloak.logout()
@@ -10,6 +12,14 @@ function logoutUser() {
 <template>
   <main>
     <button @click="logoutUser">Se déconnecter</button>
+
+    <h1>Public data from API</h1>
+    <ApiPublicData />
+
+    <h1>Auth data from API</h1>
+    <ApiAuthData />
+
+    <h1>Content from Vue</h1>
     <TheWelcome />
   </main>
 </template>
