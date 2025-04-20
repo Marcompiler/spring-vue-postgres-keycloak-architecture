@@ -26,7 +26,7 @@ async function getDataFromApiAsync() {
 
     return await responseFromApi.text()
   } catch (error) {
-    throw new Error(`Something went wrong with auth API fetch : ${error}`)
+    throw new Error(`Something went wrong with auth API fetch: ${error}`)
   }
 }
 </script>
