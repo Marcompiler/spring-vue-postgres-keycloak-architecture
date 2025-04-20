@@ -43,7 +43,7 @@ Le voici donc.
 
 J'ai commencé par me faire des piqûres de rappel quant à mes cours sur Java Spring et à faire
 plusieurs brouillons de schémas de base de données. J'ai entamé des projets que j'ai fréquemment abandonnés
-car je me sentais bloqué par mon manque de connaissances, générant chez moi un sentiment d'incompétence
+car je me sentais bloqué par mon manque de connaissances, générant chez moi un sentiment d'illégitimé
 qui me dissuadait alors de continuer.
 
 Ensuite, j'ai accumulé les connaissances nécessaires, notamment aux moyens des tutoriels susmentionnés,
