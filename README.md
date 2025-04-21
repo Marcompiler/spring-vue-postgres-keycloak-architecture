@@ -1,6 +1,7 @@
 # Test-Architecture-Spring_Keycloak_VueJS
 
-Ce repository a pour but de tester l'ensemble des fonctionnalités de base mises à disposition par l'architecture que je souhaite tester ici.
+Ce repository a pour but de tester l'ensemble des fonctionnalités de base mises à disposition 
+par l'architecture que je souhaite tester ici.
 
 ## Architecture
 
@@ -12,7 +13,6 @@ L'architecture est donc constituée de la façon suivante :
   - [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
 - [Un frontend](./frontend/README.md)
   - [Vue.JS](https://vuejs.org/)
-  - [Element Plus](https://element-plus.org)
 - [Un serveur d'autorisation (SSO)](./authorization-server/README.md)
   - [Keycloak](https://www.keycloak.org/)
 
@@ -59,8 +59,31 @@ Une fois que j'ai pu comprendre vraiment l'Authorization Code Flow, j'ai pu comm
 comment entreprendre la partie frontend.
 
 J'ai alors réussi à créer mon application VueJS (_Vue 3_) avec `npm` puis ai décidé de suivre le tutoriel lié
-au framework. Une fois que j'ai eu les bases de Vue, j'ai essayé de trouver comment implémenter Keycloak dans l'application.
+au framework. Une fois que j'ai eu les bases de Vue, j'ai essayé de trouver comment implémenter Keycloak 
+dans l'application.
 
-Une fois que j'y suis parvenu, ça m'a d'autant plus motivé à continuer : je parvenais désormais à faire communiquer mon SSO
-autant avec mon API qu'avec mon frontend. Je savais alors que je n'avais plus qu'à faire communiquer le frontend avec l'API
-et, là, toutes les pièces du puzzle de base seraient enfin assemblées.
+Une fois que j'y suis parvenu, ça m'a d'autant plus motivé à continuer : je parvenais désormais à faire communiquer 
+mon SSO autant avec mon API qu'avec mon frontend. Je savais alors que je n'avais plus qu'à faire communiquer 
+le frontend avec l'API et, là, toutes les pièces du puzzle de base seraient enfin assemblées.
+
+Dès le lendemain, je m'y suis remis, ai appris comment faire des requêtes avec `fetch` en JavaScript, 
+gérer le CORS dans l'API puis ai appelé les différents endpoints de l'API, tout fonctionnait. 
+Ce fut un vrai relâchement car je sus alors que la stack que j'avais constituée était fonctionnelle.
+
+Ensuite, étant spécialisé backend initialement, j'ai recherché un framework CSS avec composants,
+cela afin de comparer les alternatives au lieu d'[Element Plus](https://element-plus.org), juste pour voir. 
+J'ai alors découvert [PrimeVue](https://primevue.org/) qui, malgré un nombre d'étoiles moins important que d'autres,
+m'a semblé fiable, complet et clairement documenté.
+
+Néanmoins, j'ai tenu à ce que ce projet se limite au nécessaire tout en laissant le choix sur les technologies qui
+vont au-delà de la portée prévue par ce projet. Je me suis donc finalement contenté de mentionner 
+les deux frameworks CSS ci-dessus afin de vous laisser choisir, parmi eux ou d'autres encore, ce que vous préférez.
+
+Enfin, le clou final à ce projet m'a paru être ce qui allait être de toute façon nécessaire pour la suite : 
+la gestion des utilisateurs au niveau du backend-database. En effet, on ne se limite généralement pas au SSO pour nos
+utilisateurs ; celui-ci se contente d'authentifier et de sécuriser les données nécessaires à cette authentification.
+
+Pour les données propres à l'application, liées aux mêmes utilisateurs, il faut donc les gérer au sein de celle-ci.
+Sans parler que je n'ai pas encore essayé d'interpréter les profils/rôles définis par le SSO dans le backend.
+C'est alors devenu mon prochain objectif.
+
