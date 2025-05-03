@@ -1,4 +1,4 @@
-package com.marcompiler.test_architecture_rest_jpa_oauth2.config;
+package com.marcompiler.test_architecture_rest_jpa_oauth2.config.security;
 
 import io.micrometer.common.lang.NonNullApi;
 import org.springframework.context.annotation.Bean;
