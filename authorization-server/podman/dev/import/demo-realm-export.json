@@ -1,6 +1,8 @@
 {
   "id": "3009cd4d-0818-4e53-a98f-f901d4b43ca9",
   "realm": "demo-realm",
+  "displayName": "",
+  "displayNameHtml": "",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
@@ -328,8 +330,8 @@
           "attributes": {}
         },
         {
-          "id": "49fbc604-ab2f-4080-b1b4-c3e9dfdb0a01",
-          "name": "demo:write:users",
+          "id": "b75f958c-780a-407c-96f8-28cec0f6ac52",
+          "name": "demo:read:users",
           "description": "",
           "composite": false,
           "clientRole": true,
@@ -337,8 +339,8 @@
           "attributes": {}
         },
         {
-          "id": "b75f958c-780a-407c-96f8-28cec0f6ac52",
-          "name": "demo:read:users",
+          "id": "7620c0d8-7d2d-43dc-a937-83505b51ed2f",
+          "name": "demo:write:users",
           "description": "",
           "composite": false,
           "clientRole": true,
@@ -465,6 +467,10 @@
         "realm-management": [
           "create-client"
         ],
+        "demo-vuejs": [
+          "demo:read:users",
+          "demo:write:users"
+        ],
         "broker": [
           "read-token"
         ],
@@ -489,7 +495,12 @@
       "realmRoles": [
         "demo-role-users"
       ],
-      "clientRoles": {}
+      "clientRoles": {
+        "demo-vuejs": [
+          "demo:read:users",
+          "demo:write:users"
+        ]
+      }
     }
   ],
   "defaultRole": {
@@ -2612,13 +2623,21 @@
     "clientOfflineSessionMaxLifespan": "0",
     "oauth2DevicePollingInterval": "5",
     "clientSessionIdleTimeout": "0",
+    "actionTokenGeneratedByUserLifespan.verify-email": "",
+    "actionTokenGeneratedByUserLifespan.idp-verify-account-via-email": "",
     "clientOfflineSessionIdleTimeout": "0",
+    "actionTokenGeneratedByUserLifespan.execute-actions": "",
     "cibaInterval": "5",
     "realmReusableOtpCode": "false",
     "cibaExpiresIn": "120",
     "oauth2DeviceCodeLifespan": "600",
+    "saml.signature.algorithm": "",
     "parRequestUriLifespan": "60",
     "clientSessionMaxLifespan": "0",
+    "frontendUrl": "",
+    "acr.loa.map": "{}",
+    "shortVerificationUri": "",
+    "actionTokenGeneratedByUserLifespan.reset-credentials": "",
     "darkMode": "true"
   },
   "keycloakVersion": "26.2.1",
