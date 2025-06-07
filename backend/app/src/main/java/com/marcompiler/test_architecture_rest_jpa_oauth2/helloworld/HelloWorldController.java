@@ -1,7 +1,8 @@
 package com.marcompiler.test_architecture_rest_jpa_oauth2.helloworld;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.oauth2.core.oidc.StandardClaimNames;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -28,8 +29,8 @@ public class HelloWorldController {
 
     @GetMapping("/user")
     @PreAuthorize("hasRole('demo:read:users')") // Role from realm-scoped roles
-    public String helloWorldUser() {
-        return "Hello world dear user !";
+    public String helloWorldUser(JwtAuthenticationToken auth) {
+        return "Hello world dear "+auth.getToken().getClaimAsString(StandardClaimNames.PREFERRED_USERNAME)+" ("+auth.getToken().getClaimAsString(StandardClaimNames.SUB)+") !";
     }
 
     @GetMapping("/admin")
