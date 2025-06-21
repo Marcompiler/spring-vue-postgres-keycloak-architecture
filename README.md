@@ -107,3 +107,19 @@ qui m'a paru **suffisamment solide et modulaire**.
 Ce notamment pour récupérer les identifiants utilisateurs afin de pouvoir leur associer des données spécifiques au 
 niveau de l'API Spring dans la base de données Postgres dédiée.
 Il faut donc également constituer une **base pour la structure de données des utilisateurs** pour donner forme à cela.
+
+Et... voilà. Ce fut le dernier stade (étonnement facile comparé au reste) que j'ai pu imaginer jusqu'ici et
+qui me semblait être essentiel pour débuter pleinement un projet.
+En effet, on dispose désormais :
+
+- d'une base de données fiable, solide et polyvalente.
+- d'un backend se connectant à la base de données et générant son contenu automatiquement.
+- d'un frontend se connectant au backend pour interagir avec les données au travers du portail sécurisé que représente le backend.
+- d'un single-sign on (*SSO*) permettant d'authentifier voire gérer les autorisations des utilisateurs.
+
+Le tout interagissant les uns avec les autres de manière fonctionnel tout en étant constitué que d'éléments open source
+avec chacun une réputation solide et une grande polyvalence.
+
+La cerise sur le gâteau avant de partager tout cela est de documenter le tout au mieux afin que 
+quiconque souhaitant se lancer puisse disposer d'informations claires et d'une base (*au moins de réflexion*) solide 
+pour concrétiser ses idées.
