@@ -1,12 +1,15 @@
 # Podman (Keycloak) - PROD
 
+## Description
+
 Ici, la procédure est plus complexe que pour la [DEV](../dev).
-En effet, d'après la [documentation de Keycloak](https://www.keycloak.org/server/containers#_creating_a_customized_and_optimized_container_image), la bonne pratique est de construire soi-même son image Keycloak avant de l'utiliser dans un conteneur.
+En effet, d'après la [documentation de Keycloak](https://www.keycloak.org/server/containers#_creating_a_customized_and_optimized_container_image), la bonne pratique est de construire 
+soi-même son image Keycloak avant de l'utiliser dans un conteneur.
 
 Pour synthétiser autant que possible, je vais résumer la procédure à la [section suivante ci-dessous](#procédure-de-déploiement).
 Si plus de personnalisation s'avère nécessaire, allez voir dans la [documentation Keycloak](https://www.keycloak.org/server/containers#_creating_a_customized_and_optimized_container_image).
 
-## Procédure de déploiement
+## Comment utiliser
 
 En bref, il faut :
 
@@ -17,3 +20,4 @@ En bref, il faut :
    2. Si vous utilisez le service "[db](podman-compose.yml#L16)", veillez à assigner les mêmes valeurs que dans le Containerfile pour les identifiants etc.
 
 NB : À l'heure actuelle, le déploiement en production ne fut **pas encore testé**.
+Je vais déjà essayer de terminer un projet digne d'une production moi-même avec cette stack avant de m'y essayer...

@@ -1,15 +1,14 @@
 # Authorization Server
 
+## Description
+
 Le serveur d'autorisation ici sera une instance Keycloak déployée sous forme d'un container Podman.
-
-## But
-
-C'est ici qu'on délègue la gestion des utilisateurs, leur authentification et leurs autorisations/rôles.
+C'est donc ici qu'on délègue la gestion des utilisateurs, leur authentification et leurs autorisations/rôles.
 
 De plus, grâce à la possibilité du SSO, si les applications se multiplient pour un même lot d'utilisateurs, 
-leurs identifiants pourront être centralisés et réutilisés ailleurs grâce à Keycloak.
+leur identité pourra être centralisée et réutilisée ailleurs grâce à Keycloak (*concept même du SSO*).
 
-## Comment démarrer
+## Comment utiliser
 
 Tout d'abord, fiez-vous au contenu du dossier Podman pour lancer votre propre instance Keycloak.
 Cela selon l'environnement que vous souhaitez.
@@ -18,8 +17,11 @@ Vous pouvez également démarrer l'instance de DEV qui va importer directement l
 création du container.
 
 Durant vos tests, je vous invite à seulement stopper/redémarrer le container sans le supprimer. 
-Cela afin de ne pas perdre votre progression. Lors du déploiement en production, vous définirez des points de montage
-pour ne rien perdre, même entre les recréations du container.
+Cela afin de ne pas perdre votre configuration (*vous pouvez toujours l'exporter et remplacer l'export déjà présent*). 
+Lors du déploiement en production, vous définirez des points de montage pour ne rien perdre.
+
+Une fois que vous avez un conteneur fonctionnel, vous pouvez, si ce n'est pas déjà fait grâce à l'export préexistant,
+suivre les démarches ci-dessous ou simplement les lires pour comprendre les concepts.
 
 ### Realm
 
@@ -77,7 +79,7 @@ Dans notre cas, durant le développement, nous pouvons nous contenter de défini
 
 - Le client-ID tel que "demo-client".
 - Cochez "Standard flow".
-- Si vous souhaitez tester au moyen de requêtes API (voir HTTPie), cochez "Direct access grants".
+- Si vous souhaitez tester au moyen de requêtes API (*voir HTTPie*), cochez "Direct access grants".
 
 ### Rôles de client
 
@@ -91,3 +93,6 @@ Par conséquent, dans votre client "demo-client", vous pouvez créer les rôles 
 
 - Le rôle "demo:read:users".
 - Le rôle "demo:write:users".
+
+Vous disposez alors d'une configuration permettant de tester plusieurs cas d'utilisation ; 
+les utilisateurs, administrateurs, la vérification de rôles et l'enregistrement de clients.
