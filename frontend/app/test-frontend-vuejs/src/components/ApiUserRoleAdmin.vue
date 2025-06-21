@@ -11,7 +11,7 @@ watchEffect(async () => {
 async function getDataFromApiAsync() {
   const apiEndpoint = 'http://localhost:8080/api/helloworld/admin'
 
-  console.log(`Token from keycloak: ${keycloak.token}`)
+  //console.log(`Token from keycloak: ${keycloak.token}`)
 
   try {
     const responseFromApi = await fetch(apiEndpoint, {
