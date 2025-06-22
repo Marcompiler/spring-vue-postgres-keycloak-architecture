@@ -1,5 +1,4 @@
 ### Podman ###
 /podman/.env*
-/podman/Containerfile
 
 !/podman/.env*.template

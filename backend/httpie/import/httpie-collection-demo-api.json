@@ -93,13 +93,13 @@
               },
               {
                 "name": "username",
-                "value": "admin",
+                "value": "demo-admin",
                 "enabled": true,
                 "type": "text"
               },
               {
                 "name": "password",
-                "value": "123",
+                "value": "demo",
                 "enabled": true,
                 "type": "text"
               }
@@ -153,13 +153,13 @@
               },
               {
                 "name": "username",
-                "value": "user",
+                "value": "demo-user",
                 "enabled": true,
                 "type": "text"
               },
               {
                 "name": "password",
-                "value": "123",
+                "value": "demo",
                 "enabled": true,
                 "type": "text"
               }
