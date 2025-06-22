@@ -3,10 +3,9 @@
 ## Description
 
 Ici, la procédure est plus complexe que pour la [DEV](../dev).
-En effet, d'après la [documentation de Keycloak](https://www.keycloak.org/server/containers#_creating_a_customized_and_optimized_container_image), la bonne pratique est de construire 
-soi-même son image Keycloak avant de l'utiliser dans un conteneur.
+En effet, d'après la [documentation de Keycloak](https://www.keycloak.org/server/containers#_creating_a_customized_and_optimized_container_image), la bonne pratique est de construire soi-même son image Keycloak avant de l'utiliser dans un conteneur.
 
-Pour synthétiser autant que possible, je vais résumer la procédure à la [section suivante ci-dessous](#procédure-de-déploiement).
+Pour synthétiser autant que possible, je vais résumer la procédure à la [section suivante ci-dessous](#comment-utiliser).
 Si plus de personnalisation s'avère nécessaire, allez voir dans la [documentation Keycloak](https://www.keycloak.org/server/containers#_creating_a_customized_and_optimized_container_image).
 
 ## Comment utiliser

@@ -9,5 +9,5 @@ de ce dépôt.
 ## Comment utiliser
 
 Lorsque vous démarrerez le conteneur Podman Keycloak DEV à l'aide du `podman-compose.yml` dédié, cet export sera
-automatiquement importé dans le conteneur Keycloak grâce à la commande `--import-realm` et le point de montage 
+automatiquement importé dans le conteneur Keycloak grâce à la commande `--import-realm` et le point de montage
 avec ce dossier.

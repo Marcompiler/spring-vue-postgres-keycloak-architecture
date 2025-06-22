@@ -108,7 +108,7 @@ Ce notamment pour récupérer les identifiants utilisateurs afin de pouvoir leur
 niveau de l'API Spring dans la base de données Postgres dédiée.
 Il faut donc également constituer une **base pour la structure de données des utilisateurs** pour donner forme à cela.
 
-Et... voilà. Ce fut le dernier stade (étonnement facile comparé au reste) que j'ai pu imaginer jusqu'ici et
+Et... voilà. Ce fut le dernier stade (*étonnement facile comparé au reste*) que j'ai pu imaginer jusqu'ici et
 qui me semblait être essentiel pour débuter pleinement un projet.
 En effet, on dispose désormais :
 
