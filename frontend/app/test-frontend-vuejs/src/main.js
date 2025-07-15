@@ -5,6 +5,7 @@ import App from './App.vue'
 import router from './router'
 import keycloak from './keycloak'
 
+// Here we define the authentication as necessary to access to the app.
 await keycloak
   .init({
     onLoad: 'login-required',
