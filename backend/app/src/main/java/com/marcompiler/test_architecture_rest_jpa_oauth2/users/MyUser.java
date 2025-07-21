@@ -2,11 +2,6 @@ package com.marcompiler.test_architecture_rest_jpa_oauth2.users;
 
 import com.marcompiler.test_architecture_rest_jpa_oauth2.common.BaseJpaEntity;
 import jakarta.persistence.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Table(name = "USERS")
