@@ -7,7 +7,7 @@ que je souhaite tester ici.
 
 L'architecture est donc constituée de la façon suivante :
 
-- [Un backend API RESTful](./backend/README.md)
+- [Un backend API RPC](./backend/README.md)
   - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
   - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html)
   - [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
@@ -59,7 +59,7 @@ afin d'**allier confort et valeurs personnelles**.
 Une fois que j'ai pu **comprendre** vraiment l'**Authorization Code Flow**, j'ai pu commencer à réfléchir sur
 comment entreprendre la partie frontend.
 
-J'ai alors réussi à **créer mon application VueJS** (*Vue 3*) avec `npm` puis ai décidé de **suivre le tutoriel lié**
+J'ai alors réussi à **créer mon application VueJS** (_Vue 3_) avec `npm` puis ai décidé de **suivre le tutoriel lié**
 au framework. **Une fois que j'ai eu les bases** de Vue, j'ai essayé de trouver comment **implémenter Keycloak** 
 dans l'application.
 
@@ -99,27 +99,31 @@ Une fois que j'ai pu **comprendre** la différence entre les deux, j'ai pu les r
 Ayant déjà dû gérer des claims SSO au sein de mon travail, j'ai rapidement compris comment étaient transportés
 les rôles au sein des JWT.
 
-Ensuite, **en usant d'un tutoriel** (*qui, je dois dire, comportait quelques incohérences, notamment entre l'article et
-le repository associé*) **combiné à l'aide de l'IA**, j'ai fini par constituer une **architecture** 
-qui m'a paru **suffisamment solide et modulaire**.
+Ensuite, **en usant d'un tutoriel** (_qui, je dois dire, comportait quelques incohérences, notamment entre l'article et
+le repository associé_) **combiné à l'aide de l'IA**, j'ai fini par constituer une **architecture** qui m'a paru **suffisamment solide et modulaire**.
 
 À ce stade, je suis pratiquement certain qu'il ne me reste **plus qu'une seule étape** : **gérer les claims SSO**.
-Ce notamment pour récupérer les identifiants utilisateurs afin de pouvoir leur associer des données spécifiques au 
+Ce notamment pour récupérer les identifiants utilisateurs afin de pouvoir leur associer des données spécifiques au
 niveau de l'API Spring dans la base de données Postgres dédiée.
 Il faut donc également constituer une **base pour la structure de données des utilisateurs** pour donner forme à cela.
 
-Et... voilà. Ce fut le dernier stade (*étonnement facile comparé au reste*) que j'ai pu imaginer jusqu'ici et
+Et... voilà. Ce fut le dernier stade (_étonnement facile comparé au reste_) que j'ai pu imaginer jusqu'ici et
 qui me semblait être essentiel pour débuter pleinement un projet.
 En effet, on dispose désormais :
 
 - d'une base de données fiable, solide et polyvalente.
 - d'un backend se connectant à la base de données et générant son contenu automatiquement.
 - d'un frontend se connectant au backend pour interagir avec les données au travers du portail sécurisé que représente le backend.
-- d'un single-sign on (*SSO*) permettant d'authentifier voire gérer les autorisations des utilisateurs.
+- d'un single-sign on (_SSO_) permettant d'authentifier voire gérer les autorisations des utilisateurs.
 
 Le tout interagissant les uns avec les autres de manière fonctionnel tout en étant constitué que d'éléments open source
 avec chacun une réputation solide et une grande polyvalence.
 
-La cerise sur le gâteau avant de partager tout cela est de documenter le tout au mieux afin que 
-quiconque souhaitant se lancer puisse disposer d'informations claires et d'une base (*au moins de réflexion*) solide 
+La cerise sur le gâteau avant de partager tout cela est de documenter le tout au mieux afin que
+quiconque souhaitant se lancer puisse disposer d'informations claires et d'une base (_au moins de réflexion_) solide
 pour concrétiser ses idées.
+
+Après m'être rendu compte, en ayant lu correctement le [tutoriel de Spring pour construire une API RESTful](https://spring.io/guides/tutorials/rest) et me rendre compte que j'étais dans le faux quand à ce que je pensais qu'étais une API REST, j'ai longuement hésité à inclure ces nouveaux concepts au sein de ce repository.
+J'ai fini par conclure que j'allais expliciter qu'il s'agirait ici d'une [API RPC](https://fr.wikipedia.org/wiki/Appel_de_proc%C3%A9dure_%C3%A0_distance) afin de laisser la possibilité, pour ceux qui le nécessitent, d'implémenter eux-mêmes le caractère "REST" de leur future API sur base de ce qu'ils auront appris ici (_comme moi là-dessus_).
+
+J'ai alors enfin pu trouver le temps pour compléter la documentation restante. Je vais essayer d'établir une "roadmap d'apprentissage" que j'inviterais à suivre pour comprendre au mieux ce répertoire mais cela restera évidemment subjectif.
