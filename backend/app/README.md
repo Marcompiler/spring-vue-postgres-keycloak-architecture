@@ -21,23 +21,17 @@ Vous pouvez utiliser "`mvnw`" ici présent afin de vous assurer d'utiliser la ve
 1. Tout d'abord, **ouvrez votre invite de commande dans ce répertoire**. 
 2. Ensuite, **construisez et installez le projet** :
 
-        ```sh
         ./mvnw clean install
-        ```
 
-3. Enfin, **démarrez le projet** :
+1. Enfin, **démarrez le projet** :
 
-        ```sh
         ./mvnw spring-boot:run
-        ```
 
-4. Faites un appel sur l'un des endpoints du backend avec votre navigateur, [HTTPie](../httpie/) ou, si vous avec `curl` :
+2. Faites un appel sur l'un des endpoints du backend avec votre navigateur, [HTTPie](../httpie/) ou, si vous avec `curl` :
 
-        ```sh
         curl http://localhost:8080/api/public
-        ```
 
-5. Vérifiez que la requête précédente vous renvoie bien : "Hello public". Le backend est alors correctement déployé et exécuté.
+3. Vérifiez que la requête précédente vous renvoie bien : "Hello public". Le backend est alors correctement déployé et exécuté.
 
 ### Développement
 
