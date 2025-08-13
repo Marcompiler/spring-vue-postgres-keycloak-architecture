@@ -1,4 +1,4 @@
-package com.marcompiler.test_architecture_rest_jpa_oauth2.helloworld;
+package com.marcompiler.backend.helloworld;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.core.oidc.StandardClaimNames;

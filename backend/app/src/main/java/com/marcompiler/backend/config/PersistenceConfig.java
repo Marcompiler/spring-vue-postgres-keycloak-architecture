@@ -1,4 +1,4 @@
-package com.marcompiler.test_architecture_rest_jpa_oauth2.config;
+package com.marcompiler.backend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

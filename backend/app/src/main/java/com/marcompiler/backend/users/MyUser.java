@@ -1,6 +1,7 @@
-package com.marcompiler.test_architecture_rest_jpa_oauth2.users;
+package com.marcompiler.backend.users;
 
-import com.marcompiler.test_architecture_rest_jpa_oauth2.common.BaseJpaEntity;
+import com.marcompiler.backend.common.BaseJpaEntity;
+
 import jakarta.persistence.*;
 
 @Entity

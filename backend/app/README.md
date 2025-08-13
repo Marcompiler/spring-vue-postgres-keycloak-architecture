@@ -21,21 +21,21 @@ Vous pouvez utiliser "`mvnw`" ici présent afin de vous assurer d'utiliser la ve
 1. Tout d'abord, **ouvrez votre invite de commande dans ce répertoire**. 
 2. Ensuite, **construisez et installez le projet** :
 
-```sh
-./mvnw clean install
-```
+        ```sh
+        ./mvnw clean install
+        ```
 
 3. Enfin, **démarrez le projet** :
 
-```sh
-./mvnw spring-boot:run
-```
+        ```sh
+        ./mvnw spring-boot:run
+        ```
 
 4. Faites un appel sur l'un des endpoints du backend avec votre navigateur, [HTTPie](../httpie/) ou, si vous avec `curl` :
 
-```sh
-curl http://localhost:8080/api/public
-```
+        ```sh
+        curl http://localhost:8080/api/public
+        ```
 
 5. Vérifiez que la requête précédente vous renvoie bien : "Hello public". Le backend est alors correctement déployé et exécuté.
 
@@ -45,4 +45,4 @@ Pour développer l'application, **veuillez utiliser un IDE** tel que [IntelliJ I
 
 La plupart des fichiers ici ont été générés par [Spring Initializr](https://start.spring.io), vous n'avez donc pas à vous en soucier pour le bon fonctionnement de l'application.
 
-**Pour entamer votre développement**, vous pouvez **directement plonger** dans le répertoire [**`main`**](./src/main/).
+**Pour entamer votre développement/compréhension**, vous pouvez **directement plonger** dans le répertoire [**`main`**](./src/main/).

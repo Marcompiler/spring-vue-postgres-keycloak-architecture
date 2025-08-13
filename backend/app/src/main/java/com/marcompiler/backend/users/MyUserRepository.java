@@ -1,4 +1,4 @@
-package com.marcompiler.test_architecture_rest_jpa_oauth2.users;
+package com.marcompiler.backend.users;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

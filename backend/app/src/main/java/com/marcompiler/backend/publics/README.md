@@ -12,7 +12,7 @@ Celui-ci **permet donc de s'assurer**, en plus de comprendre la base de ce qui f
 
 Depuis le frontend ou HTTPie, **appelez l'endpoint** du controller. Par défaut, il s'agit de :
 
-```
+```sh
 http://localhost:8080/api/public
 ```
 

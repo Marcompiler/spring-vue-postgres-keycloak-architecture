@@ -1,4 +1,4 @@
-package com.marcompiler.test_architecture_rest_jpa_oauth2.publics;
+package com.marcompiler.backend.publics;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;

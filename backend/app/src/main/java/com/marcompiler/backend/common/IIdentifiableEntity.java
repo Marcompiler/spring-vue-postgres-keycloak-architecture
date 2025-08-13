@@ -1,4 +1,4 @@
-package com.marcompiler.test_architecture_rest_jpa_oauth2.common;
+package com.marcompiler.backend.common;
 
 /**
  * Defines the use of an identifier of a given type.

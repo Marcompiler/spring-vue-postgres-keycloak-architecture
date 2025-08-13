@@ -1,4 +1,4 @@
-package com.marcompiler.test_architecture_rest_jpa_oauth2.common;
+package com.marcompiler.backend.common;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;

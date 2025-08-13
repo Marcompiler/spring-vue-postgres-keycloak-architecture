@@ -1,4 +1,4 @@
-package com.marcompiler.test_architecture_rest_jpa_oauth2.helloworld;
+package com.marcompiler.backend.helloworld;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

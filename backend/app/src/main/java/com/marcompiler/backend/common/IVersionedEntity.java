@@ -1,4 +1,4 @@
-package com.marcompiler.test_architecture_rest_jpa_oauth2.common;
+package com.marcompiler.backend.common;
 
 /**
  * Defines a versioning for entities. Fed automatically by Spring JPA with Version annotation and used to manage concurrent access.
