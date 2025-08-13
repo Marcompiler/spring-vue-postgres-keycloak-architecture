@@ -4,7 +4,7 @@
 
 Nous voici dans **le coeur de l'architecture : l'API**. Elle est au centre de tous les autres éléments de la chaîne : la base de données, le SSO et le frontend.
 
-Il s'agit donc d'une application en [Java](https://www.java.com/fr/), sous le framework [Spring](https://spring.io/) et qui se veut RESTful tel que présenté dans [la documentation officielle de Spring](https://spring.io/guides/tutorials/rest).
+Il s'agit donc d'une application en [Java](https://www.java.com/fr/), sous le framework [Spring](https://spring.io/) et ~~qui se veut RESTful~~ qui est une API RPC tel que j'ai été corrigé par la lecture de [la documentation officielle de Spring](https://spring.io/guides/tutorials/rest).
 
 ## Comment utiliser
 
