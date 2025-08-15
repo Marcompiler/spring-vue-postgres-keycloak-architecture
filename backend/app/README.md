@@ -18,20 +18,20 @@ Sinon, vous pouvez directement exécuter l'application en l'état à l'aide des 
 
 Vous pouvez utiliser "`mvnw`" ici présent afin de vous assurer d'utiliser la version de Maven utilisée durant le développement de cette application. Néanmoins, rien ne vous empêche d'installer Maven sur votre machine et l'utiliser directement. Auquel cas, vous utiliserez non pas `mvnw` mais `mvn` dans les commandes qui suivent.
 
-1. Tout d'abord, **ouvrez votre invite de commande dans ce répertoire**. 
+1. Tout d'abord, **ouvrez votre invite de commande dans ce répertoire**.
 2. Ensuite, **construisez et installez le projet** :
 
         ./mvnw clean install
 
-1. Enfin, **démarrez le projet** :
+3. Enfin, **démarrez le projet** :
 
         ./mvnw spring-boot:run
 
-2. Faites un appel sur l'un des endpoints du backend avec votre navigateur, [HTTPie](../httpie/) ou, si vous avec `curl` :
+4. Faites un appel sur l'un des endpoints du backend avec votre navigateur, [HTTPie](../httpie/) ou, si vous avec `curl` :
 
         curl http://localhost:8080/api/public
 
-3. Vérifiez que la requête précédente vous renvoie bien : "Hello public". Le backend est alors correctement déployé et exécuté.
+5. Vérifiez que la requête précédente vous renvoie bien : "Hello public". Le backend est alors correctement déployé et exécuté.
 
 ### Développement
 

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.marcompiler</groupId>
-	<artifactId>test-architecture-rest-jpa-oauth2</artifactId>
+	<artifactId>backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>test-architecture-rest-jpa-oauth2</name>
-	<description>Test for an architecture with JPA, OAuth2 and REST (with Postgres, Keycloak and Vue.JS in mind).</description>
+	<name>backend</name>
+	<description>Backend of the stack.</description>
 	<url/>
 	<licenses>
 		<license/>

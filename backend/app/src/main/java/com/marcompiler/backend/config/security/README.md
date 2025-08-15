@@ -2,7 +2,7 @@
 
 ## Description
 
-**Gros morceau** de la configuration : **la sécurité** de l'application. 
+**Gros morceau** de la configuration : **la sécurité** de l'application.
 
 Autrement dit, c'est ici que nous allons configurer ce qui permettra d'**évaluer les accès à l'application** par des intervenants et autres applications.
 

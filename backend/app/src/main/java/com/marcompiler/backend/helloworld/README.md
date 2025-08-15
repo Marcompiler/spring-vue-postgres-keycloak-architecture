@@ -24,5 +24,5 @@ Pour ce faire, **authentifiez-vous au sein du SSO**, **récupérez le [Json Web 
 http://localhost:8080/api/helloworld
 ```
 
-Vous obtiendrez alors une **réponse HTTP 200 (OK) : "`Hello world`"**. 
+Vous obtiendrez alors une **réponse HTTP 200 (OK) : "`Hello world`"**.
 Celle-ci vous permet de savoir que **votre API est bien démarrée et est accessible au travers de l'authentification**.

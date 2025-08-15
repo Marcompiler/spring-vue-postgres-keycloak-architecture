@@ -2,7 +2,7 @@
 
 ## Description
 
-Ceci est la **configuration** de l'application backend. 
+Ceci est la **configuration** de l'application backend.
 
 On y définit donc, au moyen de [`application.properties`](./application.properties), des **propriétés à appliquer pour l'exécution** de l'application.
 

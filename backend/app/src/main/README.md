@@ -9,7 +9,7 @@ Ceci est le répertoire à partir duquel vous allez le plus développer des chos
 
 ## Comment utiliser
 
-Selon ce que vous souhaitez, vous pouvez : 
+Selon ce que vous souhaitez, vous pouvez :
 
 - Continuer à **explorer l'application** dans [`le répertoire où tout cela commence`](./java/com/marcompiler/test_architecture_rest_jpa_oauth2/).
 - Consulter la **configuration de l'application** dans [`resources`](./resources/).
