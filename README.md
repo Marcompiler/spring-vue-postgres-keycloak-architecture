@@ -13,7 +13,7 @@ L'architecture est donc constituée de la façon suivante :
   - [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
 - [Un frontend](./frontend/README.md)
   - [Vue.JS](https://vuejs.org/)
-- [Un serveur d'autorisation (SSO)](./authorization-server/README.md)
+- [Une authentification unique (SSO)](./sso/README.md)
   - [Keycloak](https://www.keycloak.org/)
 
 ## Outils utilisés

@@ -5,7 +5,7 @@
 Ici va se trouver l'application Web avec laquelle les utilisateurs vont interagir depuis l'extérieur.
 
 Cette application va donc permettre aux utilisateurs de naviguer au travers de pages Web dont les données seront majoritairement octroyée par le biais du [backend](../backend).
-L'accès à ces mêmes données et aux interactions possibles pour l'utilisateur courant sera géré au moyen de l'[authorization server](../authorization-server).
+L'accès à ces mêmes données et aux interactions possibles pour l'utilisateur courant sera géré au moyen de l'[authentification unique](../sso).
 
 ## Comment utiliser
 
