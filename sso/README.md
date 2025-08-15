@@ -1,4 +1,4 @@
-# Authorization Server
+# Authentification unique (SSO)
 
 ## Description
 
