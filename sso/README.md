@@ -83,15 +83,14 @@ Dans notre cas, durant le développement, nous pouvons nous contenter de défini
 
 ### Rôles de client
 
-Enfin, il ne manque plus qu'à définir des rôles au niveau du client. En effet, non seulement les utilisateurs peuvent
+Enfin, il ne manque plus qu'à définir des **rôles** au niveau du **client**. En effet, non seulement les utilisateurs peuvent
 être autorisés sur base de leurs propres rôles, mais il en va de même pour les applications clientes elles-mêmes.
 
-Par exemple, dans le cas de notre stack ici, l'API Spring pourrait être appelée par plusieurs applications Vue.js, 
-chacune ayant alors un "client-ID" et donc des autorisations particulières.
+Par exemple, dans le cas de notre architecture ici, **l'API Spring pourrait être appelée par plusieurs applications Vue.js, chacune ayant alors un "client-ID"** et donc des autorisations particulières.
 
 Par conséquent, **dans votre client "demo-client"**, vous pouvez créer les rôles suivants :
 
 - Le rôle **"demo:read:users"**.
 - Le rôle **"demo:write:users"**.
 
-Vous disposez alors d'une configuration permettant de tester plusieurs cas d'utilisation ; les utilisateurs, administrateurs, la vérification de rôles et l'enregistrement de clients.
+**Vous disposez alors d'une configuration permettant de tester plusieurs cas d'utilisation ; les utilisateurs, administrateurs, la vérification de rôles et l'enregistrement de clients**.
