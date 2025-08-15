@@ -5,7 +5,7 @@
 Le serveur d'autorisation ici sera une instance [Keycloak](https://www.keycloak.org/) déployée sous forme d'un container [Podman](https://podman.io/).
 C'est donc ici qu'on délègue la **gestion des utilisateurs**, leur **authentification** et leurs **autorisations/rôles**.
 
-De plus, **grâce à la possibilité du SSO**, si les applications se multiplient pour un même lot d'utilisateurs, 
+De plus, **grâce à la possibilité du SSO**, si les applications se multiplient pour un même lot d'utilisateurs,
 leur **identité** pourra être **centralisée et réutilisée** ailleurs grâce à Keycloak (*concept même du SSO*).
 
 ## Comment utiliser
@@ -16,8 +16,8 @@ Cela selon l'environnement que vous souhaitez.
 Vous pouvez également démarrer l'instance de DEV qui va importer directement l'export créé à l'occasion lors de la
 création du container.
 
-Durant vos tests, je vous invite à seulement stopper/redémarrer le container sans le supprimer. 
-Cela afin de ne pas perdre votre configuration (*[vous pouvez toujours l'exporter](https://www.keycloak.org/server/importExport) et remplacer l'export déjà présent*). 
+Durant vos tests, je vous invite à seulement stopper/redémarrer le container sans le supprimer.
+Cela afin de ne pas perdre votre configuration (*[vous pouvez toujours l'exporter](https://www.keycloak.org/server/importExport) et remplacer l'export déjà présent*).
 Lors du déploiement **en production**, vous définirez des **points de montage** pour ne rien perdre.
 
 Une fois que vous avez un conteneur fonctionnel, vous pouvez, si ce n'est pas déjà fait grâce à l'export préexistant,
@@ -45,7 +45,7 @@ Pour ce faire, créez un utilisateur **"demo-user"** en spécifiant les informat
 - Spécifier un nom d'utilisateur, un email, un prénom et un nom de famille.
 - Une fois l'utilisateur créé, ajoutez-lui un mot de passe (*décochez "temporaire"*).
 
-Sans cela, la personne ne pourra soit pas se connecter depuis vos applications, 
+Sans cela, la personne ne pourra soit pas se connecter depuis vos applications,
 soit ces informations lui seront de toute façon demandées à la première connexion.
 
 Vous pouvez déjà créer un second utilisateur **"demo-admin"** pour la suite.
