@@ -1,9 +1,10 @@
-# Test-Architecture-Spring_Keycloak_VueJS
+# Architecture Web - Exemple Spring-Vue-Postgres-Keycloak
 
-Ce repository a pour but de **tester** l'ensemble des **fonctionnalités de base** issues **de l'architecture** 
-que je souhaite tester ici.
+## Description
 
-## Architecture
+Ce repository est une **architecture permettant de développer un site Web complet** avec tous les éléments nécessaires : un **backend**, un **frontend**, une **base de données** et une **authentification unique**.
+
+### Architecture
 
 L'architecture est donc constituée de la façon suivante :
 
@@ -16,17 +17,41 @@ L'architecture est donc constituée de la façon suivante :
 - [Une authentification unique (SSO)](./sso/README.md)
   - [Keycloak](https://www.keycloak.org/)
 
+### À qui s'adresse ceci
+
+Ce projet s'adresse à **toute personne qui** :
+
+- **Souhaite apprendre**.
+- **Cherche** de l'**inspiration** pour constituer sa propre architecture.
+- **Souhaite démarrer le développement d'un site Web** complet et polyvalent.
+- S'est perdue ici (_Bienvenue !_).
+
+## Objectifs
+
+Le **but premier** est de **partager** publiquement ce que je fais habituellement dans mon coin **pour permettre à d'autres** de **s'inspirer** voire de **se motiver** à faire leurs propres créations.
+
+Ce repository **peut servir de base** pour **n'importe quel projet de site Web**. En espérant que sa composition corresponde à ce qui vous sera nécessaire pour votre cas particulier.
+**Si vous n'avez aucune exigence**, j'ose penser que **vous disposez ici de tout ce qui est nécessaire** pour développer votre propre solution.
+
+Je vous invite donc à **forker ce projet** ou **en faire ce que bon vous semble** à partir du moment où cela peut **vous aider/inspirer/faire apprendre** quelque chose.
+
+### Parcours de développement
+
+**Si vous hésitez à vous lancer**, j'ai longtemps été dans la même situation que vous et **je comprends**. Par conséquent, **je vous invite à lire le [parcours de développement](DEV_JOURNEY.md)** que j'ai rédigé à propos de ce projet.
+
+Si cela peut vous **aider à vous sentir moins seul voire à vous motiver**, j'en serais ravi.
+
 ## Outils utilisés
 
 Les outils qui furent utilisés ici sont :
 
-- [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/) (_développement de l'application_)
+- [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/) (_développement du backend_)
 - [VSCodium](https://vscodium.com/) (_versioning des fichiers ailleurs que dans le projet IntelliJ_)
 - [HTTPie](https://httpie.io/) (_requêtes HTTP et tests de l'API_)
 
 ## Tutoriels utilisés
 
-Pour leur implémentation, je me suis notamment servi des tutoriels suivants :
+Pour leur implémentation, je me suis notamment servi des tutoriels suivants que **je vous invite à consulter en complément d'informations** :
 
 - [Spring Web - API RESTful (HATEOAS)](https://spring.io/guides/tutorials/rest) (_documentation officielle de Spring_)
 - [Spring Boot 3 KeyCloak OAuth2](https://www.youtube.com/watch?v=_0oXZKr97ro&list=PLSVW22jAG8pAXU0th247M7xPCekzeNdrH&index=10) (_vidéo YouTube_)
@@ -36,94 +61,36 @@ Pour leur implémentation, je me suis notamment servi des tutoriels suivants :
 - [Keycloak JavaScript adapter](https://www.keycloak.org/securing-apps/javascript-adapter)
 - [Spring Boot Keycloak role based authorization with JWT](https://medium.com/@kspoyraz7/spring-boot-keycloak-role-based-authorization-with-jwt-3bd29bdd9016)
 
-## Parcours de développement
+## Feuille de route pour la prise en main
 
-J'ai pensé que **partager mon parcours** sur la **prise en main** de ces technologies
-et des **difficultés** que j'ai rencontrées pourraient potentiellement **inspirer voire motiver d'autres à se lancer**.
-Le voici donc.
+### Connaissances préalables conseillées
 
-J'ai commencé par me faire des **piqûres de rappel** quant à mes cours sur Java Spring et à faire
-plusieurs brouillons de schémas de base de données. J'ai entamé **plusieurs projets que j'ai abandonnés**
-car **je me sentais bloqué** par mon **manque de connaissances**, générant chez moi un **sentiment d'illégitimé**
-qui me dissuadait alors de continuer.
+Pour prendre ce projet en main, je vous invite tout d'abord à disposer des **connaissances nécessaires** afin de **comprendre au mieux** les **concepts abordés ici**.
 
-Ensuite, j'ai **accumulé les connaissances nécessaires**, notamment aux moyens des tutoriels susmentionnés,
-**pour comprendre exactement ce que j'allais utiliser et pourquoi**. 
-J'ai dû **accepter de ne pas pouvoir tout bien faire dès le départ**, ce qui, encore à ce jour, reste compliqué.
+Je dirais donc que les concepts principaux à connaître sont :
 
-Après plusieurs tâtonnements, des dérapages, voire des décrochages, j'ai fini par constituer **petit à petit**
-une **base fonctionnelle entre la base de données, le backend et le SSO**. Cela m'a aidé à **reprendre confiance en moi**
-ainsi qu'**en ma stack de développement** qui, elle aussi, fut un calvaire à constituer
-afin d'**allier confort et valeurs personnelles**.
+- La [**virtualisation par conteneur**](https://fr.wikipedia.org/wiki/Conteneur_(virtualisation)) avec, dans ce cas-ci, **[Podman](https://fr.wikipedia.org/wiki/Podman)**.
+- Ce qu'est une **[API](https://fr.wikipedia.org/wiki/Interface_de_programmation)**
+  - Dans ce cas-ci, une **[RPC](https://fr.wikipedia.org/wiki/Appel_de_proc%C3%A9dure_%C3%A0_distance)** mais **[REST](https://fr.wikipedia.org/wiki/Representational_state_transfer)** reste tout aussi intéressant.
+- Ce qu'est une **[base de données relationnelle](https://fr.wikipedia.org/wiki/Base_de_donn%C3%A9es_relationnelle)** et ce qu'est **[PostgreSQL](https://fr.wikipedia.org/wiki/PostgreSQL)**.
+- La différence entre **[backend](https://fr.wikipedia.org/wiki/Backend) et [frontend](https://fr.wikipedia.org/wiki/Frontal_(informatique))**.
+- Ce qu'est un **[Single Sign-On (SSO)](https://fr.wikipedia.org/wiki/Authentification_unique)** et **l'intérêt d'en utiliser un**.
+- Ce qu'est un **[Framework](https://fr.wikipedia.org/wiki/Framework)**. Dans notre cas il s'agit de :
+  - **[Spring](https://fr.wikipedia.org/wiki/Spring_(framework))** (_backend_)
+  - **[Vue.js](https://fr.wikipedia.org/wiki/Vue.js)** (_frontend_)
+- **Les différents langages utilisés** ici que sont :
+  - [HTML](https://fr.wikipedia.org/wiki/Hypertext_Markup_Language)
+  - [Java](https://fr.wikipedia.org/wiki/Java_(langage))
+  - [JavaScript](https://fr.wikipedia.org/wiki/JavaScript)
+- Les connaissances suivantes ne sont pas abordées ici mais peuvent vous aider à **compléter la compréhension** :
+  - Le [langage CSS](https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade)
+  - Le [langage SQL](https://fr.wikipedia.org/wiki/Structured_Query_Language)
 
-Une fois que j'ai pu **comprendre** vraiment l'**Authorization Code Flow**, j'ai pu commencer à réfléchir sur
-comment entreprendre la partie frontend.
+### Étapes à suivre
 
-J'ai alors réussi à **créer mon application VueJS** (_Vue 3_) avec `npm` puis ai décidé de **suivre le tutoriel lié**
-au framework. **Une fois que j'ai eu les bases** de Vue, j'ai essayé de trouver comment **implémenter Keycloak** 
-dans l'application.
+Une fois que vous vous sentez prêts à plonger dans ce repository, je vous propose de le faire dans cet ordre :
 
-Une fois que j'y suis parvenu, ça m'a d'autant plus **motivé à continuer** : je parvenais désormais à faire 
-**communiquer mon SSO autant avec mon API qu'avec mon frontend**. Je savais alors que je n'avais plus qu'à faire communiquer 
-le frontend avec l'API et, là, toutes les pièces du puzzle de base seraient enfin assemblées.
-
-Dès le lendemain, je m'y suis remis, **ai appris** comment faire des requêtes avec `fetch` en JavaScript, 
-gérer le CORS dans l'API puis ai appelé les différents endpoints de l'API, **tout fonctionnait**. 
-Ce fut un vrai relâchement car je sus alors que **la stack que j'avais constituée était fonctionnelle**.
-
-Ensuite, étant **spécialisé backend** initialement, j'ai recherché un **framework CSS avec composants**,
-cela afin de comparer les alternatives au lieu d'[Element Plus](https://element-plus.org), juste pour voir. 
-J'ai alors découvert [PrimeVue](https://primevue.org/) qui, malgré un nombre d'étoiles moins important que d'autres,
-m'a semblé fiable, complet et clairement documenté.
-
-**Néanmoins**, j'ai tenu à ce que **ce projet se limite au nécessaire** tout en **laissant le choix** sur les technologies qui
-vont **au-delà de la portée prévue** par ce projet. Je me suis donc finalement contenté de mentionner 
-les deux frameworks CSS ci-dessus afin de vous laisser choisir, parmi eux ou d'autres encore, ce que vous préférez.
-
-Enfin, **le clou final** à ce projet m'a paru être ce qui allait être de toute façon nécessaire pour la suite : 
-**la gestion des utilisateurs au niveau du backend-database**. En effet, on ne se limite généralement pas au SSO pour nos
-utilisateurs ; celui-ci se contente d'authentifier et de sécuriser les données nécessaires à cette authentification.
-
-**Pour les données propres à l'application**, liées aux mêmes utilisateurs, il faut donc les gérer au sein de celle-ci.
-Sans parler que je n'ai pas encore essayé d'**interpréter les rôles définis par le SSO dans le backend**.
-C'est alors devenu mon **prochain objectif**.
-
-Durant un week-end hors de chez moi, j'ai profité d'un instant sur mon portable pour investiguer sur comment
-**implémenter les rôles** au niveau de mon architecture. J'ai alors découvert les différents types de rôles dans Keycloak.
-Il y a alors **deux types de rôles** :
-
-- Les rôles au niveau des **Realms**.
-- Les rôles au niveau des **clients**.
-
-Une fois que j'ai pu **comprendre** la différence entre les deux, j'ai pu les retrouver au sein de mon API Spring.
-Ayant déjà dû gérer des claims SSO au sein de mon travail, j'ai rapidement compris comment étaient transportés
-les rôles au sein des JWT.
-
-Ensuite, **en usant d'un tutoriel** (_qui, je dois dire, comportait quelques incohérences, notamment entre l'article et
-le repository associé_) **combiné à l'aide de l'IA**, j'ai fini par constituer une **architecture** qui m'a paru **suffisamment solide et modulaire**.
-
-À ce stade, je suis pratiquement certain qu'il ne me reste **plus qu'une seule étape** : **gérer les claims SSO**.
-Ce notamment pour récupérer les identifiants utilisateurs afin de pouvoir leur associer des données spécifiques au
-niveau de l'API Spring dans la base de données Postgres dédiée.
-Il faut donc également constituer une **base pour la structure de données des utilisateurs** pour donner forme à cela.
-
-Et... voilà. Ce fut le dernier stade (_étonnement facile comparé au reste_) que j'ai pu imaginer jusqu'ici et
-qui me semblait être essentiel pour débuter pleinement un projet.
-En effet, on dispose désormais :
-
-- d'une base de données fiable, solide et polyvalente.
-- d'un backend se connectant à la base de données et générant son contenu automatiquement.
-- d'un frontend se connectant au backend pour interagir avec les données au travers du portail sécurisé que représente le backend.
-- d'un single-sign on (_SSO_) permettant d'authentifier voire gérer les autorisations des utilisateurs.
-
-Le tout interagissant les uns avec les autres de manière fonctionnel tout en étant constitué que d'éléments open source
-avec chacun une réputation solide et une grande polyvalence.
-
-La cerise sur le gâteau avant de partager tout cela est de documenter le tout au mieux afin que
-quiconque souhaitant se lancer puisse disposer d'informations claires et d'une base (_au moins de réflexion_) solide
-pour concrétiser ses idées.
-
-Après m'être rendu compte, en ayant lu correctement le [tutoriel de Spring pour construire une API RESTful](https://spring.io/guides/tutorials/rest) et me rendre compte que j'étais dans le faux quand à ce que je pensais qu'étais une API REST, j'ai longuement hésité à inclure ces nouveaux concepts au sein de ce repository.
-J'ai fini par conclure que j'allais expliciter qu'il s'agirait ici d'une [API RPC](https://fr.wikipedia.org/wiki/Appel_de_proc%C3%A9dure_%C3%A0_distance) afin de laisser la possibilité, pour ceux qui le nécessitent, d'implémenter eux-mêmes le caractère "REST" de leur future API sur base de ce qu'ils auront appris ici (_comme moi là-dessus_).
-
-J'ai alors enfin pu trouver le temps pour compléter la documentation restante. Je vais essayer d'établir une "roadmap d'apprentissage" que j'inviterais à suivre pour comprendre au mieux ce répertoire mais cela restera évidemment subjectif.
+1. La [**base de données**](./database/). Elle se contente ici d'être **un script Podman** à exécuter pour qu'elle s'instancie.
+2. Le [**SSO**](./sso/). Il ne s'agit principalement que d'**un script Podman** également mais comporte **plusieurs concepts spécifiques**.
+3. Le [**backend**](./backend/). Une **application** Java Spring **reposant sur les deux premiers** pour fonctionner.
+4. Le [**frontend**](./frontend/). C'est la **façade** de votre architecture **qui se greffe par dessus le reste**.
