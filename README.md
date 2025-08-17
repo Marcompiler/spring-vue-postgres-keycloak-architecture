@@ -4,22 +4,9 @@
 
 Ce repository est une **architecture permettant de développer un site Web complet** avec tous les éléments nécessaires : un **backend**, un **frontend**, une **base de données** et une **authentification unique**.
 
-### Architecture
+Le tout **uniquement avec des éléments/outils open source** (_en tous cas autant que possible_).
 
-L'architecture est donc constituée de la façon suivante :
-
-- [Un backend API RPC](./backend/)
-  - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
-  - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html)
-  - [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
-- [Un frontend](./frontend/)
-  - [Vue.JS](https://vuejs.org/)
-- [Une authentification unique (SSO)](./sso/)
-  - [Keycloak](https://www.keycloak.org/)
-- [Une base de données](./database/)
-  - [PostgreSQL](https://fr.wikipedia.org/wiki/PostgreSQL)
-
-### À qui s'adresse ceci
+## À qui s'adresse ceci
 
 Ce projet s'adresse à **toute personne qui** :
 
@@ -36,6 +23,115 @@ Ce repository **peut servir de base** pour **n'importe quel projet de site Web**
 **Si vous n'avez aucune exigence**, j'ose penser que **vous disposez ici de tout ce qui est nécessaire** pour développer votre propre solution.
 
 Je vous invite donc à **forker ce projet** ou **en faire ce que bon vous semble** à partir du moment où cela peut **vous aider/inspirer/faire apprendre** quelque chose.
+
+## Architecture
+
+L'architecture est donc constituée de la façon suivante :
+
+- [Un backend API RPC](./backend/)
+  - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
+  - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html)
+  - [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
+- [Un frontend](./frontend/)
+  - [Vue.JS](https://vuejs.org/)
+- [Une authentification unique (SSO)](./sso/)
+  - [Keycloak](https://www.keycloak.org/)
+- [Une base de données](./database/)
+  - [PostgreSQL](https://fr.wikipedia.org/wiki/PostgreSQL)
+
+## Pour démarrer
+
+### Prérequis
+
+Avant de commencer, assurez-vous d’avoir installé :
+
+- [Podman](https://podman.io/docs/installation) (_ou [Docker](https://docs.docker.com/get-started/get-docker/)_) pour lancer la base de données et le SSO (_voire le backend et le frontend_).
+  - [Podman-Compose](https://podman-desktop.io/docs/compose/setting-up-compose) (_ou [Docker-Compose](https://docs.docker.com/compose/install/)_) est également conseillé. Sinon vous devrez convertir les `.yml` en commandes `run`.
+- [Java 24+](https://jdk.java.net/24/) pour le backend Spring.
+- [Maven](https://maven.apache.org/download.cgi) pour construire le backend.
+- [Node.js 22+](https://nodejs.org/fr/download) et [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) pour le frontend.
+
+Si ce n'est déjà fait, je vous invite à redémarrer votre machine une fois la/les installations terminées.
+
+### Variables d'environnement
+
+La base de données et l'authentification unique (_SSO_) dépendent d'un fichier de variables d'environnement pour démarrer. Veillez donc à créer une copie du fichier `.env.*.template` et le renommer en retirant `.template`.
+
+Cela donne donc :
+
+| Élément | Fichier template | Nom de la copie |
+| --- | --- | --- |
+| Base de données | [`.env.database.template`](./database/podman/.env.database.template) | `.env.database` |
+| SSO | [`.env.sso.template`](./sso/podman/dev/.env.sso.template) | `.env.sso` |
+
+Attention que si vous modifiez les valeurs, il faut répercuter ces modifications dans les configurations qui les utilisent :
+
+- Les valeurs de `.env.database` sont utilisées par le backend dans son [application.properties](./backend/app/src/main/resources/application.properties) et ses scripts d'exécution Podman (_[Linux](./backend/app/podman-run.sh)/[Windows](./backend/app/podman-run.ps1)_).
+- Les valeurs de `.env.sso` sont à utiliser lors de la connexion à l'interface Web du SSO en tant qu'administrateur (adresse par défaut : <http://localhost:8080>).
+
+Une fois les copies créées et renommées, **vous pouvez alors démarrer tous** les éléments de l'architecture **par Podman et/ou par commandes** selon ce qui vous accommode le mieux.
+
+### Scripts Podman (_ou Docker_)
+
+**Chaque élément** de l'architecture **comporte des scripts** pour démarrer au sein d'un conteneur. Par conséquent, vous trouverez des **scripts `.sh` pour Linux et `.ps1` pour Windows**.
+
+Vous pouvez donc exécuter les scripts **dans cette ordre** selon votre environnement :
+
+| Ordre | Élément à démarrer | Linux | Windows |
+| --- | --- | --- | --- |
+| 1 | **Base de données** | [Run](./database/podman/podman-run.sh) | [Run](./database/podman/podman-run.ps1) |
+| 2 | **SSO** (_DEV_) | [Run](./sso/podman/dev/podman-run.sh) | [Run](./sso/podman/dev/podman-run.ps1) |
+| 3 | **Backend** | [Build](./backend/app/podman-build.sh) -> [Run](./backend/app/podman-run.sh) | [Build](./backend/app/podman-build.ps1) -> [Run](./backend/app/podman-run.ps1) |
+| 4 | **Frontend** | [Build](./frontend/app/podman-build.sh) -> [Run](./frontend/app/podman-run.sh) | [Build](./frontend/app/podman-build.ps1) -> [Run](./frontend/app/podman-run.ps1) |
+
+Certains ont "`Build -> Run`", cela signifie que vous devez **d'abord construire l'image** à instancier pour le conteneur. Il suffit donc d'exécuter **`Build` puis `Run`**.
+
+_N.B. : **Pour Docker**, il suffit de **remplacer** toutes les occurrences de **"podman" par "docker"**._
+
+### Commandes à exécuter
+
+**_Veillez à respecter l'ordre d'exécution_**.
+
+Avant toute chose, certains éléments de l'architecture nécessite Podman/Docker, assurez-vous donc que la machine correspondante existe et est démarrée :
+
+```sh
+podman machine init
+podman machine start
+```
+
+Chaque élément de l'architecture comporte un script pour le démarrer :
+
+#### Base de données (1/4)
+
+Exécutez la commande suivante pour **démarrer un conteneur Postgres** :
+
+```sh
+podman-compose -f "./database/podman/podman-compose.yml" up -d
+```
+
+#### Authentification unique (SSO) (2/4)
+
+Exécutez la commande suivante pour **démarrer un conteneur Keycloak** (_pour le développement_) :
+
+```sh
+podman-compose -f "./sso/podman/dev/podman-compose.yml" up -d
+```
+
+#### Backend (3/4)
+
+Allez dans le **répertoire de l'application backend** :
+
+```sh
+cd backend/app
+```
+
+Démarrez l'application au moyen des commandes suivantes :
+
+TODO
+
+#### Frontend (4/4)
+
+TODO
 
 ### Parcours de développement
 
