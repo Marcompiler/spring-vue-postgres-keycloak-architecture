@@ -22,6 +22,7 @@ public class MyUser extends BaseJpaEntity<Long> {
         return 0L;
     }
 
+    @SuppressWarnings("unused")
     private MyUser() {}
 
     public MyUser(String sub, String surname) {
