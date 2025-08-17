@@ -2,8 +2,8 @@
 version: "3.9"
 services:
   oauth:
-    image: quay.io/keycloak/keycloak:26.2
-    container_name: "demo-spring_keycloak_vuejs-keycloak"
+    image: quay.io/keycloak/keycloak:26.3
+    container_name: "sso"
     ports:
       - "8181:8080"
     command: ["start-dev", "--import-realm"]
