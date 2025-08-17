@@ -16,6 +16,8 @@ L'architecture est donc constituée de la façon suivante :
   - [Vue.JS](https://vuejs.org/)
 - [Une authentification unique (SSO)](./sso/README.md)
   - [Keycloak](https://www.keycloak.org/)
+- [Une base de données](./database/)
+  - [PostgreSQL](https://fr.wikipedia.org/wiki/PostgreSQL)
 
 ### À qui s'adresse ceci
 
