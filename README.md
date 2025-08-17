@@ -62,6 +62,8 @@ Pour leur implémentation, je me suis notamment servi des tutoriels suivants que
 - [Tutoriel Vue version 3](https://vuejs.org/tutorial/#step-1)
 - [Keycloak JavaScript adapter](https://www.keycloak.org/securing-apps/javascript-adapter)
 - [Spring Boot Keycloak role based authorization with JWT](https://medium.com/@kspoyraz7/spring-boot-keycloak-role-based-authorization-with-jwt-3bd29bdd9016)
+- [Spring Boot with Docker](https://spring.io/guides/gs/spring-boot-docker)
+- [Dockerize Vue.js App](https://v2.vuejs.org/v2/cookbook/dockerize-vuejs-app.html?redirect=true)
 
 ## Feuille de route pour la prise en main
 
