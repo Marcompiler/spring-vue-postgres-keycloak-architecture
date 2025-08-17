@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
 import keycloak from '@/keycloak'
+import { BACKEND_BASE_URL } from '@/backend'
 
 let dataFromApi = ref('')
 
@@ -9,7 +10,7 @@ watchEffect(async () => {
 })
 
 async function getDataFromApiAsync() {
-  const apiEndpoint = 'http://localhost:8080/api/users'
+  const apiEndpoint = `${BACKEND_BASE_URL}/users`
 
   //console.log(`Token from keycloak: ${keycloak.token}`)
 

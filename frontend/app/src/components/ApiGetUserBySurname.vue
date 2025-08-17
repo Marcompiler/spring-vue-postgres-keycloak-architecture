@@ -1,13 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 import keycloak from '@/keycloak'
+import { BACKEND_BASE_URL } from '@/backend'
 
 const dataFromApi = ref('')
 
 const inputForApi = ref('1')
 
 async function getDataFromApiAsync(surname) {
-  const apiEndpoint = `http://localhost:8080/api/users/surname/${surname}`
+  const apiEndpoint = `${BACKEND_BASE_URL}/users/surname/${surname}`
 
   //console.log(`Token from keycloak: ${keycloak.token}`)
 

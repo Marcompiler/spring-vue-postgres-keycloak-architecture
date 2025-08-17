@@ -18,42 +18,8 @@
     },
     "requests": [
       {
-        "name": "Get HelloWorld",
-        "url": "localhost:8080/api/helloworld",
-        "method": "GET",
-        "headers": [],
-        "queryParams": [],
-        "pathParams": [],
-        "auth": {
-          "type": "bearer",
-          "credentials": {
-            "username": "",
-            "password": "ACCESS_TOKEN_HERE"
-          },
-          "target": "headers"
-        },
-        "body": {
-          "type": "none",
-          "file": {
-            "name": ""
-          },
-          "text": {
-            "value": "",
-            "format": "application/json"
-          },
-          "form": {
-            "isMultipart": false,
-            "fields": []
-          },
-          "graphql": {
-            "query": "",
-            "variables": ""
-          }
-        }
-      },
-      {
         "name": "Access Token - Admin",
-        "url": "http://localhost:8181/realms/demo-realm/protocol/openid-connect/token",
+        "url": "localhost:8080/realms/demo-realm/protocol/openid-connect/token",
         "method": "POST",
         "headers": [
           {
@@ -113,7 +79,7 @@
       },
       {
         "name": "Access Token - User",
-        "url": "http://localhost:8181/realms/demo-realm/protocol/openid-connect/token",
+        "url": "localhost:8080/realms/demo-realm/protocol/openid-connect/token",
         "method": "POST",
         "headers": [
           {
@@ -172,8 +138,71 @@
         }
       },
       {
+        "name": "Get Public",
+        "url": "localhost:8081/api/public",
+        "method": "GET",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "auth": {
+          "type": "inherited"
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
+        "name": "Get HelloWorld",
+        "url": "localhost:8081/api/helloworld",
+        "method": "GET",
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "auth": {
+          "type": "bearer",
+          "credentials": {
+            "username": "",
+            "password": "ACCESS_TOKEN_HERE"
+          },
+          "target": "headers"
+        },
+        "body": {
+          "type": "none",
+          "file": {
+            "name": ""
+          },
+          "text": {
+            "value": "",
+            "format": "application/json"
+          },
+          "form": {
+            "isMultipart": false,
+            "fields": []
+          },
+          "graphql": {
+            "query": "",
+            "variables": ""
+          }
+        }
+      },
+      {
         "name": "Get HelloWorld by ID",
-        "url": "localhost:8080/api/helloworld/1",
+        "url": "localhost:8081/api/helloworld/1",
         "method": "GET",
         "headers": [],
         "queryParams": [],

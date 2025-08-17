@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
+import { BACKEND_BASE_URL } from '@/backend'
 
 let dataFromApi = ref('')
 
@@ -8,7 +9,7 @@ watchEffect(async () => {
 })
 
 async function getDataFromApiAsync() {
-  const apiEndpoint = 'http://localhost:8080/api/public'
+  const apiEndpoint = `${BACKEND_BASE_URL}/public`
 
   try {
     const responseFromApi = await fetch(apiEndpoint)
