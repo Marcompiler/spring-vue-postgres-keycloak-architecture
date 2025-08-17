@@ -8,13 +8,13 @@ Ce repository est une **architecture permettant de développer un site Web compl
 
 L'architecture est donc constituée de la façon suivante :
 
-- [Un backend API RPC](./backend/README.md)
+- [Un backend API RPC](./backend/)
   - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
   - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html)
   - [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
-- [Un frontend](./frontend/README.md)
+- [Un frontend](./frontend/)
   - [Vue.JS](https://vuejs.org/)
-- [Une authentification unique (SSO)](./sso/README.md)
+- [Une authentification unique (SSO)](./sso/)
   - [Keycloak](https://www.keycloak.org/)
 - [Une base de données](./database/)
   - [PostgreSQL](https://fr.wikipedia.org/wiki/PostgreSQL)
