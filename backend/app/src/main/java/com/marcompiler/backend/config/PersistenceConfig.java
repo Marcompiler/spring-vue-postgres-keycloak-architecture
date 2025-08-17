@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com.marcompiler.test_architecture_rest_jpa_oauth2")
+@EnableJpaRepositories(basePackages = "com.marcompiler.backend")
 @EnableJpaAuditing
 public class PersistenceConfig {
     @Bean

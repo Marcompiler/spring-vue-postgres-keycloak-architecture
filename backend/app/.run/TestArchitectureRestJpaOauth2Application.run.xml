@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="TestArchitectureRestJpaOauth2Application" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="com.marcompiler.test_architecture_rest_jpa_oauth2.TestArchitectureRestJpaOauth2Application" />
-    <module name="test-architecture-rest-jpa-oauth2" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>
