@@ -32,7 +32,7 @@ public class SecurityConfig {
      * Identifiants des clients Keycloak desquels puiser les rôles.
      */
     private static final String[] CLIENT_IDS = {
-            "demo-vuejs"
+            "demo-frontend"
     };
 
     @Bean

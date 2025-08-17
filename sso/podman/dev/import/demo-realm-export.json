@@ -320,7 +320,22 @@
           "attributes": {}
         }
       ],
-      "demo-vuejs": [
+      "security-admin-console": [],
+      "admin-cli": [],
+      "demo-backend": [],
+      "account-console": [],
+      "broker": [
+        {
+          "id": "0a3865f6-f0d5-4a60-9b20-0ab192334861",
+          "name": "read-token",
+          "description": "${role_read-token}",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "7a548f0a-343c-4744-91e1-1fcebc5fef20",
+          "attributes": {}
+        }
+      ],
+      "demo-frontend": [
         {
           "id": "b958a395-b519-45d8-a2f4-233f6bec9b36",
           "name": "uma_protection",
@@ -348,21 +363,6 @@
           "attributes": {}
         }
       ],
-      "security-admin-console": [],
-      "admin-cli": [],
-      "account-console": [],
-      "broker": [
-        {
-          "id": "0a3865f6-f0d5-4a60-9b20-0ab192334861",
-          "name": "read-token",
-          "description": "${role_read-token}",
-          "composite": false,
-          "clientRole": true,
-          "containerId": "7a548f0a-343c-4744-91e1-1fcebc5fef20",
-          "attributes": {}
-        }
-      ],
-      "demo-api": [],
       "account": [
         {
           "id": "83dbe311-b511-48d5-bd29-1e6eb74312ea",
@@ -467,12 +467,12 @@
         "realm-management": [
           "create-client"
         ],
-        "demo-vuejs": [
-          "demo:read:users",
-          "demo:write:users"
-        ],
         "broker": [
           "read-token"
+        ],
+        "demo-frontend": [
+          "demo:read:users",
+          "demo:write:users"
         ],
         "account": [
           "view-consent",
@@ -496,7 +496,7 @@
         "demo-role-users"
       ],
       "clientRoles": {
-        "demo-vuejs": [
+        "demo-frontend": [
           "demo:read:users",
           "demo:write:users"
         ]
@@ -769,8 +769,8 @@
     },
     {
       "id": "fa9cc3da-0291-48b6-89a6-528ce92e228d",
-      "clientId": "demo-api",
-      "name": "Spring API for Demo",
+      "clientId": "demo-backend",
+      "name": "Backend app for demo",
       "description": "",
       "rootUrl": "",
       "adminUrl": "",
@@ -801,7 +801,9 @@
         "backchannel.logout.session.required": "true",
         "standard.token.exchange.enabled": "false",
         "post.logout.redirect.uris": "+",
+        "frontchannel.logout.session.required": "true",
         "oauth2.device.authorization.grant.enabled": "false",
+        "display.on.consent.screen": "false",
         "backchannel.logout.revoke.offline.tokens": "false"
       },
       "authenticationFlowBindingOverrides": {},
@@ -825,8 +827,8 @@
     },
     {
       "id": "f59ba96c-adb4-49c8-8abf-664ee42bd6ca",
-      "clientId": "demo-vuejs",
-      "name": "VueJS app for Demo",
+      "clientId": "demo-frontend",
+      "name": "Frontend app for demo",
       "description": "",
       "rootUrl": "",
       "adminUrl": "",
@@ -1733,14 +1735,14 @@
         "subComponents": {},
         "config": {
           "allowed-protocol-mapper-types": [
-            "oidc-address-mapper",
+            "saml-user-attribute-mapper",
             "oidc-usermodel-attribute-mapper",
+            "oidc-address-mapper",
+            "oidc-full-name-mapper",
+            "oidc-sha256-pairwise-sub-mapper",
             "oidc-usermodel-property-mapper",
             "saml-role-list-mapper",
-            "oidc-sha256-pairwise-sub-mapper",
-            "saml-user-property-mapper",
-            "saml-user-attribute-mapper",
-            "oidc-full-name-mapper"
+            "saml-user-property-mapper"
           ]
         }
       },
@@ -1760,14 +1762,14 @@
         "subComponents": {},
         "config": {
           "allowed-protocol-mapper-types": [
+            "oidc-sha256-pairwise-sub-mapper",
+            "oidc-usermodel-attribute-mapper",
             "oidc-usermodel-property-mapper",
             "oidc-full-name-mapper",
-            "oidc-sha256-pairwise-sub-mapper",
-            "oidc-address-mapper",
             "saml-user-attribute-mapper",
-            "saml-user-property-mapper",
-            "oidc-usermodel-attribute-mapper",
-            "saml-role-list-mapper"
+            "saml-role-list-mapper",
+            "oidc-address-mapper",
+            "saml-user-property-mapper"
           ]
         }
       },
@@ -1885,7 +1887,6 @@
     ]
   },
   "internationalizationEnabled": false,
-  "supportedLocales": [],
   "defaultLocale": "fr",
   "authenticationFlows": [
     {
@@ -2601,6 +2602,15 @@
       "config": {}
     },
     {
+      "alias": "idp_link",
+      "name": "Linking Identity Provider",
+      "providerId": "idp_link",
+      "enabled": true,
+      "defaultAction": false,
+      "priority": 110,
+      "config": {}
+    },
+    {
       "alias": "update_user_locale",
       "name": "Update User Locale",
       "providerId": "update_user_locale",
@@ -2640,7 +2650,7 @@
     "actionTokenGeneratedByUserLifespan.reset-credentials": "",
     "darkMode": "true"
   },
-  "keycloakVersion": "26.2.1",
+  "keycloakVersion": "26.3.2",
   "userManagedAccessAllowed": false,
   "organizationsEnabled": false,
   "verifiableCredentialsEnabled": false,

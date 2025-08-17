@@ -8,7 +8,7 @@
     "source": "HTTPie Desktop 2025.2.0"
   },
   "entry": {
-    "name": "Demo-API",
+    "name": "Demo-Backend",
     "icon": {
       "name": "wrench",
       "color": "green"
@@ -87,7 +87,7 @@
               },
               {
                 "name": "client_id",
-                "value": "demo-api",
+                "value": "demo-backend",
                 "enabled": true,
                 "type": "text"
               },
@@ -147,7 +147,7 @@
               },
               {
                 "name": "client_id",
-                "value": "demo-api",
+                "value": "demo-backend",
                 "enabled": true,
                 "type": "text"
               },
