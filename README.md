@@ -28,7 +28,7 @@ Je vous invite donc à **forker ce projet** ou **en faire ce que bon vous semble
 
 L'architecture est donc constituée de la façon suivante :
 
-- [Un backend API RPC](./backend/)
+- [Un backend API REST](./backend/)
   - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
   - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html)
   - [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
@@ -171,7 +171,7 @@ Je dirais donc que les concepts principaux à connaître sont :
 
 - La [**virtualisation par conteneur**](https://fr.wikipedia.org/wiki/Conteneur_(virtualisation)) avec, dans ce cas-ci, **[Podman](https://fr.wikipedia.org/wiki/Podman)**.
 - Ce qu'est une **[API](https://fr.wikipedia.org/wiki/Interface_de_programmation)**
-  - Dans ce cas-ci, une **[RPC](https://fr.wikipedia.org/wiki/Appel_de_proc%C3%A9dure_%C3%A0_distance)** mais **[REST](https://fr.wikipedia.org/wiki/Representational_state_transfer)** reste tout aussi intéressant.
+  - Dans ce cas-ci, une API **[REST](https://fr.wikipedia.org/wiki/Representational_state_transfer)**. Tenir compte qu'elle n'est qu'au [**niveau 2** du modèle de maturité de Richardson](https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_maturit%C3%A9_de_Richardson#Niveau_2_:_verbes_HTTP).
 - Ce qu'est une **[base de données relationnelle](https://fr.wikipedia.org/wiki/Base_de_donn%C3%A9es_relationnelle)** et ce qu'est **[PostgreSQL](https://fr.wikipedia.org/wiki/PostgreSQL)**.
 - La différence entre **[backend](https://fr.wikipedia.org/wiki/Backend) et [frontend](https://fr.wikipedia.org/wiki/Frontal_(informatique))**.
 - Ce qu'est un **[Single Sign-On (SSO)](https://fr.wikipedia.org/wiki/Authentification_unique)** et **l'intérêt d'en utiliser un**.
