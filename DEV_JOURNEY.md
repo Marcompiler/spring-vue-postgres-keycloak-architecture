@@ -74,11 +74,15 @@ J'ai alors enfin pu trouver le temps pour compléter la documentation restante. 
 
 ## Erreurs de parcours et solutions
 
-### API REST != API RPC
+### API REST != API RESTful != API RPC
 
 Après m'être rendu compte, en ayant lu correctement le [tutoriel de Spring pour construire une API RESTful](https://spring.io/guides/tutorials/rest) et me rendre compte que **j'étais dans l'erreur** quant à ce que je pensais qu'étais une API REST, **j'ai alors longuement hésité à inclure ces nouveaux concepts** au sein de ce repository.
 
-**J'ai fini par conclure** que j'allais expliciter **qu'il s'agirait ici d'une [API RPC](https://fr.wikipedia.org/wiki/Appel_de_proc%C3%A9dure_%C3%A0_distance)** afin de laisser la possibilité, pour ceux qui le nécessitent, d'implémenter eux-mêmes le caractère "REST" de leur future API sur base de ce qu'ils auront appris ici (_comme moi là-dessus_).
+~~**J'ai fini par conclure** que j'allais expliciter **qu'il s'agirait ici d'une [API RPC](https://fr.wikipedia.org/wiki/Appel_de_proc%C3%A9dure_%C3%A0_distance)** afin de laisser la possibilité, pour ceux qui le nécessitent, d'implémenter eux-mêmes le caractère "REST" de leur future API sur base de ce qu'ils auront appris ici (_comme moi là-dessus_).~~
+
+Au vu de la structure dont était conçu **le backend**, ça **ressemblait quand même davantage à du REST qu'à du RPC "basique"**. Par conséquent, j'ai continué de chercher et c'est là que j'ai fini par comprendre la **différence entre "REST" et "RESTful"**. Par conséquent, nous pouvons considérer **le backend** ici comme du **REST mais pas RESTful car il manque l'[hypermédia](https://fr.wikipedia.org/wiki/HATEOAS)**.
+
+Plus précisément, si on utilise le **[modèle de maturité de Richardson](https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_maturit%C3%A9_de_Richardson)**, nous pouvons qualifier **cette API de [niveau 2](https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_maturit%C3%A9_de_Richardson#Niveau_2_:_verbes_HTTP)**. Le [niveau 3](https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_maturit%C3%A9_de_Richardson#Niveau_3_:_contr%C3%B4les_hyperm%C3%A9dias) requiert par conséquent l'hypermédia. Ce niveau convient a mon goût car **l'hypermédia n'est pas nécessaire _ici_** ni pour d'autres. Sans compter, surtout, que ça rend la lecture du **code bien plus simple pour un débutant**.
 
 ### Difficultés à terminer
 
