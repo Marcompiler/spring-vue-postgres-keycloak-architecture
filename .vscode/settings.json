@@ -1,3 +1,8 @@
 {
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "markdownlint.config": {
+        "MD033": {
+            "allowed_elements": ["span"]
+        }
+    }
 }
