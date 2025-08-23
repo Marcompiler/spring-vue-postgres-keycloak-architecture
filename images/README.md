@@ -1,13 +1,13 @@
-# Illustrations
+# Images
 
 ## Description
 
-Ici se trouve les illustrations utilisées au sein de ce projet.
+Ici se trouve les images utilisées au sein de ce projet.
 
 Pour les constituer, j'ai utilisé les logiciels suivants :
 
-- draw.io
-- GIMP
+- [draw.io](https://www.drawio.com/)
+- [GIMP](https://www.gimp.org/)
 
 Vous les trouverez utilisées au travers du repository.
 
