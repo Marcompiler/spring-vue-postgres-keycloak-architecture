@@ -2,7 +2,12 @@
     "java.compile.nullAnalysis.mode": "automatic",
     "markdownlint.config": {
         "MD033": {
-            "allowed_elements": ["span"]
+            "allowed_elements": [
+                "span", 
+                "picture",
+                "source",
+                "img"
+            ]
         }
     }
 }
