@@ -1,0 +1,6 @@
+# Draw.io
+*.drawio
+*.drawio.bkp
+
+# GIMP
+*.xcf
