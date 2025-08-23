@@ -26,6 +26,8 @@ Je vous invite donc à **forker ce projet** ou **en faire ce que bon vous semble
 
 ## Architecture
 
+### Structure de l'architecture
+
 L'architecture est donc constituée de la façon suivante :
 
 - [Un backend API REST](./backend/)
@@ -38,6 +40,26 @@ L'architecture est donc constituée de la façon suivante :
   - [Keycloak](https://www.keycloak.org/)
 - [Une base de données](./database/)
   - [PostgreSQL](https://fr.wikipedia.org/wiki/PostgreSQL)
+
+### Fonctionnement de l'architecture
+
+![architecture diagram](./images/fullstack%20diagram.png)
+
+Donc, voici comment ça se présente. Ce schéma permet de visualiser aisément les interactions entre les différents éléments de l'architecture.
+
+Ce diagramme part du principe que les utilisateurs ont tous un compte préexistant au sein du SSO et que l'utilisateur tente d'accéder à une ressource "protégées" (_nécessitant authentification_).
+
+À partir du moment où un utilisateur va tenter d'accéder au site Web, une suite d'étapes va s'enclencher pour lui donner le résultat attendu :
+
+1. Tout d'abord, **l'utilisateur accède au [frontend](./frontend/)** en allant sur l'URL de celui-ci.
+2. **S'il n'est pas authentifié**, il est directement **redirigé vers le [SSO](./sso/)**. Il va alors devoir **saisir ses identifiants** pour être authentifié auprès du SSO et aux yeux du frontend.
+3. **Une fois authentifié**, il est **redigiré vers la page initiale du frontend** qu'il tentait d'accéder. Le **frontend va alors charger** le contenu de la page.
+4. **Pour charger le contenu**, le **frontend peut devoir faire appel au backend**. Ce dernier reçoit alors un [Json Web Token](https://fr.wikipedia.org/wiki/JSON_Web_Token) (_JWT_) comportant l'identité de l'utilisateur ayant fait la demande depuis le frontend.
+5. Pour vérifier l'identité et les autorisations de l'utilisateur, le backend contacte alors le SSO avec le JWT reçu pour lui demander si celui-ci est valide.
+6. Le SSO répond positivement, ce qui donne alors le feu vert au backend pour répondre à la requête faite en 4.
+7. Pour répondre, le backend va souvent interagir avec la base de données pour traiter les données demandées par la requête.
+8. Le backend répond enfin à la requête avec le contenu demandé qui va venir compléter celui du frontend.
+9. Une fois le contenu chargé, le **frontend renvoie le résultat final** à l'utilisateur.
 
 ## Pour démarrer
 
