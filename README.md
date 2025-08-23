@@ -43,7 +43,7 @@ L'architecture est donc constituée de la façon suivante :
 
 ### Fonctionnement de l'architecture
 
-![architecture diagram](./images/fullstack%20diagram.png)
+![architecture diagram](./images/fullstack%20diagram.svg)
 
 Donc, voici comment ça se présente. Ce schéma permet de visualiser aisément les interactions entre les différents éléments de l'architecture.
 
