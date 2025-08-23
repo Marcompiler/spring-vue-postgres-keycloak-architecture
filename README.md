@@ -49,17 +49,17 @@ Donc, voici comment ça se présente. Ce schéma permet de visualiser aisément 
 
 Ce diagramme part du principe que les utilisateurs ont tous un compte préexistant au sein du SSO et que l'utilisateur tente d'accéder à une ressource "protégées" (_nécessitant authentification_).
 
-À partir du moment où un utilisateur va tenter d'accéder au site Web, une suite d'étapes va s'enclencher pour lui donner le résultat attendu :
+À partir du moment où un utilisateur va tenter d'accéder au site Web, une suite d'étapes va s'enclencher pour lui donner le résultat attendu (_code couleur repris du diagramme_) :
 
-1. Tout d'abord, **l'utilisateur accède au [frontend](./frontend/)** en allant sur l'URL de celui-ci.
-2. **S'il n'est pas authentifié**, il est directement **redirigé vers le [SSO](./sso/)**. Il va alors devoir **saisir ses identifiants** pour être authentifié auprès du SSO et aux yeux du frontend.
-3. **Une fois authentifié**, il est **redigiré vers la page initiale du frontend** qu'il tentait d'accéder. Le **frontend va alors charger** le contenu de la page.
-4. **Pour charger le contenu**, le **frontend peut devoir faire appel au backend**. Ce dernier reçoit alors un [Json Web Token](https://fr.wikipedia.org/wiki/JSON_Web_Token) (_JWT_) comportant l'identité de l'utilisateur ayant fait la demande depuis le frontend.
-5. Pour vérifier l'identité et les autorisations de l'utilisateur, le backend contacte alors le SSO avec le JWT reçu pour lui demander si celui-ci est valide.
-6. Le SSO répond positivement, ce qui donne alors le feu vert au backend pour répondre à la requête faite en 4.
-7. Pour répondre, le backend va souvent interagir avec la base de données pour traiter les données demandées par la requête.
-8. Le backend répond enfin à la requête avec le contenu demandé qui va venir compléter celui du frontend.
-9. Une fois le contenu chargé, le **frontend renvoie le résultat final** à l'utilisateur.
+1. Tout d'abord, **l'utilisateur accède au <span style="color:red">frontend</span>** en allant sur l'URL de celui-ci.
+2. **Si l'utilisateur n'est pas authentifié**, il est directement **redirigé vers le <span style="color:violet">SSO</span>**. L'utilisateur va alors devoir **saisir ses identifiants** pour être **authentifié auprès du <span style="color:violet">SSO</span> et aux yeux du <span style="color:red">frontend</span>**.
+3. **Une fois authentifié**, l'utilisateur est **redirigé vers la page initiale du <span style="color:red">frontend</span>** qu'il tentait d'accéder. Le **<span style="color:red">frontend</span> va alors charger** le contenu de la page.
+4. **Pour charger le contenu**, le **<span style="color:red">frontend</span> peut devoir faire appel au <span style="color:lightgreen">backend</span>**. Cet appel comporte alors un Json Web Token (_JWT_) contenant l'identité de l'utilisateur ayant fait la requête initiale.
+5. **Pour vérifier l'identité et les autorisations** de l'utilisateur, **le <span style="color:lightgreen">backend</span> contacte alors le <span style="color:violet">SSO</span> avec le JWT** reçu pour lui demander si celui-ci est valide.
+6. **Si le <span style="color:violet">SSO</span> répond positivement**, cela donne alors le **feu vert au <span style="color:lightgreen">backend</span> pour répondre à la requête du <span style="color:red">frontend</span>** faite à l'étape 4.
+7. Pour répondre, **le <span style="color:lightgreen">backend</span> va** souvent **interagir avec la <span style="color:cyan">base de données</span>** pour traiter les données demandées par la requête.
+8. **Le <span style="color:lightgreen">backend</span> répond enfin à la requête avec le contenu demandé** qui va venir **compléter celui du <span style="color:red">frontend</span>**.
+9. Une fois le contenu chargé, le **<span style="color:red">frontend</span> renvoie le résultat final** à l'utilisateur.
 
 ## Pour démarrer
 
@@ -67,13 +67,13 @@ Ce diagramme part du principe que les utilisateurs ont tous un compte préexista
 
 Avant de commencer, assurez-vous d’avoir installé :
 
-- [Podman](https://podman.io/docs/installation) (_ou [Docker](https://docs.docker.com/get-started/get-docker/)_) pour lancer la base de données et le SSO (_voire le backend et le frontend_).
-  - [Podman-Compose](https://podman-desktop.io/docs/compose/setting-up-compose) (_ou [Docker-Compose](https://docs.docker.com/compose/install/)_) est également conseillé. Sinon vous devrez convertir les `.yml` en commandes `run`.
-- [Java 24+](https://jdk.java.net/24/) pour le backend Spring.
-- [Maven](https://maven.apache.org/download.cgi) pour construire le backend.
-- [Node.js 22+](https://nodejs.org/fr/download) et [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) pour le frontend.
+- **[Podman](https://podman.io/docs/installation)** (_ou [Docker](https://docs.docker.com/get-started/get-docker/)_) pour lancer la base de données et le SSO (_voire le backend et le frontend_).
+  - **[Podman-Compose](https://podman-desktop.io/docs/compose/setting-up-compose)** (_ou [Docker-Compose](https://docs.docker.com/compose/install/)_) est également conseillé. Sinon vous devrez convertir les `.yml` en commandes `run`.
+- **[Java 24+](https://jdk.java.net/24/)** pour le backend Spring.
+- **[Maven](https://maven.apache.org/download.cgi)** pour construire le backend.
+- **[Node.js 22+](https://nodejs.org/fr/download)** et **[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)** pour le frontend.
 
-Si ce n'est déjà fait, je vous invite à redémarrer votre machine une fois la/les installations terminées.
+Si ce n'est déjà fait, je vous invite à **redémarrer votre machine** une fois la/les installations terminées.
 
 ### Variables d'environnement
 
