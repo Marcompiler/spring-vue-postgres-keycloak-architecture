@@ -161,28 +161,6 @@ TODO
 
 Si cela peut vous **aider à vous sentir moins seul voire à vous motiver**, j'en serais ravi.
 
-## Outils utilisés
-
-Les outils qui furent utilisés ici sont :
-
-- [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/) (_développement du backend_)
-- [VSCodium](https://vscodium.com/) (_versioning des fichiers ailleurs que dans le projet IntelliJ_)
-- [HTTPie](https://httpie.io/) (_requêtes HTTP et tests de l'API_)
-
-## Tutoriels utilisés
-
-Pour leur implémentation, je me suis notamment servi des tutoriels suivants que **je vous invite à consulter en complément d'informations** :
-
-- [Spring Web - API RESTful (HATEOAS)](https://spring.io/guides/tutorials/rest) (_documentation officielle de Spring_)
-- [Spring Boot 3 KeyCloak OAuth2](https://www.youtube.com/watch?v=_0oXZKr97ro&list=PLSVW22jAG8pAXU0th247M7xPCekzeNdrH&index=10) (_vidéo YouTube_)
-- [Repository Spring Security OAuth2 Keycloak Demo](https://github.com/SaiUpadhyayula/spring-security-oauth2-keycloak-demo) (_repository issu de la vidéo ci-dessus_)
-- [Blog OAuth - Basic SPA - Overview](https://github.com/gary-archer/oauth.blog/blob/master/public/posts/basicspa-overview.mdx)
-- [Tutoriel Vue version 3](https://vuejs.org/tutorial/#step-1)
-- [Keycloak JavaScript adapter](https://www.keycloak.org/securing-apps/javascript-adapter)
-- [Spring Boot Keycloak role based authorization with JWT](https://medium.com/@kspoyraz7/spring-boot-keycloak-role-based-authorization-with-jwt-3bd29bdd9016)
-- [Spring Boot with Docker](https://spring.io/guides/gs/spring-boot-docker)
-- [Dockerize Vue.js App](https://v2.vuejs.org/v2/cookbook/dockerize-vuejs-app.html?redirect=true)
-
 ## Feuille de route pour la prise en main
 
 ### Connaissances préalables conseillées
@@ -216,3 +194,25 @@ Une fois que vous vous sentez prêts à plonger dans ce repository, je vous prop
 2. Le [**SSO**](./sso/). Il ne s'agit principalement que d'**un script Podman** également mais comporte **plusieurs concepts spécifiques**.
 3. Le [**backend**](./backend/). Une **application** Java Spring **reposant sur les deux premiers** pour fonctionner.
 4. Le [**frontend**](./frontend/). C'est la **façade** de votre architecture **qui se greffe par dessus le reste**.
+
+## Tutoriels utilisés
+
+Pour leur implémentation, je me suis notamment servi des tutoriels suivants que **je vous invite à consulter en complément d'informations** :
+
+- [Spring Web - API RESTful (HATEOAS)](https://spring.io/guides/tutorials/rest) (_documentation officielle de Spring_)
+- [Spring Boot 3 KeyCloak OAuth2](https://www.youtube.com/watch?v=_0oXZKr97ro&list=PLSVW22jAG8pAXU0th247M7xPCekzeNdrH&index=10) (_vidéo YouTube_)
+- [Repository Spring Security OAuth2 Keycloak Demo](https://github.com/SaiUpadhyayula/spring-security-oauth2-keycloak-demo) (_repository issu de la vidéo ci-dessus_)
+- [Blog OAuth - Basic SPA - Overview](https://github.com/gary-archer/oauth.blog/blob/master/public/posts/basicspa-overview.mdx)
+- [Tutoriel Vue version 3](https://vuejs.org/tutorial/#step-1)
+- [Keycloak JavaScript adapter](https://www.keycloak.org/securing-apps/javascript-adapter)
+- [Spring Boot Keycloak role based authorization with JWT](https://medium.com/@kspoyraz7/spring-boot-keycloak-role-based-authorization-with-jwt-3bd29bdd9016)
+- [Spring Boot with Docker](https://spring.io/guides/gs/spring-boot-docker)
+- [Dockerize Vue.js App](https://v2.vuejs.org/v2/cookbook/dockerize-vuejs-app.html?redirect=true)
+
+## Outils utilisés
+
+Les outils qui furent utilisés ici sont :
+
+- [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/) (_développement du backend_)
+- [VSCodium](https://vscodium.com/) (_versioning des fichiers ailleurs que dans le projet IntelliJ_)
+- [HTTPie](https://httpie.io/) (_requêtes HTTP et tests de l'API_)
