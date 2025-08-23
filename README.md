@@ -97,7 +97,7 @@ Une fois les copies créées et renommées, **vous pouvez alors démarrer tous**
 
 **Chaque élément** de l'architecture **comporte des scripts** pour démarrer au sein d'un conteneur. Par conséquent, vous trouverez des **scripts `.sh` pour Linux et `.ps1` pour Windows**.
 
-Vous pouvez donc exécuter les scripts **dans cette ordre** selon votre environnement :
+Vous pouvez donc exécuter les scripts **dans cet ordre, dans leur répertoire respectif** selon votre environnement :
 
 | Ordre | Élément à démarrer | Linux | Windows |
 | --- | --- | --- | --- |
@@ -147,13 +147,29 @@ Allez dans le **répertoire de l'application backend** :
 cd backend/app
 ```
 
-Démarrez l'application au moyen des commandes suivantes :
+**Démarrez l'application** au moyen des commandes suivantes :
 
-TODO
+```sh
+./mvnw clean install
+./mvnw spring-boot:run
+```
 
 #### Frontend (4/4)
 
-TODO
+Allez dans le **répertoire de l'application frontend** :
+
+```sh
+cd frontend/app
+```
+
+**Démarrez l'application** au moyen des commandes suivantes :
+
+```sh
+npm install
+npm run dev
+```
+
+**L'ensemble des éléments est alors démarré** et vous pouvez commencer à **tester votre site Web** en allant sur <http://localhost:5173>.
 
 ### Parcours de développement
 
