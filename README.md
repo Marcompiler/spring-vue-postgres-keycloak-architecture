@@ -49,7 +49,7 @@ Donc, voici comment ça se présente. Ce schéma permet de visualiser aisément 
 
 Ce diagramme part du principe que les utilisateurs ont tous un compte préexistant au sein du SSO et que l'utilisateur tente d'accéder à une ressource "protégées" (_nécessitant authentification_).
 
-À partir du moment où un utilisateur va tenter d'accéder au site Web, une suite d'étapes va s'enclencher pour lui donner le résultat attendu (_code couleur repris du diagramme_) :
+À partir du moment où un utilisateur va tenter d'accéder au site Web, une suite d'étapes va s'enclencher pour lui donner le résultat attendu (_code couleur repris du diagramme, non visible sur GitHub_) :
 
 1. Tout d'abord, **l'utilisateur accède au <span style="color:red">frontend</span>** en allant sur l'URL de celui-ci.
 2. **Si l'utilisateur n'est pas authentifié**, il est directement **redirigé vers le <span style="color:violet">SSO</span>**. L'utilisateur va alors devoir **saisir ses identifiants** pour être **authentifié auprès du <span style="color:violet">SSO</span> et aux yeux du <span style="color:red">frontend</span>**.
