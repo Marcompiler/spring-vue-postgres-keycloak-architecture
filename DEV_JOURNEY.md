@@ -1,102 +1,102 @@
-# Parcours de développement
+# Development journey
 
-## Pourquoi cet écrit
+## Why this article
 
-J'ai pensé que **partager mon parcours** sur la **prise en main** de ces technologies et des **difficultés** que j'ai rencontrées pourraient potentiellement **inspirer voire motiver d'autres à se lancer**.
+I thought that **sharing my journey** in **learning** these technologies and the **difficulties** I encountered could potentially **inspire and motivate others to get started**.
 
-Le voici donc.
+So here it is.
 
-## Avant d'entamer ce projet
+## Before starting this project
 
-J'ai commencé par me faire des **piqûres de rappel** quant à mes cours sur Java Spring et à faire plusieurs brouillons de schémas de base de données. J'ai entamé **plusieurs projets que j'ai abandonnés** car **je me sentais bloqué** par mon **manque de connaissances**, générant chez moi un **sentiment d'illégitimé** qui me dissuadait alors de continuer.
+I began by **refreshing my memory** of my Java Spring courses and making several drafts of database schemas. I started **several projects that I abandoned** because **I felt stuck** due to my **lack of knowledge**, which made me feel **inadequate** and discouraged me from continuing.
 
-Ensuite, j'ai **accumulé les connaissances nécessaires**, notamment aux moyens des tutoriels susmentionnés, **pour comprendre exactement ce que j'allais utiliser et pourquoi**.
-J'ai dû **accepter de ne pas pouvoir tout bien faire dès le départ**, ce qui, encore à ce jour, reste compliqué.
+Then, I **gained the necessary knowledge**, particularly through the aforementioned tutorials, **to understand exactly what I was going to use and why**.
+I had to **accept that I couldn't do everything well from the start**, which, even today, remains difficult.
 
-## Assemblage d'un backend
+## Assembling a backend
 
-Après plusieurs tâtonnements, des dérapages, voire des décrochages, j'ai fini par constituer **petit à petit** une **base fonctionnelle entre la base de données, le backend et le SSO**. Cela m'a aidé à **reprendre confiance en moi** ainsi qu'**en ma stack de développement** qui, elle aussi, fut un calvaire à constituer afin d'**allier confort et valeurs personnelles**.
+After several attempts, setbacks, and even failures, I finally managed to **gradually** build a **functional foundation between the database, the backend, and the SSO**. This helped me **regain confidence in myself** and **in my development stack**, which was also a nightmare to build in order to **combine comfort and personal values**.
 
-Une fois que j'ai pu **comprendre** vraiment l'**Authorization Code Flow**, j'ai pu commencer à réfléchir sur comment entreprendre la partie frontend.
+Once I was able to truly **understand** the **Authorization Code Flow**, I was able to start thinking about how to tackle the frontend.
 
-J'ai alors réussi à **créer mon application VueJS** (_Vue 3_) avec `npm` puis ai décidé de **suivre le tutoriel lié** au framework. **Une fois que j'ai eu les bases** de Vue, j'ai essayé de trouver comment **implémenter Keycloak** dans l'application.
+I then managed to **create my VueJS application** (_Vue 3_) with `npm` and decided to **follow the tutorial linked** to the framework. **Once I had the basics** of Vue, I tried to figure out how to **implement Keycloak** in the application.
 
-Une fois que j'y suis parvenu, ça m'a d'autant plus **motivé à continuer** : je parvenais désormais à faire **communiquer mon SSO autant avec mon API qu'avec mon frontend**. Je savais alors que je n'avais plus qu'à faire communiquer le frontend avec l'API et, là, toutes les pièces du puzzle de base seraient enfin assemblées.
+Once I succeeded, it **motivated me even more to continue**: I was now able to **communicate my SSO with both my API and my frontend**. I knew then that all I had to do was get the frontend to communicate with the API, and then all the basic pieces of the puzzle would finally be in place.
 
-## Prise en main du frontend
+## Getting started with the frontend
 
-Dès le lendemain, je m'y suis remis, **ai appris** comment faire des requêtes avec `fetch` en JavaScript, gérer le CORS dans l'API puis ai appelé les différents endpoints de l'API, **tout fonctionnait**.
-Ce fut un vrai relâchement car je sus alors que **la stack que j'avais constituée était fonctionnelle**.
+The next day, I got back to work, **learned** how to make requests with `fetch` in JavaScript, managed CORS in the API, and then called the various API endpoints. **Everything worked**.
+It was a real relief because I knew then that **the stack I had built was functional**.
 
-Ensuite, étant **spécialisé backend** initialement, j'ai recherché un **framework CSS avec composants**, cela afin de comparer les alternatives au lieu d'[Element Plus](https://element-plus.org), juste pour voir.
-J'ai alors découvert [PrimeVue](https://primevue.org/) qui, malgré un nombre d'étoiles moins important que d'autres, m'a semblé fiable, complet et clairement documenté.
+Then, being **specialized in backend** initially, I looked for a **CSS framework with components** to compare alternatives to [Element Plus](https://element-plus.org), just to see.
+I then discovered [PrimeVue](https://primevue.org/) which, despite having fewer stars than others, seemed reliable, comprehensive, and clearly documented.
 
-**Néanmoins**, j'ai tenu à ce que **ce projet se limite au nécessaire** tout en **laissant le choix** sur les technologies qui vont **au-delà de la portée prévue** par ce projet. Je me suis donc finalement contenté de mentionner les deux frameworks CSS ci-dessus afin de vous laisser choisir, parmi eux ou d'autres encore, ce que vous préférez.
+**Nevertheless**, I wanted **this project to be limited to what was necessary** while **leaving the choice** of technologies that go **beyond the scope of this project** open. So I finally decided to mention the two CSS frameworks above to let you choose between them or others, whichever you prefer.
 
-## Gestion des utilisateurs
+## User management
 
-Enfin, **le clou final** à ce projet m'a paru être ce qui allait être de toute façon nécessaire pour la suite : **la gestion des utilisateurs au niveau du backend-database**. En effet, on ne se limite généralement pas au SSO pour nos utilisateurs ; celui-ci se contente d'authentifier et de sécuriser les données nécessaires à cette authentification.
+Finally, **the final nail in the coffin** for this project seemed to me to be something that would be necessary anyway for the future: **user management at the backend database level**. Indeed, we don't generally limit ourselves to SSO for our users; SSO simply authenticates and secures the data necessary for this authentication.
 
-**Pour les données propres à l'application**, liées aux mêmes utilisateurs, il faut donc les gérer au sein de celle-ci. Sans parler que je n'ai pas encore essayé d'**interpréter les rôles définis par le SSO dans le backend**. C'est alors devenu mon **prochain objectif**.
+**For application-specific data** related to the same users, it must therefore be managed within the application. Not to mention that I haven't yet tried to **interpret the roles defined by SSO in the backend**. This then became my **next goal**.
 
-Durant un week-end hors de chez moi, j'ai profité d'un instant sur mon portable pour investiguer sur comment **implémenter les rôles** au niveau de mon architecture. J'ai alors découvert les différents types de rôles dans Keycloak.
-Il y a alors **deux types de rôles** :
+During a weekend away from home, I took advantage of some free time on my laptop to investigate how to **implement roles** in my architecture. I then discovered the different types of roles in Keycloak.
+There are **two types of roles**:
 
-- Les rôles au niveau des **Realms**.
-- Les rôles au niveau des **clients**.
+- Roles at the **Realms** level.
+- Roles at the **client** level.
 
-Une fois que j'ai pu **comprendre** la différence entre les deux, j'ai pu les retrouver au sein de mon API Spring.
-Ayant déjà dû gérer des claims SSO au sein de mon travail, j'ai rapidement compris comment étaient transportés les rôles au sein des JWT.
+Once I was able to **understand** the difference between the two, I was able to find them within my Spring API.
+Having already had to manage SSO claims in my work, I quickly understood how roles were transported within JWTs.
 
-Ensuite, **en usant d'un tutoriel** (_qui, je dois dire, comportait quelques incohérences, notamment entre l'article et le repository associé_) **combiné à l'aide de l'IA**, j'ai fini par constituer une **architecture** qui m'a paru **suffisamment solide et modulaire**.
+Then, **using a tutorial** (_which, I must say, had a few inconsistencies, particularly between the article and the associated repository_) **combined with AI**, I ended up building an **architecture** that seemed **sufficiently robust and modular** to me.
 
-À ce stade, je suis pratiquement certain qu'il ne me reste **plus qu'une seule étape** : **gérer les claims SSO**.
-Ce notamment pour récupérer les identifiants utilisateurs afin de pouvoir leur associer des données spécifiques au niveau de l'API Spring dans la base de données Postgres dédiée.
-Il faut donc également constituer une **base pour la structure de données des utilisateurs** pour donner forme à cela.
+At this point, I am almost certain that I have **only one step** left: **managing SSO claims**.
+This is particularly important for retrieving user identifiers so that I can associate them with specific data at the Spring API level in the dedicated Postgres database.
+I therefore also need to build a **base for the user data structure** to give shape to this.
 
 ## Contemplation
 
-Et... **voilà**. Ce fut le dernier stade (_étonnement facile comparé au reste_) que j'ai pu imaginer jusqu'ici et qui me semblait être essentiel pour débuter pleinement un projet.
-En effet, on dispose désormais :
+And... **there you have it**. This was the last stage (_easy to achieve compared to the rest_) that I could imagine so far and which seemed essential to me in order to fully embark on a project.
+Indeed, we now have:
 
-- d'une **base de données** fiable, solide et polyvalente.
-- d'un **backend** se connectant à la base de données et générant son contenu automatiquement.
-- d'un **frontend** se connectant au backend pour interagir avec les données au travers du portail sécurisé que représente le backend.
-- d'un **single-sign on** (_SSO_) permettant d'authentifier voire gérer les autorisations des utilisateurs.
+- a reliable, robust, and versatile **database**.
+- a **backend** that connects to the database and generates its content automatically.
+- a **frontend** that connects to the backend to interact with the data through the secure portal that the backend represents.
+- a **single sign-on** (_SSO_) system for authenticating and managing user permissions.
 
-Le tout **interagissant les uns avec les autres** de manière fonctionnel tout en étant **constitués que d'éléments open source** avec chacun une réputation solide et une grande polyvalence.
+All of these components **interact with each other** in a functional manner while being **made up of open source elements**, each with a solid reputation and great versatility.
 
-## Touche finale
+## Final touch
 
-La **cerise sur le gâteau avant de partager** tout cela est de **documenter le tout** au mieux afin que quiconque souhaitant se lancer puisse disposer d'informations claires et d'une base (_au moins de réflexion_) solide pour concrétiser ses idées.
+The **icing on the cake before sharing** all this is to **document everything** as best as possible so that anyone wishing to get started has clear information and a solid foundation (at least for reflection) to bring their ideas to fruition.
 
-J'ai alors enfin pu trouver le temps pour compléter la documentation restante. Je vais essayer d'établir une "**roadmap d'apprentissage**" que j'inviterais à suivre pour comprendre au mieux ce répertoire mais **cela restera évidemment subjectif**.
+I finally found the time to complete the remaining documentation. I will try to establish a "learning roadmap" that I would recommend following to best understand this directory, but this will obviously remain subjective.
 
 ## Conclusions
 
-**Ce projet touche à sa fin**, ou du moins son aboutissement que pour être enfin publié. Je n'ai **aucune idée de si cela plaira** ou non, ni même si ça servira réellement à quelqu'un, ni si ce projet est fiable à 100%.
+**This project is coming to an end**, or at least its completion, as it is finally being published. I have **no idea whether people will like it** or not, or even if it will really be useful to anyone, or if this project is 100% reliable.
 
-Tout ce que je sais est que **j'avais besoin de le faire et que j'ai fait de mon mieux**. Je pense que **c'est ça qui prévaut**. Au-delà de ça, si quelqu'un lit ceci, **je vous souhaite le meilleur** en espérant avoir été une **source d'inspiration, de motivation ou ne serait-ce que de distraction**.
+All I know is that **I needed to do it and I did my best**. I think **that's what matters**. Beyond that, if anyone is reading this, **I wish you all the best** and hope that I have been a **source of inspiration, motivation, or even just entertainment**.
 
-## Erreurs de parcours et solutions
+## Mistakes and solutions
 
-### API REST != API RESTful != API RPC
+### REST API != RESTful API != RPC API
 
-Après m'être rendu compte, en ayant lu correctement le [tutoriel de Spring pour construire une API RESTful](https://spring.io/guides/tutorials/rest) et me rendre compte que **j'étais dans l'erreur** quant à ce que je pensais qu'étais une API REST, **j'ai alors longuement hésité à inclure ces nouveaux concepts** au sein de ce repository.
+After reading the [Spring tutorial on building a RESTful API](https://spring.io/guides/tutorials/rest) carefully and realizing that **I was mistaken** about what I thought a REST API was, **I hesitated for a long time about whether to include these new concepts** in this repository.
 
-~~**J'ai fini par conclure** que j'allais expliciter **qu'il s'agirait ici d'une [API RPC](https://fr.wikipedia.org/wiki/Appel_de_proc%C3%A9dure_%C3%A0_distance)** afin de laisser la possibilité, pour ceux qui le nécessitent, d'implémenter eux-mêmes le caractère "REST" de leur future API sur base de ce qu'ils auront appris ici (_comme moi là-dessus_).~~
+~~**I finally concluded** that I would make it clear **that this would be an [RPC API](https://en.wikipedia.org/wiki/Remote_procedure_call)** so that those who needed to could implement the "REST" nature of their future API themselves based on what they had learned here (_as I did on this_).~~
 
-Au vu de la structure dont était conçu **le backend**, ça **ressemblait quand même davantage à du REST qu'à du RPC "basique"**. Par conséquent, j'ai continué de chercher et c'est là que j'ai fini par comprendre la **différence entre "REST" et "RESTful"**. Par conséquent, nous pouvons considérer **le backend** ici comme du **REST mais pas RESTful car il manque l'[hypermédia](https://fr.wikipedia.org/wiki/HATEOAS)**.
+Given the structure of **the backend**, it **still looked more like REST than "basic" RPC**. So I kept searching, and that's when I finally understood the **difference between "REST" and "RESTful"**. Therefore, we can consider **the backend** here as **REST but not RESTful because it lacks [hypermedia](https://en.wikipedia.org/wiki/HATEOAS)**.
 
-Plus précisément, si on utilise le **[modèle de maturité de Richardson](https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_maturit%C3%A9_de_Richardson)**, nous pouvons qualifier **cette API de [niveau 2](https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_maturit%C3%A9_de_Richardson#Niveau_2_:_verbes_HTTP)**. Le [niveau 3](https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_maturit%C3%A9_de_Richardson#Niveau_3_:_contr%C3%B4les_hyperm%C3%A9dias) requiert par conséquent l'hypermédia. Ce niveau convient a mon goût car **l'hypermédia n'est pas nécessaire _ici_** ni pour d'autres. Sans compter, surtout, que ça rend la lecture du **code bien plus simple pour un débutant**.
+More specifically, if we use the **[Richardson maturity model](https://en.wikipedia.org/wiki/Richardson_Maturity_Model)**, we can classify **this API as [level 2](https://en.wikipedia.org/wiki/Richardson_Maturity_Model#Level_2:_HTTP_verbs)**. [Level 3](https://en.wikipedia.org/wiki/Richardson_Maturity_Model#Level_3:_Hypermedia_controls) therefore requires hypermedia. This level suits me because **hypermedia is not necessary here or for others**. Not to mention, above all, that it makes reading the **code much easier for a beginner**.
 
-### Difficultés à terminer
+### Difficulties in completing
 
-**J'ai été tenté à plusieurs reprises d'arrêter ce projet**.
+**I was tempted several times to abandon this project**.
 
-Outre le fait que je ne m'intéresse pas qu'à la programmation mais bien à l'informatique dans sa généralité, **j'ai eu du mal à me focaliser** ici pour parvenir à conclure ce projet.
-Pour y parvenir, **je me suis obligé à ce que je ne puisse rien programmer d'autre que ce projet et sa documentation**. Cela fut compliqué pour moi car je ne cessais de ressasser ce qu'il fallait terminer pour ici sans pour autant m'y adonner.
+In addition to the fact that I am not only interested in programming but also in computer science in general, **I found it difficult to focus** here in order to complete this project.
+To achieve this, **I forced myself to program nothing else but this project and its documentation**. This was difficult for me because I kept thinking about what needed to be finished here without actually doing it.
 
-Ce qui fut fascinant est que ce n'était même **pas réellement compliqué mais volumineux**. Surtout que **devoir se tenir à quelque chose ainsi, autant et sur la durée, ça s'est révélé particulièrement difficile** pour moi. Autant lorsque j'ai des objectifs clairs énoncés et donnés par l'extérieur, c'est facile. Autant le faire de soi-même de bout en bout, c'est parfois assez compliqué de s'y tenir...
+What was fascinating was that it wasn't even **really complicated, just voluminous**. Especially since **having to stick to something like this, so much and for so long, proved particularly difficult** for me. When I have clear objectives set out and given to me by someone else, it's easy. But when you have to do it yourself from start to finish, it can sometimes be quite difficult to stick to it...
 
-Néanmoins, **je pense être parvenu à constituer quelque chose d'un tant soit peu correct** alors **j'espère que cela pourra aider quiconque lisant ceci**. Ne serait-ce qu'une personne cherchant de l'inspiration.
+Nevertheless, **I think I've managed to put together something that's at least somewhat decent**, so **I hope it can help anyone reading this**. Even if it's just one person looking for inspiration.
