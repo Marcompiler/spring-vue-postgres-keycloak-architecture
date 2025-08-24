@@ -29,7 +29,7 @@ public class SecurityConfig {
     };
 
     /**
-     * Identifiants des clients Keycloak desquels puiser les rôles.
+     * Keycloak client IDs from which to retrieve roles.
      */
     private static final String[] CLIENT_IDS = {
             "demo-frontend"
@@ -58,7 +58,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    @SuppressWarnings("unchecked") // On part du principe qu'on connaît la structure de données de Keycloak
+    @SuppressWarnings("unchecked") // We assume that the Keycloak data structure is known.
     public JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtGrantedAuthoritiesConverter defaultConverter = new JwtGrantedAuthoritiesConverter();
 
@@ -66,7 +66,7 @@ public class SecurityConfig {
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(jwt -> {
             Collection<GrantedAuthority> authorities = defaultConverter.convert(jwt);
 
-            // Extraire les rôles du realm
+            // Extract realm-scoped roles
             Map<String, Object> realmAccess = jwt.getClaim("realm_access");
             if (realmAccess != null && realmAccess.containsKey("roles")) {
                 List<String> realmRoles = (List<String>) realmAccess.get("roles");
@@ -75,7 +75,7 @@ public class SecurityConfig {
                         .toList());
             }
 
-            // Extraire les rôles des clients spécifiés
+            // Extract client-scoped roles
             Map<String, Object> resourceAccess = jwt.getClaim("resource_access");
             if (resourceAccess != null) {
                 Arrays.stream(CLIENT_IDS).toList().forEach(clientId -> {

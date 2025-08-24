@@ -54,7 +54,7 @@ public class MyUserController {
             return ResponseEntity.ok(result.getId());
         }
         catch(DataIntegrityViolationException ex) {
-            // Si un utilisateur avec le même pseudo/sub existe déjà, erreur car colonne NOT NULL et UNIQUE
+            // If a user with the same sub/nickname already exists, error due to NOT NULL and UNIQUE constraint
             return ResponseEntity
                     .status(HttpStatus.CONFLICT)
                     .body("A user with the same sub/username already exists !");
