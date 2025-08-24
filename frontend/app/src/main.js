@@ -22,7 +22,7 @@ async function initKeycloak() {
 
       const app = createApp(App)
 
-      // Ajouter keycloak globalement
+      // Add keycloak globally
       app.config.globalProperties.$keycloak = keycloak
 
       app.use(router)
