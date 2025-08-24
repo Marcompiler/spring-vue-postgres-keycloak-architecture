@@ -113,6 +113,9 @@ Certains ont "`Build -> Run`", cela signifie que vous devez **d'abord construire
 
 _N.B. : **Pour Docker**, il suffit de **remplacer** toutes les occurrences de **"podman" par "docker"**._
 
+**Tous les éléments sont maintenant démarrés** et vous pouvez commencer à **tester votre stack** en vous rendant sur <http://localhost:8082>.  
+Mais avant cela, notre SSO va nous saluer : vous devez donc d’abord [créer vos propres utilisateurs](#une-fois-tout-démarré---créez-vos-utilisateurs).
+
 ### Commandes à exécuter
 
 **_Veillez à respecter l'ordre d'exécution_**.
@@ -126,10 +129,10 @@ podman machine start
 
 #### Base de données (1/4)
 
-Exécutez la commande suivante pour **démarrer un conteneur Postgres** :
+Dans un **nouveau terminal**, exécutez la commande suivante pour **démarrer un conteneur Postgres** :
 
 ```sh
-podman-compose -f "./database/podman/podman-compose.yml" up -d
+podman-compose -f "./database/podman/podman-compose.yml" up
 ```
 
 #### Authentification unique (SSO) (2/4)
@@ -137,12 +140,12 @@ podman-compose -f "./database/podman/podman-compose.yml" up -d
 Exécutez la commande suivante pour **démarrer un conteneur Keycloak** (_pour le développement_) :
 
 ```sh
-podman-compose -f "./sso/podman/dev/podman-compose.yml" up -d
+podman-compose -f "./sso/podman/dev/podman-compose.yml" up
 ```
 
 #### Backend (3/4)
 
-Allez dans le **répertoire de l'application backend** :
+Dans un **nouveau terminal**, allez dans le **répertoire de l'application backend** :
 
 ```sh
 cd backend/app
@@ -157,7 +160,7 @@ cd backend/app
 
 #### Frontend (4/4)
 
-Allez dans le **répertoire de l'application frontend** :
+Dans un **nouveau terminal**, allez dans le **répertoire de l'application frontend** :
 
 ```sh
 cd frontend/app
@@ -170,9 +173,36 @@ npm install
 npm run dev
 ```
 
-**L'ensemble des éléments est alors démarré** et vous pouvez commencer à **tester votre site Web** en allant sur <http://localhost:5173>.
+**Tous les éléments sont maintenant démarrés** et vous pouvez commencer à **tester votre stack** en vous rendant sur <http://localhost:5173>.  
+Mais avant cela, notre SSO va nous saluer : vous devez donc d’abord [créer vos propres utilisateurs](#une-fois-tout-démarré---créez-vos-utilisateurs).
 
-### Parcours de développement
+### Une fois tout démarré -> Créez vos utilisateurs
+
+**Une fois que tout est démarré**, vous devez ajouter deux utilisateurs dans votre instance Keycloak.  
+Pour cela, **ouvrez votre navigateur** et allez à son adresse.  
+**Par défaut**, il s’agit de **<http://localhost:8080>**.
+
+Lorsque la page s’affiche, **saisissez les identifiants que vous avez définis dans votre propre fichier [`.env.sso`](./sso/podman/dev/.env.sso)** (_assurez-vous de l’avoir créé au préalable !_).
+
+Ensuite, allez dans **"Manage Realms"** et cliquez sur **"demo-realm"**.  
+S’il apparaît comme "Current realm", allez dans **"Users"** et créez deux utilisateurs en leur attribuant ces valeurs :
+
+| Nom du paramètre | Valeur Utilisateur 1 | Valeur Utilisateur 2 |
+| --- | --- | --- |
+| Actions utilisateur requises | Aucune | Aucune |
+| Email vérifié | `On` | `On` |
+| Nom d’utilisateur | demo-user | demo-admin |
+| Email | <demo-user@example.com> | <demo-admin@example.com> |
+| Prénom | Demo | Demo |
+| Nom | User | Admin |
+| Groupes | `demo-users` | `demo-admins` |
+
+**Une fois créés**, allez dans leurs **"Credentials"** et cliquez sur **"Set password"**.  
+**Pour les deux**, définissez **"demo"** comme mot de passe et mettez **"Temporary" sur `Off`**.
+
+**Ce n’est qu’alors** que vous pourrez **vous connecter au SSO via la redirection du frontend** (_cela devrait ressembler à quelque chose commençant par "<http://localhost:8080/realms/demo-realm/protocol/openid-connect/auth[...]>"_).
+
+## Parcours de développement
 
 **Si vous hésitez à vous lancer**, j'ai longtemps été dans la même situation que vous et **je comprends**. Par conséquent, **je vous invite à lire le [parcours de développement](DEV_JOURNEY.fr.md)** que j'ai rédigé à propos de ce projet.
 

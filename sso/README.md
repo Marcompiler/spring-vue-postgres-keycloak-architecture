@@ -13,15 +13,15 @@ their **identity** can be **centralized and reused** elsewhere thanks to Keycloa
 First, refer to the contents of the [Podman folder](./podman/) to **launch your own Keycloak instance**.
 This will depend on the environment you want.
 
-You can also start the DEV instance, which will directly import the export created when
-the container was created.
+You can also start the **DEV** instance, which **will directly import the export created beforehand** for you.
+
+**Once you have a functional container**, you can, if you have not already done so using the pre-existing export, follow the steps below or simply read them to understand the concepts.
+
+Attention, **if you used the export**, you **must** nevertheless **create the users**!
 
 During your tests, I recommend that you only stop/restart the container without deleting it.
 This is so that you don't lose your configuration (*[you can always export it](https://www.keycloak.org/server/importExport) and replace the existing export*).
 When deploying **in production**, you will define **mount points** so that nothing is lost.
-
-Once you have a functional container, you can, if you have not already done so using the pre-existing export,
-follow the steps below or simply read them to understand the concepts.
 
 ### Realm
 

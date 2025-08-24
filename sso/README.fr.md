@@ -10,18 +10,18 @@ leur **identité** pourra être **centralisée et réutilisée** ailleurs grâce
 
 ## Comment utiliser
 
-Tout d'abord, fiez-vous au contenu du [dossier Podman](./podman/) pour **lancer votre propre instance Keycloak**.
-Cela selon l'environnement que vous souhaitez.
+Commencez par consulter le contenu du [dossier Podman](./podman/) pour **lancer votre propre instance Keycloak**.  
+Cela dépendra de l’environnement que vous souhaitez.
 
-Vous pouvez également démarrer l'instance de DEV qui va importer directement l'export créé à l'occasion lors de la
-création du container.
+Vous pouvez également démarrer **l’instance DEV**, qui **importera directement l’export créé préalablement** pour vous.
 
-Durant vos tests, je vous invite à seulement stopper/redémarrer le container sans le supprimer.
-Cela afin de ne pas perdre votre configuration (*[vous pouvez toujours l'exporter](https://www.keycloak.org/server/importExport) et remplacer l'export déjà présent*).
-Lors du déploiement **en production**, vous définirez des **points de montage** pour ne rien perdre.
+**Une fois que vous avez un conteneur fonctionnel**, vous pouvez, si vous ne l’avez pas déjà fait via l’export préexistant, suivre les étapes ci-dessous ou simplement les lire pour en comprendre les concepts.
 
-Une fois que vous avez un conteneur fonctionnel, vous pouvez, si ce n'est pas déjà fait grâce à l'export préexistant,
-suivre les démarches ci-dessous ou simplement les lire pour comprendre les concepts.
+Attention, **si vous avez utilisé l’export**, vous devez néanmoins **créer les utilisateurs** !
+
+Lors de vos tests, je recommande de seulement arrêter/redémarrer le conteneur sans le supprimer.  
+Cela permet de ne pas perdre votre configuration (*[vous pouvez toujours l’exporter](https://www.keycloak.org/server/importExport) et remplacer l’export existant*).  
+Lors d’un déploiement **en production**, vous définirez des **points de montage** afin que rien ne soit perdu.
 
 ### Realm
 

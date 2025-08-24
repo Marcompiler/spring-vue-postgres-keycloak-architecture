@@ -64,6 +64,10 @@ When a user attempts to access the website, a series of steps will be triggered 
 
 ## Getting started
 
+Needless to mention that **everything here** is for **development purposes**.
+
+**For production**, you should **assign values and deploy** elements **according to your own infrastructure**.
+
 ### Prerequisites
 
 Before you begin, make sure you have installed:
@@ -111,6 +115,8 @@ Some have "`Build -> Run`", which means that you must **first build the image** 
 
 _N.B.: **For Docker**, simply **replace** all instances of **"podman" with "docker"**._
 
+**All elements are now started** and you can begin **testing your stack** by going to <http://localhost:8082>. But first, our SSO is gonna say hello to us, so first, you have to [create your own users](#once-everything-started---create-your-users).
+
 ### Commands to execute
 
 **_Be sure to follow the order of execution_**.
@@ -124,23 +130,25 @@ podman machine start
 
 #### Database (1/4)
 
-Run the following command to **start a Postgres container**:
+In a **new terminal**, run the following command to **start a Postgres container**:
 
 ```sh
-podman-compose -f "./database/podman/podman-compose.yml" up -d
+cd ./database/podman/
+podman-compose -f "podman-compose.yml" up
 ```
 
 #### Single Sign-On (SSO) (2/4)
 
-Run the following command to **start a Keycloak container** (_for development_):
+In a **new terminal**, run the following command to **start a Keycloak container** (_for development_):
 
 ```sh
-podman-compose -f "./sso/podman/dev/podman-compose.yml" up -d
+cd ./sso/podman/dev/
+podman-compose -f "podman-compose.yml" up
 ```
 
 #### Backend (3/4)
 
-Go to the **backend application directory**:
+In a **new terminal**, go to the **backend application directory**:
 
 ```sh
 cd backend/app
@@ -155,7 +163,7 @@ cd backend/app
 
 #### Frontend (4/4)
 
-Go to the **frontend application directory**:
+In a **new terminal**, go to the **frontend application directory**:
 
 ```sh
 cd frontend/app
@@ -168,9 +176,33 @@ npm install
 npm run dev
 ```
 
-**All elements are now started** and you can begin **testing your website** by going to <http://localhost:5173>.
+**All elements are now started** and you can begin **testing your website** by going to <http://localhost:5173>. But first, our SSO is gonna say hello to us, so first, you have to [create your own users](#once-everything-started---create-your-users).
 
-### Development journey
+### Once everything started -> Create your users
+
+**Once everything is started**, you have to add two users into your Keycloak instance. For that, **open your browser** and go to its address.
+**By default**, it's **<http://localhost:8080>**.
+
+When the page is shown, **enter the credentials you have set into your own [`.env.sso`](./sso/podman/dev/.env.sso)** (_be sure to have created it first !_).
+
+Then, go to **"Manage Realms"** and click on **"demo-realm"**. If it is shown as "Current realm", go to **"Users"** and create two users by setting those values :
+
+| Parameter Name | Value User 1 | Value User 2 |
+| --- | --- | --- |
+| Required user actions | None | None |
+| Email verified | `On` | `On` |
+| Username | demo-user | demo-admin |
+| Email | <demo-user@example.com> | <demo-admin@example.com> |
+| First name | Demo | Demo |
+| Last name | User | Admin |
+| Groups | `demo-users` | `demo-admins` |
+
+**Once they are created**, go to their **"Credentials"** and click on **"Set password"**.
+**For both**, set **"demo"** as their password and set **"Temporary" `Off`**.
+
+**Only then** you can **login into the SSO from the frontend's redirection** (_should be something starting with "<http://localhost:8080/realms/demo-realm/protocol/openid-connect/auth[...]>"_).
+
+## Development journey
 
 **If you're hesitating to get started**, I was in the same situation as you for a long time and **I understand**. Therefore, **I invite you to read the [development journey](DEV_JOURNEY.md)** I wrote about this project.
 
@@ -184,7 +216,7 @@ To get started on this project, I recommend that you first acquire the **necessa
 
 I would say that the main concepts you need to know are:
 
-- [**container virtualization**](https://fr.wikipedia.org/wiki/Conteneur_(virtualisation)), in this case **[Podman](https://fr.wikipedia.org/wiki/Podman)**.
+- [**Container virtualization**](https://fr.wikipedia.org/wiki/Conteneur_(virtualisation)), in this case **[Podman](https://fr.wikipedia.org/wiki/Podman)**.
 - What an **[API](https://fr.wikipedia.org/wiki/Interface_de_programmation)** is.
   - In this case, a **[REST](https://fr.wikipedia.org/wiki/Representational_state_transfer)** API. Note that it is only at [**level 2** of Richardson's maturity model](https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_maturit%C3%A9_de_Richardson#Niveau_2_:_verbes_HTTP).
 - What a **[relational database](https://fr.wikipedia.org/wiki/Base_de_donn%C3%A9es_relationnelle)** is and what **[PostgreSQL](https://fr.wikipedia.org/wiki/PostgreSQL)** is.
