@@ -2,20 +2,20 @@
 
 ## Description
 
-Ce répertoire contient l'ensemble des médias et fichiers CSS/JavaScript de votre application.
+This directory contains all the media and CSS/JavaScript files of your application.
 
-C'est donc ici que vous mettrez, par exemple, les images locales affichées dans votre site Web.
+This is where you will, for example, place the local images displayed on your website.
 
-## Comment utiliser
+## How to Use
 
-### Médias
+### Media
 
-Tout fichier média photo/vidéo/etc. doit se trouver ici. Vous pourrez alors les référencer dans vos composants à l'aide, dans le cas d'HTML pur, de la balise "`img`" par exemple.
+All media files (photo/video/etc.) should be stored here. You can then reference them in your components, for example in pure HTML with the "`img`" tag.
 
 ### CSS
 
-Vous avez besoin d'appliquer un style particulier au sein d'un composant ? Ou vous souhaitez simplement diviser votre CSS principal en plusieurs CSS pour une question de rangement ? C'est également ici que vous pouvez créer vos fichiers CSS avant de les référencer dans les composants destinataires.
+Do you need to apply a specific style within a component? Or do you simply want to split your main CSS into multiple CSS files for better organization? This is also where you can create your CSS files before referencing them in the target components.
 
 ### JavaScript
 
-Dans le cas de Vue.JS, vos scripts JS peuvent se contenter d'être dans vos composants respectifs la plupart du temps. Néanmoins, si vous souhaitez par exemple partager du script à l'ensemble de votre application, vous pouvez créer un fichier JS ici pour ensuite le référencer à la racine de la structure de vos pages dans [App.vue](../App.vue).
+In the case of Vue.JS, your JS scripts can usually remain within their respective components. However, if you want to, for example, share a script across the entire application, you can create a JS file here and then reference it at the root of your page structure in [App.vue](../App.vue).

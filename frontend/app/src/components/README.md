@@ -2,29 +2,29 @@
 
 ## Description
 
-Les applications Vue.JS sont constituées de "composants" qui sont alors réutilisables et modulables au travers de l'application. La page d'accueil (*elle-même étant un composant du coup*) contient donc un ensemble de composants appelés "`Api[...]`" qui, chacun, a un objectif pour tester cette architecture.
+Vue.JS applications are made up of *components* that are reusable and modular throughout the application. The homepage (*which itself is also a component*) therefore contains a set of components named "`Api[...]`", each with a specific purpose to test this architecture.
 
-Le tableau ci-dessous reprend donc chacun de ces composants Api[...] avec leur objectif et un ordre de complexité de 1 à 5 (*proportionnel au nombre d'éléments de l'architecture intervenant à l'atteinte de l'objectif*) :
+The table below lists each of these `Api[...]` components along with their purpose and a complexity rating from 1 to 5 (*proportional to the number of architectural elements involved in achieving the goal*):  
 
-| Nom | Objectif | Complexité |
+| Name | Purpose | Complexity |
 | :---: | :--- | :---: |
-| [`ApiAuthData`](./ApiAuthData.vue) | Tester l'authentification et la récupération de données nécessitant d'être authentifié. | 2 |
-| [`ApiAuthDataWithForm`](./ApiAuthDataWithForm.vue) | Tester l'authentification et la récupération de données sur base d'un formulaire côté client. | 3 |
-| [`ApiGetUserById`](./ApiGetUserById.vue) | Permet de vérifier qu'un utilisateur a bien été enregistré dans le backend (*et non SSO*) à partir de son identifiant généré lors de son enregistrement. | 4 |
-| [`ApiGetUserBySub`](./ApiGetUserBySub.vue) | Permet de vérifier qu'un utilisateur a bien été enregistré dans le backend (*et non SSO*) à partir de son `sub` issu du SSO lors de son enregistrement. | 5 |
-| [`ApiGetUserBySurname`](./ApiGetUserBySurname.vue) | Permet de vérifier qu'un utilisateur a bien été enregistré dans le backend (*et non SSO*) à partir de son surnom choisi lors de son enregistrement. | 4 |
-| [`ApiGetUsers`](./ApiGetUsers.vue) | Permet de vérifier les utilisateurs enregistrés dans le backend (*et non SSO*). | 4 |
-| [`ApiPublicData`](./ApiPublicData.vue) | Permet de vérifier la connexion entre le frontend et la backend au moyen d'un appel vers un endpoint publique de ce dernier. | 1 |
-| [`ApiUserRegister`](./ApiUserRegister.vue) | Permet d'enregistrer l'utilisateur connecté au moyen du SSO au sein du backend, permettant alors de définir dynamiquement son `sub` issu du SSO dans le backend avec un surnom donné. | 5 |
-| [`ApiUserRoleAdmin`](./ApiUserRoleAdmin.vue) | Tester l'attribution de rôles "admin" issus du SSO sur lesquels se base l'endpoint correspondant du backend. | 3 |
-| [`ApiUserRoleUser`](./ApiUserRoleUser.vue) | Tester l'attribution de rôles "user" issus du SSO sur lesquels se base l'endpoint correspondant du backend. | 3 |
+| [`ApiAuthData`](./ApiAuthData.vue) | Test authentication and retrieval of data requiring authentication. | 2 |
+| [`ApiAuthDataWithForm`](./ApiAuthDataWithForm.vue) | Test authentication and retrieval of data based on a client-side form. | 3 |
+| [`ApiGetUserById`](./ApiGetUserById.vue) | Verify that a user has been properly registered in the backend (*and not SSO*) using the ID generated at registration. | 4 |
+| [`ApiGetUserBySub`](./ApiGetUserBySub.vue) | Verify that a user has been properly registered in the backend (*and not SSO*) using their `sub` from the SSO at the time of registration. | 5 |
+| [`ApiGetUserBySurname`](./ApiGetUserBySurname.vue) | Verify that a user has been properly registered in the backend (*and not SSO*) using the nickname chosen at registration. | 4 |
+| [`ApiGetUsers`](./ApiGetUsers.vue) | Verify the users registered in the backend (*and not SSO*). | 4 |
+| [`ApiPublicData`](./ApiPublicData.vue) | Verify the connection between frontend and backend by calling a public endpoint of the backend. | 1 |
+| [`ApiUserRegister`](./ApiUserRegister.vue) | Register the user logged in through SSO within the backend, dynamically assigning their SSO `sub` in the backend along with a chosen nickname. | 5 |
+| [`ApiUserRoleAdmin`](./ApiUserRoleAdmin.vue) | Test assignment of "admin" roles coming from SSO, which are used by the corresponding backend endpoint. | 3 |
+| [`ApiUserRoleUser`](./ApiUserRoleUser.vue) | Test assignment of "user" roles coming from SSO, which are used by the corresponding backend endpoint. | 3 |
 
-*N.B. : Pour rappel, l'application "backend" est ce qu'on appelle la partie "serveur" tandis que le "frontend" est la partie "cliente".*
+Note: *As a reminder, the "backend" application refers to the "server-side," while the "frontend" refers to the "client-side."*
 
-## Comment utiliser
+## How to Use
 
-L'ensemble des composants `Api[...]` servent donc à tester l'architecture. En l'état actuel, ils vous serviront à vérifier que vous avez correctement déployé l'ensemble des éléments de l'architecture.
+All `Api[...]` components are intended to test the architecture. In their current state, they help you verify that you have correctly deployed all elements of the architecture.
 
-Si vous souhaitez développer des composants supplémentaires, vous pouvez donc vous baser sur ceux disponibles ici.
+If you want to develop additional components, you can use these as a reference.
 
-Les autres composants, [`HelloWorld.vue`](./HelloWorld.vue), [`TheWelcome.vue`](./TheWelcome.vue) et [`WelcomeItem.vue`](./WelcomeItem.vue), sont des composants générés par Vue lors de l'initialisation du projet.
+The other components, [`HelloWorld.vue`](./HelloWorld.vue), [`TheWelcome.vue`](./TheWelcome.vue), and [`WelcomeItem.vue`](./WelcomeItem.vue), are components generated by Vue during the initialization of the project.
