@@ -231,8 +231,18 @@ Pour leur implémentation, je me suis notamment servi des tutoriels suivants que
 
 ## Outils utilisés
 
-Les outils qui furent utilisés ici sont :
+### Pour le développement
 
 - [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/) (_développement du backend_)
-- [VSCodium](https://vscodium.com/) (_versioning des fichiers ailleurs que dans le projet IntelliJ_)
+- [VSCodium](https://vscodium.com/) (_développement du reste de l'architecture_)
 - [HTTPie](https://httpie.io/) (_requêtes HTTP et tests de l'API_)
+
+### Pour les images
+
+- [draw.io](https://www.drawio.com/) (_constitution des diagrammes_)
+- [GIMP](https://www.gimp.org/) (_découpage des logos, assemblage, etc._)
+
+### Annexes
+
+- [LibreTranslate](https://libretranslate.com/) (_traductions_)
+- [ChatGPT](https://chatgpt.com) (_le mouton noir, il m'a aidé à comprendre les concepts et à trouver certaines syntaxes dans le code_)
