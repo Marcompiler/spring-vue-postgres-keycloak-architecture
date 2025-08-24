@@ -2,17 +2,17 @@
 
 ## Description
 
-Ici se trouve les images utilisées au sein de ce projet.
+Here are the images used in this project.
 
-Pour les constituer, j'ai utilisé les logiciels suivants :
+To create them, I used the following software:
 
 - [draw.io](https://www.drawio.com/)
 - [GIMP](https://www.gimp.org/)
 
-Vous les trouverez utilisées au travers du repository.
+You will find them used throughout the repository.
 
-## Comment utiliser
+## How to use
 
-N'a nulle autre but que d'illustrer des explications et de présenter l'architecture.
+Their sole purpose is to illustrate explanations and present the architecture.
 
-À vous de voir ce que vous en faites (*rappels visuels, inspirations, etc.*).
+It's up to you to decide how to use them (*visual reminders, inspiration, etc.*).
