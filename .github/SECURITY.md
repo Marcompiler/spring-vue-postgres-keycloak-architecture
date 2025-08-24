@@ -17,6 +17,6 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-**If you spot any vulnerability** into this repository, **please report it in the [issues](https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/issues) with the label named `security`**. Ainsi, le problème pourra être résolu le plus rapidement possible.
+**If you spot any vulnerability** in this repository, **please report it in the [issues](https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/issues) with the label `security`**. This way, the issue can be resolved as quickly as possible.
 
-**Dans le cas où je ne saurais pas réagir suffisamment rapidement** face aux vulnérabilités, **d'autres pourront au moins s'en rendre compte par eux-mêmes** en **consultant les [issues labellisée](https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/issues?q=is%3Aissue%20state%3Aopen%20label%3Asecurity)** afin d'adapter leur propre code au besoin.
+**If I am unable to respond quickly enough** to vulnerabilities, **others will at least be able to notice them** by **checking the [labeled issues](https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/issues?q=is%3Aissue%20state%3Aopen%20label%3Asecurity)** and adapt their own code if needed.
