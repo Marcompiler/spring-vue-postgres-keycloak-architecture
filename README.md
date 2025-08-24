@@ -98,30 +98,11 @@ Please note that if you modify the values, you must reflect these changes in the
 - The values in `.env.database` are used by the backend in its [application.properties](./backend/app/src/main/resources/application.properties) and its Podman execution scripts (_[Linux](./backend/app/podman-run.sh)/[Windows](./backend/app/podman-run.ps1)_).
 - The values in `.env.sso` are to be used when logging into the SSO web interface as an administrator (_default address: <http://localhost:8080>_).
 
-Once the copies have been created and renamed, **you can then start all** elements of the architecture **using Podman and/or commands**, whichever suits you best.
+Once the copies have been created and renamed, **you can then start all** the elements of the architecture [**using the commands below**](#commands-to-run).
 
-### Podman (_or Docker_) scripts
+### Commands to run
 
-**Each element** of the architecture **includes scripts** to start within a container. Therefore, you will find **`.sh` scripts for Linux and `.ps1` scripts for Windows**.
-
-You can therefore run the scripts **in this order, in their respective directories**, depending on your environment:
-
-| Order | Element to start | Linux | Windows |
-| --- | --- | --- | --- |
-| 1 | **Database** | [Run](./database/podman/podman-run.sh) | [Run](./database/podman/podman-run.ps1) |
-| 2 | **SSO** (_DEV_) | [Run](./sso/podman/dev/podman-run.sh) | [Run](./sso/podman/dev/podman-run.ps1) |
-| 3 | **Backend** | [Build](./backend/app/podman-build.sh) -> [Run](./backend/app/podman-run.sh) | [Build](./backend/app/podman-build.ps1) -> [Run](./backend/app/podman-run.ps1) |
-| 4 | **Frontend** | [Build](./frontend/app/podman-build.sh) -> [Run](./frontend/app/podman-run.sh) | [Build](./frontend/app/podman-build.ps1) -> [Run](./frontend/app/podman-run.ps1) |
-
-Some have "`Build -> Run`", which means that you must **first build the image** to be instantiated for the container. So just run **`Build` then `Run`**.
-
-_N.B.: **For Docker**, simply **replace** all instances of **"podman" with "docker"**._
-
-**All elements are now started** and you can begin **testing your stack** by going to <http://localhost:8082>. But first, our SSO is gonna say hello to us, so first, you have to [create your own users](#once-everything-started---create-your-users).
-
-### Commands to execute
-
-**_Be sure to follow the order of execution_**.
+**_Make sure to follow the order of execution_**.
 
 First of all, some elements of the architecture require Podman/Docker, so make sure that the corresponding machine exists and is started:
 

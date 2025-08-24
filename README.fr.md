@@ -100,27 +100,7 @@ Attention que si vous modifiez les valeurs, il faut répercuter ces modification
 - Les valeurs de `.env.database` sont utilisées par le backend dans son [application.properties](./backend/app/src/main/resources/application.properties) et ses scripts d'exécution Podman (_[Linux](./backend/app/podman-run.sh)/[Windows](./backend/app/podman-run.ps1)_).
 - Les valeurs de `.env.sso` sont à utiliser lors de la connexion à l'interface Web du SSO en tant qu'administrateur (adresse par défaut : <http://localhost:8080>).
 
-Une fois les copies créées et renommées, **vous pouvez alors démarrer tous** les éléments de l'architecture **par Podman et/ou par commandes** selon ce qui vous accommode le mieux.
-
-### Scripts Podman (_ou Docker_)
-
-**Chaque élément** de l'architecture **comporte des scripts** pour démarrer au sein d'un conteneur. Par conséquent, vous trouverez des **scripts `.sh` pour Linux et `.ps1` pour Windows**.
-
-Vous pouvez donc exécuter les scripts **dans cet ordre, dans leur répertoire respectif** selon votre environnement :
-
-| Ordre | Élément à démarrer | Linux | Windows |
-| --- | --- | --- | --- |
-| 1 | **Base de données** | [Run](./database/podman/podman-run.sh) | [Run](./database/podman/podman-run.ps1) |
-| 2 | **SSO** (_DEV_) | [Run](./sso/podman/dev/podman-run.sh) | [Run](./sso/podman/dev/podman-run.ps1) |
-| 3 | **Backend** | [Build](./backend/app/podman-build.sh) -> [Run](./backend/app/podman-run.sh) | [Build](./backend/app/podman-build.ps1) -> [Run](./backend/app/podman-run.ps1) |
-| 4 | **Frontend** | [Build](./frontend/app/podman-build.sh) -> [Run](./frontend/app/podman-run.sh) | [Build](./frontend/app/podman-build.ps1) -> [Run](./frontend/app/podman-run.ps1) |
-
-Certains ont "`Build -> Run`", cela signifie que vous devez **d'abord construire l'image** à instancier pour le conteneur. Il suffit donc d'exécuter **`Build` puis `Run`**.
-
-_N.B. : **Pour Docker**, il suffit de **remplacer** toutes les occurrences de **"podman" par "docker"**._
-
-**Tous les éléments sont maintenant démarrés** et vous pouvez commencer à **tester votre stack** en vous rendant sur <http://localhost:8082>.  
-Mais avant cela, notre SSO va nous saluer : vous devez donc d’abord [créer vos propres utilisateurs](#une-fois-tout-démarré---créez-vos-utilisateurs).
+Une fois les copies créées et renommées, **vous pouvez alors démarrer tous** les éléments de l'architecture [**à l'aide des commandes ci-dessous**](#commandes-à-exécuter).
 
 ### Commandes à exécuter
 
