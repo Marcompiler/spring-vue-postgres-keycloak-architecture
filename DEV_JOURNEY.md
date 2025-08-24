@@ -72,6 +72,12 @@ La **cerise sur le gâteau avant de partager** tout cela est de **documenter le 
 
 J'ai alors enfin pu trouver le temps pour compléter la documentation restante. Je vais essayer d'établir une "**roadmap d'apprentissage**" que j'inviterais à suivre pour comprendre au mieux ce répertoire mais **cela restera évidemment subjectif**.
 
+## Conclusions
+
+**Ce projet touche à sa fin**, ou du moins son aboutissement que pour être enfin publié. Je n'ai **aucune idée de si cela plaira** ou non, ni même si ça servira réellement à quelqu'un, ni si ce projet est fiable à 100%.
+
+Tout ce que je sais est que **j'avais besoin de le faire et que j'ai fait de mon mieux**. Je pense que **c'est ça qui prévaut**. Au-delà de ça, si quelqu'un lit ceci, **je vous souhaite le meilleur** en espérant avoir été une **source d'inspiration, de motivation ou ne serait-ce que de distraction**.
+
 ## Erreurs de parcours et solutions
 
 ### API REST != API RESTful != API RPC
