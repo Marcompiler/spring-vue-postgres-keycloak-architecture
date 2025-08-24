@@ -43,11 +43,9 @@ L'architecture est donc constituée de la façon suivante :
 
 ### Fonctionnement de l'architecture
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="images/fullstack-diagram.dark-theme.svg">
-  <source media="(prefers-color-scheme: light)" srcset="images/fullstack-diagram.white-theme.svg">
-  <img alt="Architecture diagram" src="images/fullstack-diagram.png">
-</picture>
+![Architecture diagram fallback](images/fullstack-diagram.png)
+![Architecture diagram light](images/fullstack-diagram.white-theme.svg#gh-light-mode-only)
+![Architecture diagram dark](images/fullstack-diagram.dark-theme.svg#gh-dark-mode-only)
 
 Donc, voici comment ça se présente. Ce schéma permet de visualiser aisément les interactions entre les différents éléments de l'architecture.
 
