@@ -240,5 +240,5 @@ Pour leur implémentation, je me suis notamment servi des tutoriels suivants que
 ### Annexes
 
 - [LibreTranslate](https://libretranslate.com/) (_traductions_)
-- [DeepL](https://www.deepl.com) (_traductions_)
-- [ChatGPT](https://chatgpt.com) (_le mouton noir, il m'a aidé à comprendre les concepts et à trouver certaines syntaxes dans le code_)
+- [DeepL](https://www.deepl.com) (_traductions, même si le service m’a bloqué après quelques utilisations…_)  
+- [ChatGPT](https://chatgpt.com) (_le mouton noir, il m’a aidé à comprendre des concepts, trouver certaines syntaxes dans le code et pour des traductions_)

@@ -238,5 +238,5 @@ For their implementation, I used the following tutorials, which **I invite you t
 ### Appendices
 
 - [LibreTranslate](https://libretranslate.com/) (_translations_)
-- [DeepL](https://www.deepl.com) (_translations_)
-- [ChatGPT](https://chatgpt.com) (_the black sheep, it helped me understand concepts and find certain syntaxes in the code_)
+- [DeepL](https://www.deepl.com) (_translations, even if he paywalled me after some..._)
+- [ChatGPT](https://chatgpt.com) (_the black sheep, it helped me understand concepts, find certain syntaxes in the code and for translations_)
