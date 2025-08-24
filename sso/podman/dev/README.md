@@ -2,25 +2,25 @@
 
 ## Description
 
-Ici se trouve les éléments nécessaires à l'instanciation d'un conteneur Podman Keycloak pour l'**environnement de développement**.
+Here you will find the elements necessary to instantiate a Podman Keycloak container for the **development environment**.
 
-Par défaut, l'instance **Keycloak** est **déployé** sous l'adresse <http://localhost:8181>.
+By default, the **Keycloak** instance is **deployed** at the address <http://localhost:8080>.
 
-## Comment utiliser
+## How to use
 
-La commande à exécuter pour créer/démarrer le conteneur est donc :
+The command to run to create/start the container is therefore:
 
 ```sh
 podman compose -f podman-compose.yml up -d
 ```
 
-Pour **uniquement** le stopper :
+To **only** stop it:
 
 ```sh
 podman stop keycloak-dev
 ```
 
-Pour le stopper **et** détruire :
+To stop **and** destroy it:
 
 ```sh
 podman compose -f podman-compose.yml down

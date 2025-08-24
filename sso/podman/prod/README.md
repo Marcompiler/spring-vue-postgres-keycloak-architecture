@@ -2,20 +2,20 @@
 
 ## Description
 
-Ici, la procédure est **plus complexe que pour la [DEV](../dev)**.
-En effet, d'après la [documentation officielle de Keycloak](https://www.keycloak.org/server/containers#_creating_a_customized_and_optimized_container_image), la **bonne pratique** est de **construire soi-même son image Keycloak** avant de l'utiliser dans un conteneur.
+Here, the procedure is **more complex than for [DEV](../dev)**.
+According to the [official Keycloak documentation](https://www.keycloak.org/server/containers#_creating_a_customized_and_optimized_container_image), the **best practice** is to **build your own Keycloak image** before using it in a container.
 
-Pour synthétiser autant que possible, je vais **résumer la procédure** à la [section suivante ci-dessous](#comment-utiliser).
-Si plus de personnalisation s'avère nécessaire, vuillez consulter dans la [documentation officielle de Keycloak](https://www.keycloak.org/server/containers#_creating_a_customized_and_optimized_container_image).
+To summarize as much as possible, I will **summarize the procedure** in the [following section below](#how-to-use).
+If further customization is required, please refer to the [official Keycloak documentation](https://www.keycloak.org/server/containers#_creating_a_customized_and_optimized_container_image).
 
-## Comment utiliser
+## How to use
 
-En bref, il faut :
+In short, you need to:
 
-1. À partir du [template Containerfile](Containerfile.template), **remplacer les valeurs** selon vos besoins.
-2. **Construire l'image** avec la commande : `podman build . -t mykeycloak`
-3. Une fois l'image construite, **créez et démarrez le conteneur** à l'aide du [podman-compose.yml](podman-compose.yml) en l'adaptant selon votre environnement et l'image créée.
-   1. Si vous disposez déjà d'une base de données, commentez simplement les services "[db](podman-compose.yml#L16)" et "[adminer](podman-compose.yml#L24)". Commentez également la section "[depends_on](podman-compose.yml#L7)" du service oauth.
-   2. Si vous utilisez le service "[db](podman-compose.yml#L16)", veillez à assigner les mêmes valeurs que dans le Containerfile pour les identifiants etc.
+1. Using the [Containerfile template](Containerfile.template), **replace the values** according to your needs.
+2. **Build the image** with the command: `podman build . -t mykeycloak`
+3. Once the image is built, **create and start the container** using the [podman-compose.yml](podman-compose.yml) file, adapting it to your environment and the image you created.
+   1. If you already have a database, simply comment out the “[db](podman-compose.yml#L16)” and “[adminer](podman-compose.yml#L24)” services. Also comment out the “[depends_on](podman-compose.yml#L7)” section of the oauth service.
+   2. If you are using the “[db](podman-compose.yml#L16)” service, be sure to assign the same values as in the Containerfile for identifiers, etc.
 
-*N.B. : À l'heure actuelle, le déploiement en production ne fut **pas encore testé**. Je vais déjà essayer de terminer un projet digne d'une production moi-même avec cette stack avant de m'y essayer...*
+*N.B.: At present, deployment in production has **not yet been tested**. I will first try to complete a production-worthy project myself with this stack before attempting it...*

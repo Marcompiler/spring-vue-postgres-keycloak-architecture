@@ -1,96 +1,96 @@
-# Authentification unique (SSO)
+# Single Sign-On (SSO)
 
 ## Description
 
-Le serveur d'autorisation ici sera une instance [Keycloak](https://www.keycloak.org/) déployée sous forme d'un container [Podman](https://podman.io/).
-C'est donc ici qu'on délègue la **gestion des utilisateurs**, leur **authentification** et leurs **autorisations/rôles**.
+The authorization server here will be a [Keycloak](https://www.keycloak.org/) instance deployed as a [Podman](https://podman.io/) container.
+This is where we delegate **user management**, **authentication**, and **authorizations/roles**.
 
-De plus, **grâce à la possibilité du SSO**, si les applications se multiplient pour un même lot d'utilisateurs,
-leur **identité** pourra être **centralisée et réutilisée** ailleurs grâce à Keycloak (*concept même du SSO*).
+In addition, **thanks to the possibility of SSO**, if applications multiply for the same group of users,
+their **identity** can be **centralized and reused** elsewhere thanks to Keycloak (*the very concept of SSO*).
 
-## Comment utiliser
+## How to use
 
-Tout d'abord, fiez-vous au contenu du [dossier Podman](./podman/) pour **lancer votre propre instance Keycloak**.
-Cela selon l'environnement que vous souhaitez.
+First, refer to the contents of the [Podman folder](./podman/) to **launch your own Keycloak instance**.
+This will depend on the environment you want.
 
-Vous pouvez également démarrer l'instance de DEV qui va importer directement l'export créé à l'occasion lors de la
-création du container.
+You can also start the DEV instance, which will directly import the export created when
+the container was created.
 
-Durant vos tests, je vous invite à seulement stopper/redémarrer le container sans le supprimer.
-Cela afin de ne pas perdre votre configuration (*[vous pouvez toujours l'exporter](https://www.keycloak.org/server/importExport) et remplacer l'export déjà présent*).
-Lors du déploiement **en production**, vous définirez des **points de montage** pour ne rien perdre.
+During your tests, I recommend that you only stop/restart the container without deleting it.
+This is so that you don't lose your configuration (*[you can always export it](https://www.keycloak.org/server/importExport) and replace the existing export*).
+When deploying **in production**, you will define **mount points** so that nothing is lost.
 
-Une fois que vous avez un conteneur fonctionnel, vous pouvez, si ce n'est pas déjà fait grâce à l'export préexistant,
-suivre les démarches ci-dessous ou simplement les lire pour comprendre les concepts.
+Once you have a functional container, you can, if you have not already done so using the pre-existing export,
+follow the steps below or simply read them to understand the concepts.
 
 ### Realm
 
-Dans Keycloak, vous avez donc ce qu'on appelle des "Realm".
+In Keycloak, you have what are called “Realms.”
 
-Ceux-ci sont donc des "**environnements**", des "ensembles" de "clients", de "groupes utilisateurs" et d'utilisateurs.
-On va ainsi pouvoir **séparer les applications clientes et les utilisateurs en plusieurs ensembles**.
+These are “**environments**,” ‘sets’ of “clients,” “user groups,” and users.
+This allows you to **separate client applications and users into several sets**.
 
-On peut donc commencer par **créer un realm "demo-realm"**.
+We can start by **creating a realm called “demo-realm”**.
 
-### Utilisateurs
+### Users
 
-Ensuite, lorsque vous êtes **dans votre Realm "demo-realm"**, vous allez pouvoir **créer des utilisateurs**.
+Next, when you are **in your “demo-realm”**, you will be able to **create users**.
 
-Ces utilisateurs seront ce à travers quoi les personnes qui souhaitent s'authentifier au sein de vos applications
-pourront passer.
+These users will be the means by which people who wish to authenticate themselves within your applications
+will be able to do so.
 
-Pour ce faire, créez un utilisateur **"demo-user"** en spécifiant les informations suivantes :
+To do this, create a **“demo-user”** user by specifying the following information:
 
-- Considérer l'email comme vérifié.
-- Spécifier un nom d'utilisateur, un email, un prénom et un nom de famille.
-- Une fois l'utilisateur créé, ajoutez-lui un mot de passe (*décochez "temporaire"*).
+- Mark the email as verified.
+- Specify a username, email address, first name, and last name.
+- Once the user has been created, add a password (*uncheck “temporary”*).
 
-Sans cela, la personne ne pourra soit pas se connecter depuis vos applications,
-soit ces informations lui seront de toute façon demandées à la première connexion.
+Without this, the person will either not be able to log in from your applications,
+or they will be asked for this information when they log in for the first time.
 
-Vous pouvez déjà créer un second utilisateur **"demo-admin"** pour la suite.
+You can already create a second user **“demo-admin”** for later use.
 
-### Groupes utilisateurs
+### User groups
 
-Ensuite, pour suivre les **bonnes pratiques**, nous allons placer ces **utilisateurs dans des groupes**.
-C'est alors au moyen de ces mêmes groupes que nous définirons leurs autorisations par la suite.
+Next, to follow **best practices**, we will place these **users in groups**.
+We will then use these same groups to define their permissions.
 
-Toujours **dans le realm "demo-realm"**, vous pouvez créer alors deux groupes :
+Still **in the “demo-realm” realm**, you can then create two groups:
 
-- Le groupe **"demo-users"**, auquel vous pouvez ajouter l'utilisateur **"demo-user"**.
-- Le groupe **"demo-admins"**, auquel vous pouvez ajouter l'utilisateur **"demo-admin"**.
+- The **“demo-users”** group, to which you can add the **“demo-user”** user.
+- The **“demo-admins”** group, to which you can add the **“demo-admin”** user.
 
-### Rôles de Realm
+### Realm roles
 
-Maintenant, nous arrivons à la définition des **autorisations**.
+Now we come to the definition of **permissions**.
 
-Pour ce faire, **dans votre realm "demo-realm"**, ajoutez les deux rôles suivants :
+To do this, **in your “demo-realm”**, add the following two roles:
 
-- Le rôle **"demo-role-users"**, à assigner au groupe **"demo-users"**.
-- Le rôle **"demo-role-admins"**, à assigner au groupe **"demo-admins"**.
+- The **“demo-role-users”** role, to be assigned to the **“demo-users”** group.
+- The **“demo-role-admins”** role, to be assigned to the **“demo-admins”** group.
 
 ### Clients
 
-Désormais, il ne manque plus qu'à ce que vos **applications** puissent **passer par votre Keycloak** afin d'authentifier
-les utilisateurs et vérifier les tokens d'accès qu'elles reçoivent.
+Now all that's left is for your **applications** to be able to **go through your Keycloak** in order to authenticate
+users and verify the access tokens they receive.
 
-Pour y parvenir, vous allez créer des "clients". Ceux-ci ont ***beaucoup*** de paramètres.
-Dans notre cas, durant le développement, nous pouvons nous contenter de définir les informations suivantes :
+To achieve this, you will create “clients.” These have ***many*** parameters.
+In our case, during development, we can simply define the following information:
 
-- Le client-ID tel que **"demo-client"**.
-- Cochez "Standard flow".
-- Si vous souhaitez tester au moyen de requêtes API (*voir [HTTPie](../backend/httpie/)*), cochez "Direct access grants".
+- The client ID, such as **“demo-client”**.
+- Check “Standard flow”.
+- If you want to test using API requests (*see [HTTPie](../backend/httpie/)*), check “Direct access grants”.
 
-### Rôles de client
+### Client roles
 
-Enfin, il ne manque plus qu'à définir des **rôles** au niveau du **client**. En effet, non seulement les utilisateurs peuvent
-être autorisés sur base de leurs propres rôles, mais il en va de même pour les applications clientes elles-mêmes.
+Finally, all that remains is to define **roles** at the **client** level. In fact, not only can users
+be authorized based on their own roles, but the same applies to the client applications themselves.
 
-Par exemple, dans le cas de notre architecture ici, **l'API Spring pourrait être appelée par plusieurs applications Vue.js, chacune ayant alors un "client-ID"** et donc des autorisations particulières.
+For example, in the case of our architecture here, **the Spring API could be called by several Vue.js applications, each with a “client ID”** and therefore specific permissions.
 
-Par conséquent, **dans votre client "demo-client"**, vous pouvez créer les rôles suivants :
+Therefore, **in your “demo-client” client**, you can create the following roles:
 
-- Le rôle **"demo:read:users"**.
-- Le rôle **"demo:write:users"**.
+- The role **“demo:read:users”**.
+- The role **“demo:write:users”**.
 
-**Vous disposez alors d'une configuration permettant de tester plusieurs cas d'utilisation ; les utilisateurs, administrateurs, la vérification de rôles et l'enregistrement de clients**.
+**You now have a configuration that allows you to test several use cases: users, administrators, role verification, and client registration**.

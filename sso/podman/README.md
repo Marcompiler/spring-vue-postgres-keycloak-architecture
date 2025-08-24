@@ -2,18 +2,18 @@
 
 ## Description
 
-Ici se trouve les éléments liés à Keycloak pour instancier des conteneurs Podman se basant sur une image de Keycloak.
+This is where you'll find Keycloak-related stuff for instantiating Podman containers based on a Keycloak image.
 
-Dû à la configuration avancée que permet Keycloak, j'ai séparé ce dossier en plusieurs environnements qui sont :
+Due to the advanced configuration that Keycloak allows, I have separated this folder into several environments, which are:
 
-- [L'environnement de développement (**DEV**)](./dev/)
-- [L'environnement de production (**PROD**)](./prod/) (*non testé*)
+- [The development environment (DEV)](./dev/)
+- [The production environment (PROD)](./prod/) (*untested*)
 
-## Comment utiliser
+## How to use
 
-**Durant la phase de développement**, contentez-vous d'instancier des conteneurs avec la [**configuration de DEV**](./dev/) prévue.
-Elle est suffisamment complète, d'après la portée prévue par ce projet de démarrage, pour tester vos cas d'utilisation.
+**During the development phase**, simply instantiate containers with the [**DEV configuration**](./dev/) provided.
+It is sufficiently comprehensive, based on the scope of this startup project, to test your use cases.
 
-**Lors du déploiement en production**, je vous invite à considérer [**la partie dédiée correspondante**](./prod/) afin d'avoir une idée
-du chemin à prendre. Néanmoins, je précise que, n'ayant pas encore pu exploiter cette stack moi-même pour
-un environnement de production, je vous conseille de vous fier avant tout à la [**documentation officielle de Keycloak**](https://www.keycloak.org/getting-started/getting-started-podman#_taking_the_next_step).
+**When deploying in production**, I invite you to consider [**the corresponding dedicated section**](./prod/) to get an idea
+of the path to take. However, I should point out that, as I have not yet been able to use this stack myself for
+a production environment, I advise you to rely primarily on the [**official Keycloak documentation**](https://www.keycloak.org/getting-started/getting-started-podman#_taking_the_next_step).

@@ -2,10 +2,10 @@
 
 ## Description
 
-Ici se trouve un **export du realm** mentionné précédemment **pour vos tests avec Keycloak**.
+Here is an **export of the realm** mentioned earlier **for your tests with Keycloak**.
 
-Le realm comporte donc des groupes utilisateurs, des rôles, etc. permettant de tester les fonctionnalités du reste de ce dépôt.
+The realm includes user groups, roles, etc. allowing you to test the features of the rest of this repository.
 
-## Comment utiliser
+## How to use
 
-**Lorsque vous démarrerez le conteneur Podman Keycloak DEV** à l'aide du [`podman-compose.yml`](../podman-compose.yml) dédié, **cet export sera automatiquement importé** dans le conteneur Keycloak grâce à la commande `--import-realm` et le point de montage avec ce dossier.
+**When you start the Podman Keycloak DEV container** using the dedicated [`podman-compose.yml`](../podman-compose.yml), **this export will be automatically imported** into the Keycloak container using the `--import-realm` command and the mount point with this folder.
