@@ -2,25 +2,25 @@
 
 ## Description
 
-Ceci est peut-être **la touche la plus personnelle** de ce projet : **la généricité**.
+This is perhaps **the most personal touch** of this project: **genericity**.
 
-En effet, je tiens toujours à ce que ce que je crée soit réutilisable, comme **ce pourquoi je partage ce projet avec vous**.
+Indeed, I always aim for what I create to be reusable, which is **why I am sharing this project with you**.
 
-Il s'agit donc ici d'une classe abstraite et de deux interfaces, chacune étant implémentée par mes classes `Entity` présentes dans les autres répertoires.
+Here, we have an abstract class and two interfaces, each implemented by my `Entity` classes found in other directories.
 
-| Nom | But |
+| Name | Purpose |
 | :---: | :--- |
-| [`BaseJpaEntity`](./BaseJpaEntity.java) | **Classe abstraite dont hérite les autres classes `Entity`** afin de bénéficier de **propriétés et méthodes** qui leur sont **communes**. Ici, il s'agit donc de propriétés liées aux **dates de création et de dernière modification** ainsi que l'**implémentation des deux interfaces** ci-dessous. |
-| [`IAuditedEntity`](./IAuditedEntity.java) | **Interface** définissant **deux méthodes** pour des entités : une pour **obtenir sa date de création**, une autre pour **la date de sa dernière modification**. |
-| [`IIdentifiableEntity<T>`](./IIdentifiableEntity.java) | **Interface template** définissant une **méthode** pour renvoyer l'**identifiant d'une entité**. Le **template** permet de **laisser le choix** quant au **type de données** de l'identifiant. |
-| [`IVersionedEntity`](./IVersionedEntity.java) | **Interface** définissant une **méthode** pour renvoyer **le numéro de version de l'entité**. C'est un mécanisme ici permettant de **gérer les accès concurrents**. |
+| [`BaseJpaEntity`](./BaseJpaEntity.java) | **Abstract class inherited by other `Entity` classes** to provide **common properties and methods**. Here, it includes properties related to **creation and last modification dates** as well as the **implementation of the two interfaces** below. |
+| [`IAuditedEntity`](./IAuditedEntity.java) | **Interface** defining **two methods** for entities: one to **get the creation date**, and another to **get the last modification date**. |
+| [`IIdentifiableEntity<T>`](./IIdentifiableEntity.java) | **Template interface** defining a **method** to return the **identifier of an entity**. The **template** allows choosing the **data type** of the identifier. |
+| [`IVersionedEntity`](./IVersionedEntity.java) | **Interface** defining a **method** to return the **version number of the entity**. This mechanism helps **manage concurrent access**. |
 
-## Comment utiliser
+## How to Use
 
-Si vous désirez bénéficier complètement des mécanismes offerts par [Spring JPA](https://spring.io/projects/spring-data-jpa), vous pouvez simplement faire hériter vos classes entités de [`BaseJpaEntity`](./BaseJpaEntity.java).
+If you want to fully benefit from the mechanisms provided by [Spring JPA](https://spring.io/projects/spring-data-jpa), you can simply have your entity classes inherit from [`BaseJpaEntity`](./BaseJpaEntity.java).
 
-Sinon, selon [la description ci-dessus](#description) de chaque interface, vous pouvez créer votre propre classe abstraite voire même directement implémenter les interfaces souhaitées au niveau de vos classes `Entity` selon vos besoins.
+Otherwise, based on [the description above](#description) of each interface, you can create your own abstract class or even directly implement the desired interfaces in your `Entity` classes as needed.
 
-Dans le cas où vous créez votre propre classe abstraite, veillez à ajouter l'annotation [`MappedSuperclass`](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-mapped-superclass) sur celle-ci afin que vos classes `Entity` puissent en hériter pleinement.
+If you create your own abstract class, make sure to add the [`MappedSuperclass`](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-mapped-superclass) annotation so that your `Entity` classes can fully inherit from it.
 
-Veillez cependant à garder en tête, quelque soit l'issue que vous choisirez, des avantages/inconvénients de cette approche. [Cette discussion](https://stackoverflow.com/q/66045230) le résume bien à mon sens.
+However, keep in mind, regardless of the approach you choose, the pros and cons of this method. [This discussion](https://stackoverflow.com/q/66045230) summarizes it well in my opinion.

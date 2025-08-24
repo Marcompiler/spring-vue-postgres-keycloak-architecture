@@ -2,29 +2,29 @@
 
 ## Description
 
-L'idée ici va être de développer une **application [Java](https://fr.wikipedia.org/wiki/Java_(langage))** en utilisant le **framework [Spring](https://fr.wikipedia.org/wiki/Spring_(framework))**.
+The idea here is to develop a **[Java](https://en.wikipedia.org/wiki/Java_(programming_language))** application using the **[Spring](https://en.wikipedia.org/wiki/Spring_Framework)** framework.
 
-Cette application aura pour but d'être une **API REST** de [niveau 2](https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_maturit%C3%A9_de_Richardson#Niveau_2_:_verbes_HTTP).
-Celle-ci permettra également d'interagir avec une base de données PostgreSQL au travers de Spring JPA qui va gérer les entités et les migrations.
+This application will serve as a **level 2 [REST API](https://en.wikipedia.org/wiki/Richardson_Maturity_Model#Level_2:_HTTP_Verbs)**.  
+It will also allow interaction with a PostgreSQL database via Spring JPA, which will manage entities and migrations.
 
-### Pourquoi pas RESTful ?
+### Why not fully RESTful?
 
-**De base, c'était l'idée**.
+**Initially, that was the plan.**
 
-**Néanmoins**, je me suis rendu compte **je m'étais trompé** au niveau des concepts **RPC/REST/RESTful** à la lecture de [la documentation Spring](https://spring.io/guides/tutorials/rest) puis à la découverte du [modèle de Richardson](https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_maturit%C3%A9_de_Richardson).
+**However**, I realized that I **was mistaken** regarding the **RPC/REST/RESTful concepts** after reading [the Spring documentation](https://spring.io/guides/tutorials/rest) and discovering the [Richardson Maturity Model](https://en.wikipedia.org/wiki/Richardson_Maturity_Model).
 
-Par conséquent, **pour garder les explications "accessibles" et le code "léger"**, j'ai décidé de rester au stade d'une **API REST de niveau 2**.
+Therefore, **to keep explanations "accessible" and the code "light"**, I decided to stay at the level of a **level 2 REST API**.
 
-Ainsi, **si vous le souhaitez**, je vous invite à vous baser sur **[cette même documentation](https://spring.io/guides/tutorials/rest)** si vous avez **le besoin/l'envie de développer une API RESTful ou**, comme moi, **simplement comprendre** réellement ce dont il s'agit. De ce que j'ai vu, ça semble plutôt simple à changer au niveau du code grâce à leur HATEOAS et ils l'expliquent bien mieux que moi.
+Thus, **if you want**, I invite you to refer to **[this same documentation](https://spring.io/guides/tutorials/rest)** if you **need/want to develop a RESTful API** or, like me, **simply understand** what it really involves. From what I’ve seen, it seems fairly easy to adapt the code using their HATEOAS, and they explain it much better than I can.
 
-## Comment utiliser
+## How to Use
 
-### Création du projet
+### Project Creation
 
-Tout d'abord, il a fallu **créer le projet**, j'ai donc utilisé la **[configuration suivante](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.5.4&packaging=jar&jvmVersion=24&groupId=com.yourdomain&artifactId=backend&name=backend&description=Backend%20of%20the%20stack.&packageName=com.yourdomain.backend&dependencies=web,devtools,validation,data-jpa,configuration-processor,oauth2-resource-server,postgresql,security)** avec [Spring Initializr](https://start.spring.io).
+First, the project had to be **created**, so I used the **[following configuration](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.5.4&packaging=jar&jvmVersion=24&groupId=com.yourdomain&artifactId=backend&name=backend&description=Backend%20of%20the%20stack.&packageName=com.yourdomain.backend&dependencies=web,devtools,validation,data-jpa,configuration-processor,oauth2-resource-server,postgresql,security)** via [Spring Initializr](https://start.spring.io).
 
-### Démarrage le projet
+### Starting the Project
 
-Ensuite, **veillez d'abord** à avoir **démarré** la **base de données** et le **SSO** pour que le backend puisse fonctionner.
+Next, **make sure** you have **started** the **database** and the **SSO** so that the backend can function.
 
-**Ouvrez** alors le projet **dans IntelliJ IDEA** et **démarrez** le projet.
+**Open** the project **in IntelliJ IDEA** and **run** the project.

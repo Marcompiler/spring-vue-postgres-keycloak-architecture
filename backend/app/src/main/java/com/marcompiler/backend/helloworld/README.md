@@ -2,27 +2,27 @@
 
 ## Description
 
-Le classique **["Hello world"](https://fr.wikipedia.org/wiki/Hello_world)**.
-*Il fallait évidemment qu'il soit présent dans un projet de prise en main tel que celui-ci*.
+The classic **["Hello world"](https://en.wikipedia.org/wiki/Hello_world)**.  
+*It obviously had to be included in a starter project like this one.*
 
-Ce répertoire permet de **rapidement prendre en main les différents concepts** fréquemment manipulés au sein d'une API où chacun a un rôle qui lui est propre :
+This directory allows you to **quickly get familiar with the key concepts** frequently used in an API, where each has its own role:
 
-- Les **entités avec [`HelloWorld.java`](./HelloWorld.java)**. Elles représentent les **structures de données**.
-- Les **controllers avec [`HelloWorldController.java`](./HelloWorldController.java)**. Ils permettent de faire le **pont de manière contrôlée entre les actions sur les données** de la base de données **et l'extérieur**.
-- Les **repositories avec [`HelloWorldRepository.java`](./HelloWorldRepository.java)**. C'est par eux que l'API doit passer pour **interagir directement avec la base de données**. Les **controllers** se contentant de faire le **contrôle** pour permettre l'action, ce sont bien les **repositories** qui font l'**action** en tant que telle.
-- Un **initialiseur de données [`HelloWorldDataInitializer.java`](./HelloWorldDataInitializer.java)**. On en utilise **généralement pour le premier démarrage** de l'application avec que celle-ci puisse être **déployée avec des données** au sein de la base de données, celles **nécessaires** au bon fonctionnement et/ou à l'utilisation de base de l'application par les utilisateurs.
+- **Entities with [`HelloWorld.java`](./HelloWorld.java)**. They represent the **data structures**.  
+- **Controllers with [`HelloWorldController.java`](./HelloWorldController.java)**. They act as a **controlled bridge between actions on the database data** and the outside world.  
+- **Repositories with [`HelloWorldRepository.java`](./HelloWorldRepository.java)**. The API must go through them to **interact directly with the database**. The **controllers** only handle **control**, while the **repositories** perform the actual **actions**.  
+- A **data initializer [`HelloWorldDataInitializer.java`](./HelloWorldDataInitializer.java)**. These are generally used for the first startup of the application so that it can be **deployed with data** in the database, including data **necessary** for proper functioning and/or basic use of the application by users.
 
-## Comment utiliser
+## How to Use
 
-Ici, il s'agit donc d'**observer l'initialisation des données** dont s'occupe l'[initialisateur](./HelloWorldDataInitializer.java) **lors du démarrage de l'API**.
+Here, the goal is to **observe the data initialization** handled by the [initializer](./HelloWorldDataInitializer.java) **when the API starts**.
 
-**Une fois l'API démarrée**, il est possible de **manipuler/récupérer les [entités](./HelloWorld.java)** au travers du [controller](./HelloWorldController.java) qui va faire appel au [repository](./HelloWorldRepository.java) pour modifier/récupérer les données sauvegardées.
+**Once the API is running**, you can **manipulate/retrieve the [entities](./HelloWorld.java)** via the [controller](./HelloWorldController.java), which calls the [repository](./HelloWorldRepository.java) to modify/retrieve the saved data.
 
-Pour ce faire, **authentifiez-vous au sein du SSO**, **récupérez le [Json Web Token (*JWT*)](https://fr.wikipedia.org/wiki/JSON_Web_Token)** et **passez-le avec votre requête** vers l'un des endpoints de l'API tels que, dans ce cas-ci :
+To do this, **authenticate with the SSO**, **obtain the [Json Web Token (*JWT*)](https://en.wikipedia.org/wiki/JSON_Web_Token)**, and **include it in your request** to one of the API endpoints, such as in this case:
 
 ```sh
-http://localhost:8080/api/helloworld
+http://localhost:8081/api/helloworld
 ```
 
-Vous obtiendrez alors une **réponse HTTP 200 (OK) : "`Hello world`"**.
-Celle-ci vous permet de savoir que **votre API est bien démarrée et est accessible au travers de l'authentification**.
+You will then receive an **HTTP 200 (OK) response: "`Hello world`"**.  
+This confirms that **your API is running and accessible via authentication**.

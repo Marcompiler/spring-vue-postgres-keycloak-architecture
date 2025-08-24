@@ -2,16 +2,16 @@
 
 ## Description
 
-Ceci est la **configuration** de l'application backend.
+This is the **configuration** of the backend application.
 
-On y définit donc, au moyen de [`application.properties`](./application.properties), des **propriétés à appliquer pour l'exécution** de l'application.
+Using [`application.properties`](./application.properties), it defines **properties to be applied for running** the application.
 
-## Comment utiliser
+## How to Use
 
-**En l'état**, [`application.properties`](./application.properties) définit **l'ensemble des paramètres dont vous avez besoin** pour l'exécution de l'architecture **par défaut**.
+**As-is**, [`application.properties`](./application.properties) sets **all the parameters you need** to run the architecture **with default settings**.
 
-Néanmoins, **vous pouvez redéfinir les valeurs** comme bon vous semble pour l'exécution en l'état et/ou pour votre propre développement.
+However, **you can redefine the values** as you see fit for running as-is and/or for your own development.
 
-Attention, si vous modifiez les valeurs, **veillez à les répercuter au sein des autres éléments** de l'architecture !
+Be careful: if you modify the values, **make sure to update them in the other elements** of the architecture as well!
 
-*N.B. : Si vous souhaitez **explorer les possibilités** de configuration, vous pouvez vous fier notamment à la [documentation officielle de Spring à ce sujet](https://docs.spring.io/spring-boot/appendix/application-properties/index.html).*
+*Note: If you want to **explore configuration possibilities**, you can refer to the [official Spring documentation on this topic](https://docs.spring.io/spring-boot/appendix/application-properties/index.html).*

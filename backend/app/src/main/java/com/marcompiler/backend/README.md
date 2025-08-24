@@ -2,10 +2,10 @@
 
 ## Description
 
-C'est ici que le plus gros du travail réside : faire le pont entre la façade et l'arrière-plan tout en définissant et gérant les données structurées manipulées au travers des applications.
+This is where the bulk of the work resides: bridging the frontend and the backend while defining and managing the structured data manipulated across the applications.
 
-## Comment utiliser
+## How to Use
 
-Vous pouvez **explorer chaque répertoire** ici **pour comprendre** davantage l'architecture.
+You can **explore each directory** here to **better understand** the architecture.
 
-**Ensuite**, rien ne vous empêche de **créer vos propres endpoints/données/etc.** pour exploiter encore davantage les possibilités.
+**Afterwards**, nothing prevents you from **creating your own endpoints/data/etc.** to further exploit the possibilities.

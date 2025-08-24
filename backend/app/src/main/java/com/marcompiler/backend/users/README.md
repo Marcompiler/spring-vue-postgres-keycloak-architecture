@@ -2,29 +2,29 @@
 
 ## Description
 
-**Toute application nécessitant authentification nécessite par conséquent de gérer un tant soit peu ses utilisateurs**.
+**Any application requiring authentication therefore needs to manage its users** to some extent.
 
-**L'authentification** en tant que tel, **c'est le SSO** qui s'en occupe. Néanmoins, il peut être intéressant de **conserver des informations supplémentaires** propres à **notre application** pour nos utilisateurs. C'est là que rentre en jeu ce répertoire.
+**Authentication** itself is handled by the **SSO**. However, it can be useful to **store additional information** specific to **our application** for our users. This is where this directory comes into play.
 
-Par conséquent, nous avons ici **trois éléments** :
+Consequently, we have **three elements** here:
 
-- Une classe pour l'**entité "MyUser"**.
-- Un **controller** pour contrôler la manipulation de ces entités.
-- Un **repository** pour récupérer/conserver/modifier ces entités.
+- A class for the **"MyUser" entity**.
+- A **controller** to manage these entities.
+- A **repository** to retrieve/store/update these entities.
 
 ### MyUser.java
 
-La **[classe MyUser](./MyUser.java)** constitue donc un **utilisateur au niveau de notre application**. On y stocke donc des **informations propres** au contexte de cette dernière tel qu'**un identifiant unique et un surnom**.
+The **[MyUser class](./MyUser.java)** represents a **user at the application level**. It stores **application-specific information** such as **a unique ID and a nickname**.
 
-Néanmoins, puisque les utilisateurs sont authentifiés grâce au SSO, il nous faut un moyen de faire **le lien entre** l'identité de l'utilisateur aux yeux du **SSO et notre application**. On va donc ajouter **dans notre classe** un champ **`sub`** qui sera alors l'identifiant unique représentant l'utilisateur au sein du SSO.
+Since users are authenticated via SSO, we need a way to **link the user's identity in the SSO to our application**. We therefore add a **`sub`** field in our class, which represents the unique identifier of the user within the SSO.
 
-**Cet identifiant** peut être **récupéré depuis le [Json Web Token (*JWT*)](https://fr.wikipedia.org/wiki/JSON_Web_Token)** fourni **lors de l'enregistrement** de la personne auprès de notre application. **Cet enregistrement se fait au sein du controller**.
+**This identifier** can be **retrieved from the [Json Web Token (*JWT*)](https://en.wikipedia.org/wiki/JSON_Web_Token)** provided **during the user's registration** in our application. **This registration happens in the controller**.
 
 ### MyUserController.java
 
-Le **[controller MyUserController](./MyUserController.java)** va alors offrir plusieurs fonctionnalités pour le frontend afin d'effectuer des **actions indirectes sur les utilisateurs** enregistrés au sein **de notre application**.
+The **[MyUserController](./MyUserController.java)** provides several functionalities for the frontend to perform **indirect actions on the users** registered in **our application**.
 
-**Pour que ceux-ci soient enregistrés**, il faut le permettre, c'est le rôle de la **méthode `register`**. Reprenons son code ici :
+**To register users**, this must be allowed, which is the role of the **`register` method**. Here is its code:
 
 ```java
 @PostMapping("/register")
@@ -41,7 +41,7 @@ public ResponseEntity<?> register(JwtAuthenticationToken auth, @RequestBody Map<
         return ResponseEntity.ok(result.getId());
     }
     catch(DataIntegrityViolationException ex) {
-        // Si un utilisateur avec le même surnom/sub existe déjà, erreur car colonne NOT NULL et UNIQUE
+        // If a user with the same sub/nickname already exists, error due to NOT NULL and UNIQUE constraint
         return ResponseEntity
                 .status(HttpStatus.CONFLICT)
                 .body("A user with the same sub/username already exists !");
@@ -54,31 +54,31 @@ public ResponseEntity<?> register(JwtAuthenticationToken auth, @RequestBody Map<
 }
 ```
 
-C'est donc un endpoint qu'on appelle sous le chemin "`/register`" de notre API. Cette méthode possède **deux paramètres** :
+This is an endpoint accessible via the "`/register`" path of our API. This method has **two parameters**:
 
-- **`auth`** : Il s'agit du JWT qui, suite à l'authentification de la personne auprès du SSO, va l'enregistrer au sein de notre base de données en passant par le [repository](#myuserrepositoryjava).
-- **`payload`** : C'est le contenu du body de la requête qui, dans ce cas-ci, est censé contenir un surnom pour le nouvel utilisateur.
+- **`auth`**: This is the JWT which, after the user authenticates with the SSO, registers the user in our database via the [repository](#myuserrepositoryjava).  
+- **`payload`**: This is the request body content, which in this case is expected to contain a nickname for the new user.
 
-**De `auth` on récupère le `sub` et du `payload` on récupère le surnom**. On instancie alors un nouvel utilisateur avec ces informations puis on tente de l'enregistrer à l'aide de notre [repository](#myuserrepositoryjava).
+**From `auth` we retrieve the `sub` and from `payload` we retrieve the nickname**. We then instantiate a new user with this information and attempt to save it using our [repository](#myuserrepositoryjava).
 
-**Si** ce dernier détecte un **conflit**, par exemple que le surnom et/ou le `sub` existe déjà au sein de la base de données, il renverra alors une **réponse HTTP explicitant ce conflit**. Cela pour signifier que l'utilisateur est déjà enregistré ou que le pseudo est déjà utilisé.
+**If** a conflict is detected, for example if the nickname and/or `sub` already exists in the database, it will return an **HTTP response indicating the conflict**, signaling that the user is already registered or that the nickname is already taken.
 
-Pour savoir cela, il faut du coup avoir su **sauvegarder des utilisateurs** dans la base de données. C'est alors **au tour du [repository](#myuserrepositoryjava) de jouer**.
+To handle this, users must first be **saved in the database**, which is the role of the [repository](#myuserrepositoryjava).
 
 ### MyUserRepository.java
 
-Le **[repository MyUserRepository](./MyUserRepository.java)** va alors jouer le rôle d'**interface entre notre base de données et l'application** afin que cette dernière puisse interagir avec la première. On a alors les **méthodes héritées de [`JpaRepository`](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html) mais aussi d'autres méthodes** telles que trouver un utilisateur au moyen du `sub` ou de son surnom.
+The **[MyUserRepository](./MyUserRepository.java)** acts as an **interface between our database and the application**, allowing the application to interact with the database. It provides **methods inherited from [`JpaRepository`](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html)** as well as additional methods, such as finding a user by `sub` or by nickname.
 
-## Comment utiliser
+## How to Use
 
-Depuis le frontend ou HTTPie, **veillez d'abord à vous être authentifié auprès du SSO et d'avoir récupéré un JWT**.
+From the frontend or HTTPie, **first make sure you are authenticated with the SSO and have obtained a JWT**.
 
-Ensuite, **appelez l'endpoint** du controller pour vous enregistrer au sein de l'API **avec le JWT et un surnom** dans le corps de la requête. Par défaut, il s'agit de :
+Then, **call the controller endpoint** to register in the API **using the JWT and a nickname** in the request body. By default, this is:
 
 ```sh
-http://localhost:8080/api/users/register
+http://localhost:8081/api/users/register
 ```
 
-Vous obtiendrez alors une **réponse HTTP 200 (OK) avec l'identifiant de l'utilisateur généré par l'API**. Vous pourrez alors retrouver/manipuler l'utilisateur à l'aide du `sub` ou de l'identifiant unique propre à notre base de données.
+You will then receive an **HTTP 200 (OK) response with the user ID generated by the API**. You can then retrieve/manipulate the user using the `sub` or the unique database ID.
 
-Vous pouvez alors essayer de récupérer le nouvel utilisateur à l'aide de l'une des méthodes `getUserBy[...]`.
+You can also try to retrieve the new user using one of the `getUserBy[...]` methods.

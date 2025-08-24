@@ -2,17 +2,17 @@
 
 ## Description
 
-**La configuration de l'application** ne peut se faire uniquement au travers du [`application.properties`](../../../../../resources/application.properties), il faut en effet passer **en partie par le code de l'application elle-même**.
+**Application configuration** cannot be done solely through [`application.properties`](../../../../../resources/application.properties); it must also be handled **in part through the application code itself**.
 
-Ici, il y a donc deux aspects principaux dans cette configuration :
+Here, there are two main aspects of this configuration:
 
-- La **persistance des données**.
-- La **sécurité de l'application**.
+- **Data persistence**.  
+- **Application security**.
 
-La **sécurité** a son [**dossier dédié**](./security/) puisqu'il y a plusieurs éléments la concernant. La **persistence**, elle, est configurée à l'aide de cet unique fichier : [**`PersistenceConfig.java`**](./PersistenceConfig.java).
+**Security** has its [**dedicated folder**](./security/) since there are several elements related to it. **Persistence**, on the other hand, is configured using this single file: [**`PersistenceConfig.java`**](./PersistenceConfig.java).
 
-## Comment utiliser
+## How to Use
 
-La **configuration par défaut** est évidemment **utilisable en l'état**.
+The **default configuration** can obviously be **used as-is**.
 
-**Sur base de la [documentation officielle de Spring](https://docs.spring.io/spring-data/jpa/docs/current/api/index.html)**, vous pouvez **ajuster/modifier** les annotations et contenu de [**`PersistenceConfig.java`**](./PersistenceConfig.java) afin de correspondre au mieux à votre environnement.
+Based on the [official Spring documentation](https://docs.spring.io/spring-data/jpa/docs/current/api/index.html), you can **adjust/modify** the annotations and contents of [**`PersistenceConfig.java`**](./PersistenceConfig.java) to best suit your environment.

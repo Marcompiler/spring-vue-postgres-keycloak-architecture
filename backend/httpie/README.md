@@ -2,12 +2,12 @@
 
 ## Description
 
-Sachant que le **backend est une API** avec laquelle notre frontend communique, on peut vouloir **tester notre API sans** nécessairement déployer/exécuter chaque fois notre **frontend**.
+Since the **backend is an API** with which our frontend communicates, you may want to **test the API without** necessarily deploying/running your **frontend** each time.
 
-Pour ce faire, des applications telles que [**HTTPie**](https://httpie.io/) peuvent aider.
+To do this, applications like [**HTTPie**](https://httpie.io/) can be helpful.
 
-## Comment utiliser
+## How to Use
 
-Démarrez HTTPie ou allez [sur le site](https://httpie.io/) afin d'exécuter vos requêtes de tests.
+Start HTTPie or go [to the website](https://httpie.io/) to execute your test requests.
 
-Un lot de requêtes testant le backend tel que développé jusqu'à présent est disponible dans le dossier "[`import`](./import/)".
+A set of requests testing the backend as developed so far is available in the "[`import`](./import/)" folder.
