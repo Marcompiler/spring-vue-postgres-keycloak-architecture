@@ -1,5 +1,7 @@
 # Web Architecture - Spring-Vue-Postgres-Keycloak Example
 
+![Presentation image](./images/presentation.png)
+
 ## Description
 
 This repository is an **architecture for developing a complete website** with all the necessary elements: a **backend**, a **frontend**, a **database**, and **single sign-on**.

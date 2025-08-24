@@ -4,3 +4,6 @@
 
 # GIMP
 *.xcf
+
+# Icons directory (Excluded to lighten the repository, but can be found easily if needed.)
+icons-schema
