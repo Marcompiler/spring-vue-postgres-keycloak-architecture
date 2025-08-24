@@ -43,11 +43,10 @@ L'architecture est donc constituée de la façon suivante :
 
 ### Fonctionnement de l'architecture
 
-![Architecture diagram fallback](images/fullstack-diagram.png)
-![Architecture diagram light](images/fullstack-diagram.white-theme.svg#gh-light-mode-only)
-![Architecture diagram dark](images/fullstack-diagram.dark-theme.svg#gh-dark-mode-only)
+![Architecture diagram light-theme](images/fullstack-diagram.light-theme.png#gh-light-mode-only)
+![Architecture diagram dark-theme](images/fullstack-diagram.dark-theme.png#gh-dark-mode-only)
 
-Donc, voici comment ça se présente. Ce schéma permet de visualiser aisément les interactions entre les différents éléments de l'architecture.
+Donc, voici comment ça se présente. Ce schéma permet de visualiser aisément les interactions entre les différents éléments de l'architecture (_Il existe des versions SVG au besoin dans le [répertoire des images](./images/)_).
 
 Ce diagramme part du principe que les utilisateurs ont tous un compte préexistant au sein du SSO et que l'utilisateur tente d'accéder à une ressource "protégées" (_nécessitant authentification_).
 
