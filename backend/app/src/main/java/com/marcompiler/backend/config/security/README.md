@@ -2,22 +2,22 @@
 
 ## Description
 
-**Gros morceau** de la configuration : **la sécurité** de l'application.
+A **major part** of the configuration: the **security** of the application.
 
-Autrement dit, c'est ici que nous allons configurer ce qui permettra d'**évaluer les accès à l'application** par des intervenants et autres applications.
+In other words, this is where we configure what will **evaluate access to the application** by users and other applications.
 
-Il y a donc deux fichiers :
+There are two files:
 
-- [`CorsConfig.java`](./CorsConfig.java) : dédié à la gestion du [**Cross Origin Resource Sharing (*CORS*)**](https://developer.mozilla.org/fr/docs/Web/HTTP/Guides/CORS). Définit alors **les [origines](https://developer.mozilla.org/fr/docs/Web/Security/Same-origin_policy#d%C3%A9finition_de_lorigine) pouvant appeler notre application** mais aussi **les [méthodes HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Reference/Methods) et les [en-têtes HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Reference/Headers) autorisées**.
-- [`SecurityConfig.java`](./SecurityConfig.java) : dédié à la **sécurité plus globale** de l'application avec la définition des **endpoints publiques et ceux nécessitant une authentification**. Il définit également comment récupérer les **rôles issus du SSO** lors de l'utilisation du [**Json Web Token (*JWT*)**](https://fr.wikipedia.org/wiki/JSON_Web_Token).
+- [`CorsConfig.java`](./CorsConfig.java): dedicated to managing [**Cross Origin Resource Sharing (*CORS*)**](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). It defines **the [origins](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#definition_of_an_origin) allowed to call our application**, as well as the **[HTTP methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) and [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) that are permitted**.
+- [`SecurityConfig.java`](./SecurityConfig.java): dedicated to the application's **broader security**, defining both **public endpoints and those requiring authentication**. It also specifies how to retrieve **roles from the SSO** when using a [**JSON Web Token (*JWT*)**](https://en.wikipedia.org/wiki/JSON_Web_Token).
 
-En l'état actuel, on ne permet qu'au frontend (*localhost:5173*) de communiquer avec notre backend dans [`CorsConfig.java`](./CorsConfig.java). De plus, on a définit des endpoints publiques et authentifiés ainsi que la récupération des rôles depuis le JWT d'après la spécificité de notre SSO : Keycloak.
+As it stands, [`CorsConfig.java`](./CorsConfig.java) only allows the frontend (*localhost:5173*) to communicate with our backend. In addition, public and authenticated endpoints have been defined, along with role extraction from the JWT based on the specifics of our SSO: Keycloak.
 
-## Comment utiliser
+## How to use
 
-La **configuration par défaut** est **utilisable en l'état**. Néanmoins, vous pouvez l'**ajuster** en fonction de **votre environnement** et **vos besoins/préférences**.
+The **default configuration** is **ready to use as is**. However, you can **adjust it** according to **your environment** and **your needs/preferences**.
 
-Si vous souhaitez **explorer les possibilités** de configuration, je vous invite à consulter :
+If you want to **explore the configuration possibilities**, check out:
 
-- [Cet article](https://howtodoinjava.com/spring-boot2/spring-cors-configuration/) pour le **CORS**.
-- [La documentation officielle de Spring](https://docs.spring.io/spring-security/reference/servlet/configuration/java.html) pour la classe **SecurityConfig**.
+- [This article](https://howtodoinjava.com/spring-boot2/spring-cors-configuration/) for **CORS**.  
+- [The official Spring documentation](https://docs.spring.io/spring-security/reference/servlet/configuration/java.html) for the **SecurityConfig** class.
