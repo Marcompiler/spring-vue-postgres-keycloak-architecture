@@ -172,7 +172,7 @@ npm run dev
 
 ### Parcours de développement
 
-**Si vous hésitez à vous lancer**, j'ai longtemps été dans la même situation que vous et **je comprends**. Par conséquent, **je vous invite à lire le [parcours de développement](DEV_JOURNEY.md)** que j'ai rédigé à propos de ce projet.
+**Si vous hésitez à vous lancer**, j'ai longtemps été dans la même situation que vous et **je comprends**. Par conséquent, **je vous invite à lire le [parcours de développement](DEV_JOURNEY.fr.md)** que j'ai rédigé à propos de ce projet.
 
 Si cela peut vous **aider à vous sentir moins seul voire à vous motiver**, j'en serais ravi.
 

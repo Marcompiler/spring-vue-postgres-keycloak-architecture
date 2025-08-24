@@ -14,7 +14,7 @@ Cependant, **ce dépôt est loin d'être parfait**, donc **toute contribution es
 
 Cependant, **si vous pensez qu’une couche ou fonctionnalité supplémentaire apporterait vraiment de la valeur** au template, **vous pouvez créer un PR** avec votre ajout afin que, **si accepté**, il devienne **disponible en tant que branche** de ce dépôt pour ceux qui souhaitent en bénéficier.
 
-Dans ce cas, **je référencerai votre branche dans le [README racine](../README.md)** afin que les autres puissent consulter votre version du template.
+Dans ce cas, **je référencerai votre branche dans le [README racine](../README.fr.md)** afin que les autres puissent consulter votre version du template.
 
 Évidemment, **rien ne vous empêche de forker ce projet** afin de garder le contrôle total.
 
@@ -62,5 +62,5 @@ Même si vous ne comptez pas contribuer du code, vous pouvez :
 
 ## Référence des branches dans le README 🌿
 
-- Si votre PR est acceptée, votre branche peut être **référencée dans le README racine** pour que les autres puissent la consulter.
+- Si votre PR est acceptée, votre branche peut être **référencée dans le [README racine](../README.fr.md)** pour que les autres puissent la consulter.
 - Cela aide les utilisateurs à **choisir une branche** selon leurs besoins ou préférences.
