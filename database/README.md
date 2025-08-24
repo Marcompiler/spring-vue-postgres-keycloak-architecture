@@ -2,8 +2,8 @@
 
 ## Description
 
-Il s'agit donc de la [base de données relationnelle](https://fr.wikipedia.org/wiki/Base_de_donn%C3%A9es_relationnelle) qui, dans ce cas-ci, sera [PostgreSQL](https://www.postgresql.org/). C'est en elle qu'on stockera les données structurées et qui seront manipulées par le frontend au travers du backend.
+This is the [relational database](https://en.wikipedia.org/wiki/Relational_database) which, in this case, will be [PostgreSQL](https://www.postgresql.org/). This is where structured data will be stored and accessed by the frontend through the backend.
 
-## Comment utiliser
+## How to Use
 
-Vous pouvez plonger dans le répertoire [Podman](./podman/) pour découvrir comment déployer votre base de données Postgres en quelques clics.
+You can explore the [Podman](./podman/) directory to see how to deploy your PostgreSQL database in just a few clicks.

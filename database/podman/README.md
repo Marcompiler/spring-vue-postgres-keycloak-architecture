@@ -2,18 +2,18 @@
 
 ## Description
 
-C'est donc ici qu'on dispose de ce qu'il nous faut pour déployer une base de données PostgreSQL simplement grâce à [Podman](https://podman.io/).
+This is where you have everything needed to deploy a PostgreSQL database easily using [Podman](https://podman.io/).
 
-## Comment utiliser
+## How to Use
 
-À partir du fichier [`.env.database.template`](./.env.database.template), **créez votre propre `.env.database`**.
+Starting from the [`.env.database.template`](./.env.database.template) file, **create your own `.env.database`**.
 
-Insérez-y les données que vous souhaitez. Cependant, **si vous modifiez les valeurs par défaut**, veillez à répercuter celles-ci dans la [configuration du backend](../../backend/app/src/main/resources/application.properties).
+Enter the data you want. However, **if you change the default values**, make sure to reflect them in the [backend configuration](../../backend/app/src/main/resources/application.properties).
 
-Une fois votre `.env.database` créé, vous pouvez ouvrir une invite de commande au sein de ce dossier-ci pour **exécuter la commande suivante** :
+Once your `.env.database` file is created, you can open a command prompt in this folder to **run the following command**:
 
 ```sh
 podman-compose -f podman-compose.yml up -d
 ```
 
-**Cela va alors déployer votre base de données** dans un conteneur accessible sous le port que vous avez choisi (*par défaut, `5432`*).
+This will deploy your database in a container accessible at the port you chose (_by default, `5432`_).
