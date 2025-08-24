@@ -66,6 +66,12 @@ Ce diagramme part du principe que les utilisateurs ont tous un compte préexista
 
 ## Pour démarrer
 
+Ici, j’explique **comment démarrer l’ensemble de l’architecture** afin que vous puissiez la tester directement.  
+**Si vous souhaitez la parcourir** d’abord pour **la comprendre** et/ou **vous familiariser avec elle**, je vous conseille de consulter d’abord **[la feuille de route ci-dessous](#feuille-de-route-pour-la-prise-en-main)**.
+
+Inutile de préciser que **tout ceci** est destiné **à des fins de développement**.  
+**Pour la production**, vous devrez **attribuer des valeurs et déployer** les éléments **selon votre propre infrastructure**.
+
 ### Prérequis
 
 Avant de commencer, assurez-vous d’avoir installé :

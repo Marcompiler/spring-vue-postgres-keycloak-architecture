@@ -64,8 +64,10 @@ When a user attempts to access the website, a series of steps will be triggered 
 
 ## Getting started
 
-Needless to mention that **everything here** is for **development purposes**.
+Here I explain **how to start the entire architecture** so that you can test it directly.
+**If you want to explore it** first to **understand** it and/or **get familiar with it**, I suggest you first check **[the roadmap below](#roadmap-for-getting-started)**.
 
+Needless to mention that **everything here** is for **development purposes**.
 **For production**, you should **assign values and deploy** elements **according to your own infrastructure**.
 
 ### Prerequisites
