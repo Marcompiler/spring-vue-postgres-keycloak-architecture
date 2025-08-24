@@ -69,7 +69,7 @@ When a user attempts to access the website, a series of steps will be triggered 
 Before you begin, make sure you have installed:
 
 - **[Podman](https://podman.io/docs/installation)** (_or [Docker](https://docs.docker.com/get-started/get-docker/)_) to launch the database and SSO (_or the backend and frontend_).
-- **[Podman-Compose](https://podman-desktop.io/docs/compose/setting-up-compose)** (_or [Docker-Compose](https://docs.docker.com/compose/install/)_) is also recommended. Otherwise, you will need to convert the `.yml` files into `run` commands.
+  - **[Podman-Compose](https://podman-desktop.io/docs/compose/setting-up-compose)** (_or [Docker-Compose](https://docs.docker.com/compose/install/)_) is also recommended. Otherwise, you will need to convert the `.yml` files into `run` commands.
 - **[Java 24+](https://jdk.java.net/24/)** for the Spring backend.
 - **[Maven](https://maven.apache.org/download.cgi)** to build the backend.
 - **[Node.js 22+](https://nodejs.org/fr/download)** and **[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)** for the frontend.
