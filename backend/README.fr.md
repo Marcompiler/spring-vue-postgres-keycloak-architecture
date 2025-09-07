@@ -28,3 +28,7 @@ Tout d'abord, il a fallu **créer le projet**, j'ai donc utilisé la **[configur
 Ensuite, **veillez d'abord** à avoir **démarré** la **base de données** et le **SSO** pour que le backend puisse fonctionner.
 
 **Ouvrez** alors le projet **dans IntelliJ IDEA** et **démarrez** le projet.
+
+### Conteneuriser
+
+Pour **conteneuriser votre backend**, vous pouvez plonger dans le **répertoire [`podman`](./podman/)** dédié ici pour entamer la procédure.

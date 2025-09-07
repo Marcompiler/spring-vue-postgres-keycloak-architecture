@@ -2,38 +2,38 @@
 
 ## Description
 
-This folder contains everything you may need to start containerizing your backend.
+This folder contains **everything you may need to start containerizing** your backend.
 
-It includes a `Containerfile` to be used for building the container image, which you can then instantiate as many times as you want once created.
+It includes a **`Containerfile`** to be used for **building the container image**, which you can then instantiate as many times as you want once created.
 
-There is also a `.dockerignore` file to exclude unnecessary elements from the final image.
+There is also a **`.dockerignore`** file to **exclude unnecessary elements** from the final image.
 
 ## How to use
 
-Please note that in its current state, the files here are intended for a generic deployment in a development environment.
+Please note that **in its current state**, the files here are intended for a **generic deployment** in a **development environment**.
 
-For a production environment, you should adapt the files accordingly, based in particular on [the dedicated Vue.js documentation](https://v2.vuejs.org/v2/cookbook/dockerize-vuejs-app.html?redirect=true#Real-World-Example).
+**For a production environment**, you should **adapt** the files **accordingly**, based in particular on [the dedicated Vue.js documentation](https://v2.vuejs.org/v2/cookbook/dockerize-vuejs-app.html?redirect=true#Real-World-Example).
 
 ### Containerfile and .dockerignore
 
-First, you need to copy two files into the root directory of your application:
+First, you need to **copy two files** into the [root directory of the application](../app/):
 
-- [`Containerfile`](./Containerfile): File used to build the final image. (*Mandatory*)
-- [`.dockerignore`](./.dockerignore): File defining which elements should be excluded from the image.
+- [`Containerfile`](./Containerfile): File used to **build the final image**.
+- [`.dockerignore`](./.dockerignore): File defining **which elements should be excluded** from the image. (*Optional*)
 
 ### Build the image
 
-Once the above files are prepared in the [root directory of the application](../app/), run the following command in that same directory:
+**Once the above files are prepared** in the [root directory of the application](../app/), **run** the following command:
 
 ```sh
 podman build --no-cache -t spring-vue-postgres-keycloak-architecture/backend .
 ```
 
-Where `spring-vue-postgres-keycloak-architecture/backend` is the name of the final image.
+Where `spring-vue-postgres-keycloak-architecture/backend` is the **name of the final image**.
 
 ### Deploy the image
 
-When your application image is created, run the following command (*for PowerShell, replace '\\' with '`'*):
+**When your application image is created**, **run** the following command (*for PowerShell, replace '\\' with '`'*):
 
 ```sh
 podman run -d \
@@ -48,4 +48,6 @@ podman run -d \
     localhost/spring-vue-postgres-keycloak-architecture/backend
 ```
 
-Your backend will then be accessible through the default link: <http://localhost:8082>.
+Your backend will then be accessible through the default link: <http://localhost:8081>.
+
+*N.B. : `--net=host` is used here to be able to communicate with the SSO while being containerized in the same machine.*

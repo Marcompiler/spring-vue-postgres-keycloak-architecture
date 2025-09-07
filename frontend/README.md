@@ -18,3 +18,7 @@ You can also create a run profile, for example in VSCodium, to start your applic
 ### To understand
 
 You can explore each subdirectory here to view their `README.md` describing its purpose and how to use it.
+
+### Containerize
+
+To **containerize your frontend**, you can dive into the dedicated **[`podman`](./podman/)** directory here to start the process.

@@ -28,3 +28,7 @@ First, the project had to be **created**, so I used the **[following configurati
 Next, **make sure** you have **started** the **database** and the **SSO** so that the backend can function.
 
 **Open** the project **in IntelliJ IDEA** and **run** the project.
+
+### Containerize
+
+To **containerize your backend**, you can dive into the dedicated **[`podman`](./podman/)** directory here to start the process.

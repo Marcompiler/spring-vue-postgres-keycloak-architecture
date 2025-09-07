@@ -11,10 +11,14 @@ L'accès à ces mêmes données et aux interactions possibles pour l'utilisateur
 
 ### Pour exécuter
 
-Vous pouvez suivre le [README généré par Vue.js](./app/README.md) pour démarrer l'application.
+Vous pouvez suivre le [README généré par Vue.js (*et traduit*)](./app/README.fr.md) pour démarrer l'application.
 
 Vous pouvez également créer un profil d'exécution, par exemple dans VSCodium, pour démarrer votre application d'un simple clic.
 
 ### Pour comprendre
 
 Vous pouvez explorer chaque sous-répertoire ici pour consulter leur `README.md` décrivant le but de celui-ci ainsi que comment l'utiliser.
+
+### Conteneuriser
+
+Pour **conteneuriser votre frontend**, vous pouvez plonger dans le **répertoire [`podman`](./podman/)** dédié ici pour entamer la procédure.
