@@ -15,6 +15,8 @@ This project is for **anyone who**:
 - **Wants to learn**.
 - **Is looking** for **inspiration** to build their own architecture.
 - **Wants to start developing a complete and versatile website**.
+- Consider a **personal/commercial project without licensing fees** (_see [architecture](#architecture-structure)_)  
+- Want to try **technologies outside of [Big Tech](https://en.wikipedia.org/wiki/Big_Tech)**.
 - Has lost their way here (_Welcome!_).
 
 ## Objectives
@@ -32,16 +34,17 @@ I therefore invite you to **fork this project** or **do whatever you like with i
 
 The architecture is therefore structured as follows:
 
-- [A REST API backend](./backend/)
-  - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
-  - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html)
-  - [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
-- [A frontend](./frontend/)
-  - [Vue.JS](https://vuejs.org/)
-- [Single sign-on (SSO)](./sso/)
-  - [Keycloak](https://www.keycloak.org/)
-- [A database](./database/)
-  - [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)
+- [A REST API backend](./backend/)  
+  - [Spring](https://docs.spring.io/spring-framework/reference/index.html) ([_Apache 2.0 License_](https://github.com/spring-projects/spring-framework/blob/main/LICENSE.txt))  
+    - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html) ([_Apache 2.0 License_](https://github.com/spring-projects/spring-ws/blob/main/LICENSE.txt))  
+    - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html) ([_Apache 2.0 License_](https://github.com/spring-projects/spring-data-jpa/blob/main/LICENSE.txt))  
+    - [Spring Security](https://docs.spring.io/spring-security/reference/index.html) ([_Apache 2.0 License_](https://github.com/spring-projects/spring-security/blob/main/LICENSE.txt))  
+- [A frontend](./frontend/)  
+  - [Vue.JS](https://vuejs.org/) ([_MIT License_](https://github.com/vuejs/core/blob/main/LICENSE))  
+- [Single Sign-On (SSO)](./sso/)  
+  - [Keycloak](https://www.keycloak.org/) ([_Apache 2.0 License_](https://github.com/keycloak/keycloak/blob/main/LICENSE.txt))  
+- [A database](./database/)  
+  - [PostgreSQL](https://www.postgresql.org/) ([_PostgreSQL License_](https://www.postgresql.org/about/licence/))
 
 ### How the architecture works
 

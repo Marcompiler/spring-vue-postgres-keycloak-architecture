@@ -15,6 +15,8 @@ Ce projet s'adresse à **toute personne qui** :
 - **Souhaite apprendre**.
 - **Cherche** de l'**inspiration** pour constituer sa propre architecture.
 - **Souhaite démarrer le développement d'un site Web** complet et polyvalent.
+- Envisage un **projet personnel/commercial sans frais de licence** (_voir [architecture](#structure-de-larchitecture)_)
+- Souhaite essayer des **technologies sans [GAFAM](https://fr.wikipedia.org/wiki/GAFAM)**.
 - S'est perdue ici (_Bienvenue !_).
 
 ## Objectifs
@@ -33,15 +35,16 @@ Je vous invite donc à **forker ce projet** ou **en faire ce que bon vous semble
 L'architecture est donc constituée de la façon suivante :
 
 - [Un backend API REST](./backend/)
-  - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
-  - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html)
-  - [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
+  - [Spring](https://docs.spring.io/spring-framework/reference/index.html) ([_licence Apache 2.0_](https://github.com/spring-projects/spring-framework/blob/main/LICENSE.txt))
+    - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html) ([_licence Apache 2.0_](https://github.com/spring-projects/spring-ws/blob/main/LICENSE.txt))
+    - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html) ([_licence Apache 2.0_](https://github.com/spring-projects/spring-data-jpa/blob/main/LICENSE.txt))
+    - [Spring Security](https://docs.spring.io/spring-security/reference/index.html) ([_licence Apache 2.0_](https://github.com/spring-projects/spring-security/blob/main/LICENSE.txt))
 - [Un frontend](./frontend/)
-  - [Vue.JS](https://vuejs.org/)
+  - [Vue.JS](https://vuejs.org/) ([_licence MIT_](https://github.com/vuejs/core/blob/main/LICENSE))
 - [Une authentification unique (SSO)](./sso/)
-  - [Keycloak](https://www.keycloak.org/)
+  - [Keycloak](https://www.keycloak.org/) ([_licence Apache 2.0_](https://github.com/keycloak/keycloak/blob/main/LICENSE.txt))
 - [Une base de données](./database/)
-  - [PostgreSQL](https://fr.wikipedia.org/wiki/PostgreSQL)
+  - [PostgreSQL](https://www.postgresql.org/) ([_licence PostgreSQL_](https://www.postgresql.org/about/licence/))
 
 ### Fonctionnement de l'architecture
 
