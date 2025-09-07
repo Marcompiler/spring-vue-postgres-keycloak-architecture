@@ -2,7 +2,7 @@
 
 ## Description
 
-Le serveur d'autorisation ici sera une instance [Keycloak](https://www.keycloak.org/) déployée sous forme d'un container [Podman](https://podman.io/).
+Le serveur d'autorisation ici sera une instance [Keycloak](https://www.keycloak.org/) déployée sous forme d'un conteneur [Podman](https://podman.io/).
 C'est donc ici qu'on délègue la **gestion des utilisateurs**, leur **authentification** et leurs **autorisations/rôles**.
 
 De plus, **grâce à la possibilité du SSO**, si les applications se multiplient pour un même lot d'utilisateurs,

@@ -263,7 +263,7 @@ Pour leur implémentation, je me suis notamment servi des tutoriels suivants que
 
 ## Pour aller plus loin
 
-### Containeuriser backend/frontend
+### Conteneuriser backend/frontend
 
 Déployer la base de données et le SSO fut facile, pas vrai ?
 Vous pouvez offrir la même possibilité au sein du backend et du frontend.
