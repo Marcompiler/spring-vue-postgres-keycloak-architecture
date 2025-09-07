@@ -4,7 +4,7 @@
 
 The idea here is to develop a **[Java](https://en.wikipedia.org/wiki/Java_(programming_language))** application using the **[Spring](https://en.wikipedia.org/wiki/Spring_Framework)** framework.
 
-This application will serve as a **level 2 [REST API](https://en.wikipedia.org/wiki/Richardson_Maturity_Model#Level_2:_HTTP_Verbs)**.  
+This application will serve as a **[level 2 REST API](https://en.wikipedia.org/wiki/Richardson_Maturity_Model#Level_2:_HTTP_Verbs)**.  
 It will also allow interaction with a PostgreSQL database via Spring JPA, which will manage entities and migrations.
 
 ### Why not fully RESTful?
@@ -13,7 +13,7 @@ It will also allow interaction with a PostgreSQL database via Spring JPA, which 
 
 **However**, I realized that I **was mistaken** regarding the **RPC/REST/RESTful concepts** after reading [the Spring documentation](https://spring.io/guides/tutorials/rest) and discovering the [Richardson Maturity Model](https://en.wikipedia.org/wiki/Richardson_Maturity_Model).
 
-Therefore, **to keep explanations "accessible" and the code "light"**, I decided to stay at the level of a **level 2 REST API**.
+Therefore, **to keep explanations "accessible" and the code "light"**, I decided to stay at the level of a **[level 2 REST API](https://en.wikipedia.org/wiki/Richardson_Maturity_Model#Level_2:_HTTP_Verbs)**.
 
 Thus, **if you want**, I invite you to refer to **[this same documentation](https://spring.io/guides/tutorials/rest)** if you **need/want to develop a RESTful API** or, like me, **simply understand** what it really involves. From what I’ve seen, it seems fairly easy to adapt the code using their HATEOAS, and they explain it much better than I can.
 

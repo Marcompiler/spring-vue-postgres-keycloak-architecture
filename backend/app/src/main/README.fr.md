@@ -11,5 +11,5 @@ Ceci est le répertoire à partir duquel vous allez le plus développer des chos
 
 Selon ce que vous souhaitez, vous pouvez :
 
-- Continuer à **explorer l'application** dans [`le répertoire où tout cela commence`](./java/com/marcompiler/test_architecture_rest_jpa_oauth2/).
+- Continuer à **explorer l'application** dans [`le répertoire où tout cela commence`](./java/com/marcompiler/backend/).
 - Consulter la **configuration de l'application** dans [`resources`](./resources/).
