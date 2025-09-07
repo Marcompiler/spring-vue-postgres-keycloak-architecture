@@ -260,3 +260,15 @@ Pour leur implémentation, je me suis notamment servi des tutoriels suivants que
 - [LibreTranslate](https://libretranslate.com/) (_traductions_)
 - [DeepL](https://www.deepl.com) (_traductions, même si le service m’a bloqué après quelques utilisations…_)  
 - [ChatGPT](https://chatgpt.com) (_le mouton noir, il m’a aidé à comprendre des concepts, trouver certaines syntaxes dans le code et pour des traductions_)
+
+## Pour aller plus loin
+
+### Containeuriser backend/frontend
+
+Déployer la base de données et le SSO fut facile, pas vrai ?
+Vous pouvez offrir la même possibilité au sein du backend et du frontend.
+
+Pour ce faire, vous trouverez un dossier "`podman`" à la racine de leur répertoire respectif.
+Ce dossier contient les fichiers de base et les informations nécessaires à votre prise en main sur ce sujet.
+
+Par conséquent, vous pouvez consulter [celui du backend](./backend/podman/) comme [celui du frontend](./frontend/podman/) à votre guise.

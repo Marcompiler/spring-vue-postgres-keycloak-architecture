@@ -1,15 +1,15 @@
-# Étape 1 : Build avec Maven
+# Étape 1 : Build with Maven
 FROM maven:3.9.11-eclipse-temurin-24 AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Étape 2 : Image finale minimale
+# Étape 2 : Minimal final image
 FROM eclipse-temurin:24-jre-alpine
 RUN addgroup -S backend && adduser -S backend -G backend
 USER backend:backend
 
-# Copier uniquement le JAR généré
+# Copy generated JAR
 COPY --from=build /app/target/*.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "/app.jar"]

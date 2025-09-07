@@ -257,3 +257,15 @@ For their implementation, I used the following tutorials, which **I invite you t
 - [LibreTranslate](https://libretranslate.com/) (_translations_)
 - [DeepL](https://www.deepl.com) (_translations, even if he paywalled me after some..._)
 - [ChatGPT](https://chatgpt.com) (_the black sheep, it helped me understand concepts, find certain syntaxes in the code and for translations_)
+
+## Going Further
+
+### Containerizing backend/frontend
+
+Deploying the database and the SSO was easy, right?  
+You can provide the same option for both the backend and the frontend.
+
+To do so, you will find a "`podman`" folder at the root of their respective directories.  
+This folder contains the basic files and the necessary information to get you started on this topic.
+
+Therefore, you can check out [the backend one](./backend/podman/) as well as [the frontend one](./frontend/podman/) as you wish.
