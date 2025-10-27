@@ -121,7 +121,7 @@ podman machine start
 Dans un **nouveau terminal**, exécutez la commande suivante pour **démarrer un conteneur Postgres** :
 
 ```sh
-podman-compose -f "./database/podman/podman-compose.yml" up
+podman compose -f "./database/podman/podman-compose.yml" up -d
 ```
 
 #### Authentification unique (SSO) (2/4)
@@ -129,7 +129,7 @@ podman-compose -f "./database/podman/podman-compose.yml" up
 Exécutez la commande suivante pour **démarrer un conteneur Keycloak** (_pour le développement_) :
 
 ```sh
-podman-compose -f "./sso/podman/dev/podman-compose.yml" up
+podman compose -f "./sso/podman/dev/podman-compose.yml" up -d
 ```
 
 #### Backend (3/4)

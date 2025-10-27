@@ -120,7 +120,7 @@ In a **new terminal**, run the following command to **start a Postgres container
 
 ```sh
 cd ./database/podman/
-podman-compose -f "podman-compose.yml" up
+podman compose -f "podman-compose.yml" up -d
 ```
 
 #### Single Sign-On (SSO) (2/4)
@@ -129,7 +129,7 @@ In a **new terminal**, run the following command to **start a Keycloak container
 
 ```sh
 cd ./sso/podman/dev/
-podman-compose -f "podman-compose.yml" up
+podman compose -f "podman-compose.yml" up -d
 ```
 
 #### Backend (3/4)

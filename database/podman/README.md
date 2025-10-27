@@ -13,7 +13,7 @@ Enter the data you want. However, **if you change the default values**, make sur
 Once your `.env.database` file is created, you can open a command prompt in this folder to **run the following command**:
 
 ```sh
-podman-compose -f podman-compose.yml up -d
+podman compose -f podman-compose.yml up -d
 ```
 
 This will deploy your database in a container accessible at the port you chose (_by default, `5432`_).

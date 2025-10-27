@@ -13,7 +13,7 @@ Insérez-y les données que vous souhaitez. Cependant, **si vous modifiez les va
 Une fois votre `.env.database` créé, vous pouvez ouvrir une invite de commande au sein de ce dossier-ci pour **exécuter la commande suivante** :
 
 ```sh
-podman-compose -f podman-compose.yml up -d
+podman compose -f podman-compose.yml up -d
 ```
 
 **Cela va alors déployer votre base de données** dans un conteneur accessible sous le port que vous avez choisi (*par défaut, `5432`*).
