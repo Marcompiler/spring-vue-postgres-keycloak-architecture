@@ -162,7 +162,7 @@ npm install
 npm run dev
 ```
 
-**All elements are now started** and you can begin **testing your website** by going to <http://localhost:5173>. But first, our SSO is gonna say hello to us, so first, you have to [create your own users](#once-everything-started---create-your-users).
+**All elements are now started** and you can begin **testing your website** by going to <http://localhost:5173>. But before that, our SSO is gonna say hello to us, so you must first to [create your own users](#once-everything-started---create-your-users).
 
 ### Once everything started -> Create your users
 
