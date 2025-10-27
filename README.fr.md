@@ -81,7 +81,7 @@ Avant de commencer, assurez-vous d’avoir installé :
 
 - **[Podman](https://podman.io/docs/installation)** (_ou [Docker](https://docs.docker.com/get-started/get-docker/)_) pour lancer la base de données et le SSO (_voire le backend et le frontend_).
   - **[Podman-Compose](https://podman-desktop.io/docs/compose/setting-up-compose)** (_ou [Docker-Compose](https://docs.docker.com/compose/install/)_) est également conseillé. Sinon vous devrez convertir les `.yml` en commandes `run`.
-- **[Java 24+](https://jdk.java.net/24/)** pour le backend Spring.
+- **[Java 21+](https://jdk.java.net/21/)** pour le backend Spring.
 - **[Maven](https://maven.apache.org/download.cgi)** pour construire le backend.
 - **[Node.js 22+](https://nodejs.org/fr/download)** et **[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)** pour le frontend.
 

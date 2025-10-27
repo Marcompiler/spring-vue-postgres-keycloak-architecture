@@ -1,11 +1,11 @@
 # Étape 1 : Build with Maven
-FROM maven:3.9.11-eclipse-temurin-24 AS build
+FROM maven:3.9.11-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
 # Étape 2 : Minimal final image
-FROM eclipse-temurin:24-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 RUN addgroup -S backend && adduser -S backend -G backend
 USER backend:backend
 
