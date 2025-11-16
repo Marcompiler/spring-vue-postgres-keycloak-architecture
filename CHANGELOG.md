@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.4] - 2025-11-16
+
+### Changed
+
+- Upgrade dependencies: `postgres (database)` 18.
+- Upgrade dependencies: `postgres (keycloak)` 18.
+- Upgrade dependencies: `keycloak` 26.4.
+- Dependencies: `adminer (keycloak)` specified to version 5.
+
+### Security
+
+- Upgrade dependencies: `js-yaml` 4.1.1 by [@dependabot](https://github.com/dependabot) (#4).
+
 ## [v1.0.3] - 2025-10-27
 
 ### Changed
@@ -48,6 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - LICENSE added.
 - DEV_JOURNEY(.fr).md added.
 
+[v1.0.4]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.3...v1.0.4
 [v1.0.3]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.2...v1.0.3
 [v1.0.2]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.1...v1.0.2
 [v1.0.1]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.0...v1.0.1
