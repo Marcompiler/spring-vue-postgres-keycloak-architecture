@@ -2,7 +2,7 @@
 version: "3.9"
 services:
   oauth:
-    image: quay.io/keycloak/keycloak:26.3
+    image: quay.io/keycloak/keycloak:26.4
     container_name: "sso"
     ports:
       - "8080:8080"
