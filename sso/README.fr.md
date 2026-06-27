@@ -17,7 +17,7 @@ Vous pouvez également démarrer **l’instance DEV**, qui **importera directeme
 
 **Une fois que vous avez un conteneur fonctionnel**, vous pouvez, si vous ne l’avez pas déjà fait via l’export préexistant, suivre les étapes ci-dessous ou simplement les lire pour en comprendre les concepts.
 
-Attention, **si vous avez utilisé l’export**, vous devez néanmoins **créer les utilisateurs** !
+Attention, **si vous avez utilisé l’export**, vous **DEVEZ** néanmoins **créer les utilisateurs** !
 
 Lors de vos tests, je recommande de seulement arrêter/redémarrer le conteneur sans le supprimer.  
 Cela permet de ne pas perdre votre configuration (*[vous pouvez toujours l’exporter](https://www.keycloak.org/server/importExport) et remplacer l’export existant*).  
@@ -66,8 +66,8 @@ Maintenant, nous arrivons à la définition des **autorisations**.
 
 Pour ce faire, **dans votre realm "demo-realm"**, ajoutez les deux rôles suivants :
 
-- Le rôle **"demo-role-users"**, à assigner au groupe **"demo-users"**.
-- Le rôle **"demo-role-admins"**, à assigner au groupe **"demo-admins"**.
+- Le rôle **"demo-role-users"**, à assigner au **groupe "demo-users"**.
+- Le rôle **"demo-role-admins"**, à assigner au **groupe "demo-admins"**.
 
 ### Clients
 
@@ -77,9 +77,21 @@ les utilisateurs et vérifier les tokens d'accès qu'elles reçoivent.
 Pour y parvenir, vous allez créer des "clients". Ceux-ci ont ***beaucoup*** de paramètres.
 Dans notre cas, durant le développement, nous pouvons nous contenter de définir les informations suivantes :
 
-- Le client-ID tel que **"demo-client"**.
+- Le client-ID tel que **"demo-frontend"**.
 - Cochez "Standard flow".
 - Si vous souhaitez tester au moyen de requêtes API (*voir [HTTPie](../backend/httpie/)*), cochez "Direct access grants".
+
+Une fois votre client créé, vous devez adapter les « **Paramètres d’accès** » afin que votre frontend soit autorisé à utiliser le SSO. Pour ce faire, ajoutez les URI suivantes dans « **URI de redirection valides** » :
+
+- <http://localhost:8082/*> : votre frontend lorsqu’il est déployé avec Podman.
+- <http://localhost:5173/*> : votre frontend lorsqu’il est exécuté via `npm run dev`.
+
+Pour pouvoir vous déconnecter, modifiez la section « **URIs de redirection valides après déconnexion** » en mettant « **+** » afin que les deux URIs que vous venez de définir puissent être utilisées pour la déconnexion.
+
+Procédez de la même manière dans la section « **Origines Web** » en ajoutant les éléments suivants (*attention, ce ne sont pas les mêmes que les URIs de redirection !*) :
+
+- <http://localhost:8082> : votre frontend lorsqu’il est déployé avec Podman.
+- <http://localhost:5173> : votre frontend lorsqu’il est exécuté via la commande `npm run dev`.
 
 ### Rôles de client
 
@@ -88,7 +100,7 @@ Enfin, il ne manque plus qu'à définir des **rôles** au niveau du **client**. 
 
 Par exemple, dans le cas de notre architecture ici, **l'API Spring pourrait être appelée par plusieurs applications Vue.js, chacune ayant alors un "client-ID"** et donc des autorisations particulières.
 
-Par conséquent, **dans votre client "demo-client"**, vous pouvez créer les rôles suivants :
+Par conséquent, **dans votre client "demo-frontend"**, vous pouvez créer les rôles suivants :
 
 - Le rôle **"demo:read:users"**.
 - Le rôle **"demo:write:users"**.

@@ -17,7 +17,7 @@ You can also start the **DEV** instance, which **will directly import the export
 
 **Once you have a functional container**, you can, if you have not already done so using the pre-existing export, follow the steps below or simply read them to understand the concepts.
 
-Attention, **if you used the export**, you **must** nevertheless **create the users**!
+Attention, **if you used the export**, you **MUST** nevertheless **create the users**!
 
 During your tests, I recommend that you only stop/restart the container without deleting it.
 This is so that you don't lose your configuration (*[you can always export it](https://www.keycloak.org/server/importExport) and replace the existing export*).
@@ -25,9 +25,9 @@ When deploying **in production**, you will define **mount points** so that nothi
 
 ### Realm
 
-In Keycloak, you have what are called "Realms."
+In Keycloak, you have what are called "Realms".
 
-These are "**environments**," ‘sets’ of "clients," "user groups," and users.
+These are "**environments**," ‘sets’ of "clients", "user groups", and users.
 This allows you to **separate client applications and users into several sets**.
 
 We can start by **creating a realm called "demo-realm"**.
@@ -43,7 +43,7 @@ To do this, create a **"demo-user"** user by specifying the following informatio
 
 - Mark the email as verified.
 - Specify a username, email address, first name, and last name.
-- Once the user has been created, add a password (*uncheck "temporary"*).
+- Once the user has been created, **add a password and uncheck "temporary"**.
 
 Without this, the person will either not be able to log in from your applications,
 or they will be asked for this information when they log in for the first time.
@@ -66,20 +66,32 @@ Now we come to the definition of **permissions**.
 
 To do this, **in your "demo-realm"**, add the following two roles:
 
-- The **"demo-role-users"** role, to be assigned to the **"demo-users"** group.
-- The **"demo-role-admins"** role, to be assigned to the **"demo-admins"** group.
+- The **"demo-role-users"** role, to be assigned to the **"demo-users" group**.
+- The **"demo-role-admins"** role, to be assigned to the **"demo-admins" group**.
 
 ### Clients
 
 Now all that's left is for your **applications** to be able to **go through your Keycloak** in order to authenticate
 users and verify the access tokens they receive.
 
-To achieve this, you will create "clients." These have ***many*** parameters.
-In our case, during development, we can simply define the following information:
+To achieve this, you will create "clients." These have ***many*** settings.
+In our case, during the development phase, we can simply define the following information:
 
-- The client ID, such as **"demo-client"**.
+- The client ID, such as **"demo-frontend"**.
 - Check "Standard flow".
 - If you want to test using API requests (*see [HTTPie](../backend/httpie/)*), check "Direct access grants".
+
+Once your client is created, you must configure the "**Access Settings**" so that your frontend is authorized to use SSO. To do this, add the following URIs to "**Valid Redirect URIs**":
+
+- <http://localhost:8082/*>: your frontend when deployed with Podman.
+- <http://localhost:5173/*>: your frontend when run via `npm run dev`.
+
+To be able to log out, edit the "**Valid Redirect URIs After Logout**" section by adding a "**+**" so that the two URIs you just defined can be used for logging out.
+
+Follow the same procedure in the "**Web origins**" section by adding the following entries (*note: these are not the same as the redirect URIs!*):
+
+- <http://localhost:8082>: your frontend when deployed with Podman.
+- <http://localhost:5173>: your frontend when it’s running via the `npm run dev` command.
 
 ### Client roles
 
@@ -88,7 +100,7 @@ be authorized based on their own roles, but the same applies to the client appli
 
 For example, in the case of our architecture here, **the Spring API could be called by several Vue.js applications, each with a "client ID"** and therefore specific permissions.
 
-Therefore, **in your "demo-client" client**, you can create the following roles:
+Therefore, **in your "demo-frontend" client**, you can create the following roles:
 
 - The role **"demo:read:users"**.
 - The role **"demo:write:users"**.
