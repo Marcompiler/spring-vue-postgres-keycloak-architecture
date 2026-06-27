@@ -838,13 +838,11 @@
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "http://localhost:4173/*",
         "http://localhost:8082/*",
         "http://localhost:5173/*"
       ],
       "webOrigins": [
         "http://localhost:8082",
-        "http://localhost:4173",
         "http://localhost:5173"
       ],
       "notBefore": 0,
