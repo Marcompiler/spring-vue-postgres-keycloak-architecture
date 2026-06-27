@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v1.0.6] - 2026-06-27 - Corrections and dependencies
 
+### Fixed
+
+- [MyUser.java](./backend/app/src/main/java/com/marcompiler/backend/users/MyUser.java) : Wrong ID returned in "MyUser.getId" fixed.
+
 ### Changed
 
 - The formatting of the **SSO README files** has been **corrected**, and the **"Clients" section** has been **completed**.
