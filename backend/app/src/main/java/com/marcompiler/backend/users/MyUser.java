@@ -19,7 +19,7 @@ public class MyUser extends BaseJpaEntity<Long> {
 
     @Override
     public Long getId() {
-        return 0L;
+        return id;
     }
 
     @SuppressWarnings("unused")
