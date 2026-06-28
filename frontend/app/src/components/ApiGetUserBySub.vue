@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import keycloak from '@/keycloak'
-import { BACKEND_BASE_URL } from '@/backend'
+import keycloak from '@/config/keycloak'
+import { BACKEND_BASE_URL } from '@/config/backend'
 
 const dataFromApi = ref('')
 

@@ -3,7 +3,7 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import keycloak from './keycloak'
+import keycloak from './config/keycloak'
 
 // Here we define the authentication as necessary to access to the app.
 async function initKeycloak() {

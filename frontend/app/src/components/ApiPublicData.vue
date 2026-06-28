@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
-import { BACKEND_BASE_URL } from '@/backend'
+import { BACKEND_BASE_URL } from '@/config/backend'
 
 let dataFromApi = ref('')
 
