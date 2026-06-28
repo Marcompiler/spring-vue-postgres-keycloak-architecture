@@ -8,7 +8,6 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
@@ -21,23 +20,30 @@ public class MyUserController {
     }
 
     @GetMapping
-    public List<MyUser> getUsers() {
-        return userRepository.findAll();
+    public ResponseEntity<List<MyUser>> getUsers() {
+        List<MyUser> users = userRepository.findAll();
+        return ResponseEntity.ok(users);
     }
 
     @GetMapping("/id/{id}")
-    public Optional<MyUser> getUserById(@PathVariable Long id) {
-        return userRepository.findById(id);
+    public ResponseEntity<MyUser> getUserById(@PathVariable Long id) {
+        return userRepository.findById(id)
+            .map(ResponseEntity::ok)
+            .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/sub/{sub}")
-    public Optional<MyUser> getUserBySub(@PathVariable String sub) {
-        return userRepository.findBySub(sub);
+    public ResponseEntity<MyUser> getUserBySub(@PathVariable String sub) {
+        return userRepository.findBySub(sub)
+            .map(ResponseEntity::ok)
+            .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/surname/{surname}")
-    public Optional<MyUser> getUserBySurname(@PathVariable String surname) {
-        return userRepository.findBySurname(surname);
+    public ResponseEntity<MyUser> getUserBySurname(@PathVariable String surname) {
+        return userRepository.findBySurname(surname)
+            .map(ResponseEntity::ok)
+            .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping("/register")
