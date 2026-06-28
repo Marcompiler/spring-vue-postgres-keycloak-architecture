@@ -4,8 +4,9 @@ import keycloak from '@/config/keycloak'
 import { BACKEND_BASE_URL } from '@/config/backend'
 
 const dataFromApi = ref('')
+const apiError = ref(null)
 
-const idForData = ref('Hello')
+const inputForApi = ref(null)
 
 async function getDataFromApiAsync(id) {
   const apiEndpoint = `${BACKEND_BASE_URL}/helloworld/${id}`
@@ -33,19 +34,23 @@ async function getDataFromApiAsync(id) {
 }
 
 async function submitIdAndSetDataFromApi() {
-  const resultFromApi = await getDataFromApiAsync(idForData.value)
+  apiError.value = null;
 
-  console.log(resultFromApi)
+  try {
+    const resultFromApi = await getDataFromApiAsync(inputForApi.value)
+    dataFromApi.value = resultFromApi
+  } catch (error) {
+    apiError.value = error.message;
+  }
 
-  dataFromApi.value = resultFromApi.helloMessage
-  idForData.value = null
+  inputForApi.value = null
 }
 </script>
 
 <template>
   <form @submit.prevent="submitIdAndSetDataFromApi">
     <input
-      v-model="idForData"
+      v-model="inputForApi"
       type="number"
       required
       placeholder="Give ID you want to get from API"
@@ -53,5 +58,9 @@ async function submitIdAndSetDataFromApi() {
     <button>Send to API</button>
   </form>
 
-  <p>Message from auth API : {{ dataFromApi }}</p>
+  <p>
+    Message from auth API :
+    <span v-if="apiError" class="api-answer error">{{ apiError }}</span>
+    <span v-else class="api-answer valid">{{ dataFromApi }}</span>
+  </p>
 </template>
