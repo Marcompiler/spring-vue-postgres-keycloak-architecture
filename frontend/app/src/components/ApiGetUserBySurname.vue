@@ -1,11 +1,12 @@
 <script setup>
 import { ref } from 'vue'
-import keycloak from '@/keycloak'
-import { BACKEND_BASE_URL } from '@/backend'
+import keycloak from '@/config/keycloak'
+import { BACKEND_BASE_URL } from '@/config/backend'
 
 const dataFromApi = ref('')
+const apiError = ref(null)
 
-const inputForApi = ref('1')
+const inputForApi = ref(null)
 
 async function getDataFromApiAsync(surname) {
   const apiEndpoint = `${BACKEND_BASE_URL}/users/surname/${surname}`
@@ -33,11 +34,15 @@ async function getDataFromApiAsync(surname) {
 }
 
 async function submitAndSetDataFromApi() {
-  const resultFromApi = await getDataFromApiAsync(inputForApi.value)
+  apiError.value = null;
 
-  console.log(resultFromApi)
+  try {
+    const resultFromApi = await getDataFromApiAsync(inputForApi.value)
+    dataFromApi.value = resultFromApi
+  } catch (error) {
+    apiError.value = error.message;
+  }
 
-  dataFromApi.value = resultFromApi
   inputForApi.value = null
 }
 </script>
@@ -52,5 +57,9 @@ async function submitAndSetDataFromApi() {
     <button>Send to API</button>
   </form>
 
-  <p>Message from auth API for user with given surname : {{ dataFromApi }}</p>
+  <p>
+    Message from auth API for user with given surname :
+    <span v-if="apiError" class="api-answer error">{{ apiError }}</span>
+    <span v-else class="api-answer valid">{{ dataFromApi }}</span>
+  </p>
 </template>

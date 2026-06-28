@@ -8,7 +8,7 @@ Celle-ci contient donc les répertoires et éléments de base générés par Vue
 
 ### Keycloak
 
-Pour pouvoir lier notre frontend au SSO, un **fichier supplémentaire** a été ajouté : [**`keycloak.js`**](./keycloak.js). Ce fichier JavaScript est un [**adapteur fourni par Keycloak**](https://www.keycloak.org/securing-apps/javascript-adapter) permettant de **lier** l'instance du **SSO** avec notre **frontend** afin que ce dernier puis rediriger et se servir du SSO pour l'authentification de ses utilisateurs.
+Pour pouvoir lier notre frontend au SSO, un **fichier supplémentaire** a été ajouté : [**`keycloak.js`**](./config/keycloak.js). Ce fichier JavaScript est un [**adapteur fourni par Keycloak**](https://www.keycloak.org/securing-apps/javascript-adapter) permettant de **lier** l'instance du **SSO** avec notre **frontend** afin que ce dernier puis rediriger et se servir du SSO pour l'authentification de ses utilisateurs.
 
 **Dans** le script principal [**`main.js`**](./main.js), il a donc fallut **ajouter une section** pour obliger les utilisateurs à s'authentifier au sein de l'application.
 

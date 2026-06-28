@@ -1,12 +1,17 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
-import keycloak from '@/keycloak'
-import { BACKEND_BASE_URL } from '@/backend'
+import keycloak from '@/config/keycloak'
+import { BACKEND_BASE_URL } from '@/config/backend'
 
-let dataFromApi = ref('')
+const dataFromApi = ref('')
+const apiError = ref(null)
 
 watchEffect(async () => {
-  dataFromApi.value = await getDataFromApiAsync()
+  try {
+    dataFromApi.value = await getDataFromApiAsync()
+  } catch (error) {
+    apiError.value = error.message;
+  }
 })
 
 async function getDataFromApiAsync() {
@@ -33,5 +38,9 @@ async function getDataFromApiAsync() {
 </script>
 
 <template>
-  <p>Message from user role "admin" API : {{ dataFromApi }}</p>
+  <p>
+    Message from user role "admin" API :
+    <span v-if="apiError" class="api-answer error">{{ apiError }}</span>
+    <span v-else class="api-answer valid">{{ dataFromApi }}</span>
+  </p>
 </template>

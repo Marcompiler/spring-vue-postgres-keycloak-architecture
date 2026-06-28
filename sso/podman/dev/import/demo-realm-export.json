@@ -497,8 +497,7 @@
       ],
       "clientRoles": {
         "demo-frontend": [
-          "demo:read:users",
-          "demo:write:users"
+          "demo:read:users"
         ]
       }
     }

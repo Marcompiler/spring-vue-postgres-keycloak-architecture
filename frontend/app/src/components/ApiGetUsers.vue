@@ -1,12 +1,24 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
-import keycloak from '@/keycloak'
-import { BACKEND_BASE_URL } from '@/backend'
+import keycloak from '@/config/keycloak'
+import { BACKEND_BASE_URL } from '@/config/backend'
 
-let dataFromApi = ref('')
+const dataFromApi = ref('')
+const users = ref([]);
+const usersHeaders = ref([]);
+const apiError = ref(null)
 
 watchEffect(async () => {
-  dataFromApi.value = await getDataFromApiAsync()
+  try {
+    dataFromApi.value = await getDataFromApiAsync()
+
+    users.value = JSON.parse(dataFromApi.value)
+
+    // Generate table headers by users properties
+    usersHeaders.value = Object.keys(users.value[0])
+  } catch (error) {
+    apiError.value = error.message
+  }
 })
 
 async function getDataFromApiAsync() {
@@ -33,5 +45,49 @@ async function getDataFromApiAsync() {
 </script>
 
 <template>
-  <p>Users : {{ dataFromApi }}</p>
+  <p>Users : </p>
+  <p v-if="apiError">
+    Error trying to get users : <span class="api-answer error">{{ apiError }}</span>
+  </p>
+  <p v-else-if="users && users.length === 0" class="api-answer warning">
+    No users found
+  </p>
+  <table class="users-table" v-else>
+    <thead>
+      <tr>
+        <th v-for="(field, index) in usersHeaders" :key="index">{{ field }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="user in users" :key="user.id">
+        <td v-for="(field, index) in user" :key="index" class="api-answer valid">{{ field }}</td>
+      </tr>
+    </tbody>
+  </table>
 </template>
+
+<style>
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.users-table th {
+  text-align: center;
+  font-weight: bold;
+}
+
+.users-table td {
+  text-align: left;
+  font-weight:normal;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.users-table th,
+.users-table td {
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+</style>
