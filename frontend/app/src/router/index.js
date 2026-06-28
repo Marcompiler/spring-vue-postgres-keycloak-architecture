@@ -19,11 +19,30 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/AboutView.vue'),
+      component: () => import('@/views/AboutView.vue')
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: () => import('@/views/AdminView.vue'),
+      meta: {
+        requiresAuth: true,
+        roles: ['demo:read:users', 'demo:write:users']
+      }
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: () => import('@/views/UserView.vue'),
       meta: {
         requiresAuth: true
       }
     },
+    {
+      path: '/forbidden',
+      name: 'forbidden',
+      component: () => import('@/views/ForbiddenView.vue')
+    }
   ],
 })
 
@@ -33,17 +52,28 @@ router.beforeEach(async (to) => {
     return true
   }
 
-  // already authenticated, no need to log in again
-  if (keycloak.authenticated) {
-    return true
+  // not authenticated, login
+  if (!keycloak.authenticated) {
+    await keycloak.login({
+      redirectUri: window.location.origin + to.fullPath
+    })
+    return false
   }
 
-  // otherwise, redirect to login page
-  await keycloak.login({
-    redirectUri: window.location.origin + to.fullPath
-  })
+  // role check if any
+  const requiredRoles = to.meta.roles
 
-  return false
+  if (requiredRoles && requiredRoles.length > 0) {
+    const hasRole = requiredRoles.every(role => // Use "some" instead of "every" to check if ANY role is present
+      keycloak.hasRealmRole(role) || keycloak.hasResourceRole(role)
+    )
+
+    if (!hasRole) {
+      return '/forbidden' // Forbidden access, redirect
+    }
+  }
+
+  return true
 })
 
 export default router
