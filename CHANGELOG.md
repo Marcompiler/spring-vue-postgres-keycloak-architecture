@@ -5,11 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.1.0] - 2026-06-28 - Frontend improvements and backend/sso fixes
+
+### Added
+
+- [`AdminView.vue`](./frontend/app/src/views/AdminView.vue) : **View for admin users**. Containing API calls restricted to admin users.
+- [`ForbiddenView.vue`](./frontend/app/src/views/ForbiddenView.vue) : **View for handling denied access**. Used when the user is authenticated but not authorized to access the requested resource.
+- [`UserView.vue`](./frontend/app/src/views/UserView.vue) : **View for regular users**. Containing API calls restricted to authenticated users.
+- **API answers are now displayed** with a **green** color to indicate **success**, and with a **red** color to indicate **failure**.
+
+### Changed
+
+- [`index.js`](./frontend/app/src/router/index.js) :
+  - **Authentication is no more required to access some views**, such as "Home" and "About".
+  - The `requiresAuth` meta property is now used to determine **if a route requires authentication**.
+  - The `roles` meta property is now used to specify **roles for authenticated users accessing the views** that require authentication.
+- [`keycloak.js`](./frontend/app/src/config/keycloak.js) and [`backend.js`](./frontend/app/src/config/backend.js) config files moved to a new frontend directory (`config`).
+- Use of `ResponseEntity` instead of `Optional` in the backend controllers to return responses with a more appropriate status code. These are as follows :
+  - [`HelloWorldController.java`](./backend/app/src/main/java/com/marcompiler/backend/helloworld/HelloWorldController.java)
+  - [`MyUserController.java`](./backend/app/src/main/java/com/marcompiler/backend/users/MyUserController.java)
+  - [`PublicController.java`](./backend/app/src/main/java/com/marcompiler/backend/publics/PublicController.java)
+
+### Fixed
+
+- The client role "`demo:write:users`" has been removed from `demo-users` group in the SSO.
+
 ## [v1.0.6] - 2026-06-27 - Corrections and dependencies
 
 ### Fixed
 
-- [MyUser.java](./backend/app/src/main/java/com/marcompiler/backend/users/MyUser.java) : Wrong ID returned in "MyUser.getId" fixed.
+- [`MyUser.java`](./backend/app/src/main/java/com/marcompiler/backend/users/MyUser.java) : Wrong ID returned in "MyUser.getId" fixed.
 
 ### Changed
 
@@ -111,6 +136,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - LICENSE added.
 - DEV_JOURNEY(.fr).md added.
 
+[v1.1.0]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.6...v1.1.0
 [v1.0.6]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.5...v1.0.6
 [v1.0.5]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.4...v1.0.5
 [v1.0.4]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.3...v1.0.4
