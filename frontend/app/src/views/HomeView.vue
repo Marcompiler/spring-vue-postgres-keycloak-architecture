@@ -11,15 +11,16 @@ import ApiGetUserById from '@/components/ApiGetUserById.vue'
 import ApiGetUserBySub from '@/components/ApiGetUserBySub.vue'
 import ApiGetUserBySurname from '@/components/ApiGetUserBySurname.vue'
 import ApiUserRegister from '@/components/ApiUserRegister.vue'
-
-function logoutUser() {
-  keycloak.logout()
-}
 </script>
 
 <template>
   <main>
-    <button @click="logoutUser">Se déconnecter</button>
+    <h1>Welcome to the Spring Vue Postgres Keycloak (<i>SVPK</i>) Architecture</h1>
+
+    <hr />
+
+    <button v-if="keycloak.authenticated" @click="keycloak.logout()">Log out</button>
+    <button v-else @click="keycloak.login()">Login</button>
 
     <h1>Public data from API</h1>
     <ApiPublicData />
