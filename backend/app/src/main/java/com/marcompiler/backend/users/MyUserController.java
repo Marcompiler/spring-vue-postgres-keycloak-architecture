@@ -47,6 +47,7 @@ public class MyUserController {
     }
 
     @PostMapping("/register")
+    @PreAuthorize("hasRole('demo:write:users')")
     public ResponseEntity<?> register(JwtAuthenticationToken auth, @RequestBody Map<String, String> payload)
     {
         try {
