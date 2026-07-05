@@ -3,6 +3,7 @@ package com.marcompiler.backend.users;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.core.oidc.StandardClaimNames;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
@@ -72,4 +73,18 @@ public class MyUserController {
                     .body("Error while registering user: " + ex.getMessage());
         }
     }
+
+    @DeleteMapping("/delete/{id}")
+    @PreAuthorize("hasRole('demo:write:users')")
+    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
+
+        if (userRepository.existsById(id)) {
+            userRepository.deleteById(id);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok().build();
+    }
+
 }
