@@ -11,11 +11,14 @@ const apiError = ref(null)
 watchEffect(async () => {
   try {
     dataFromApi.value = await getDataFromApiAsync()
-
     users.value = JSON.parse(dataFromApi.value)
 
-    // Generate table headers by users properties
-    usersHeaders.value = Object.keys(users.value[0])
+    if (users.value.length !== 0) {
+      usersHeaders.value = Object.keys(users.value[0]) // Generate table headers by users properties
+    } else {
+      usersHeaders.value = [];
+    }
+
   } catch (error) {
     apiError.value = error.message
   }
