@@ -239,6 +239,7 @@ For their implementation, I used the following tutorials, which **I invite you t
 - [Vue version 3 tutorial](https://vuejs.org/tutorial/#step-1) (_official Vue 3 tutorial_)
 - [Keycloak JavaScript adapter](https://www.keycloak.org/securing-apps/javascript-adapter) (_official Keycloak documentation_)
 - [Spring Boot Keycloak role-based authorization with JWT](https://medium.com/@kspoyraz7/spring-boot-keycloak-role-based-authorization-with-jwt-3bd29bdd9016) (_tutorial on roles in JWT with Spring/Keycloak_)
+- [Database Migrations for Beginners | Flyway Tutorial](https://www.youtube.com/watch?v=dJDBP7pPA-o) (_YouTube video_)
 - [Spring Boot with Docker](https://spring.io/guides/gs/spring-boot-docker) (_official Spring documentation_)
 - [Dockerize Vue.js App](https://v2.vuejs.org/v2/cookbook/dockerize-vuejs-app.html?redirect=true) (_official Vue documentation_)
 
