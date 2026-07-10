@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.0] - 2026-07-10 - Database migrations with Flyway + minor fixes
+
+### Added
+
+- Database migrations by backend added with [Flyway](https://github.com/flyway/flyway). This includes :
+  - Flyway dependency in the [`pom.xml`](./backend/app/pom.xml).
+  - [README files](./backend/app/src/main/resources/db/migrations) explaining how to use the database migration scripts.
+  - [V001__create_base_tables.sql](./backend/app/src/main/resources/db/migrations/V001__create_base_tables.sql) : first database migration script.
+
+### Changed
+
+- Spring JPA now handles only validations. Flyway is now responsible for updating the database.
+
+### Fixed
+
+- [`MyUserController.java`](./backend/app/src/main/java/com/marcompiler/backend/users/MyUserController.java) : `register` now requires the "demo:write:users" role.
+- [`ApiGetUsers.vue`](./frontend/app/src/components/ApiGetUsers.vue) : "No users found" is now displayed correctly.
+
 ## [v1.1.0] - 2026-06-28 - Frontend improvements and backend/sso fixes
 
 ### Added
@@ -136,6 +154,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - LICENSE added.
 - DEV_JOURNEY(.fr).md added.
 
+[v1.2.0]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.6...v1.1.0
 [v1.0.6]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.5...v1.0.6
 [v1.0.5]: https://github.com/Marcompiler/spring-vue-postgres-keycloak-architecture/compare/v1.0.4...v1.0.5
