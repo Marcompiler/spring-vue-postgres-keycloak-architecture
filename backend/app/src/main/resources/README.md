@@ -6,6 +6,8 @@ This is the **configuration** of the backend application.
 
 Using [`application.properties`](./application.properties), it defines **properties to be applied for running** the application.
 
+There are also [**database migrations**](db/migrations) that allow you to **update the database structure** as new versions are released.
+
 ## How to Use
 
 **As-is**, [`application.properties`](./application.properties) sets **all the parameters you need** to run the architecture **with default settings**.

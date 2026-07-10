@@ -39,6 +39,7 @@ The architecture is therefore structured as follows:
     - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html) ([_Apache 2.0 License_](https://github.com/spring-projects/spring-ws/blob/main/LICENSE.txt))  
     - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html) ([_Apache 2.0 License_](https://github.com/spring-projects/spring-data-jpa/blob/main/LICENSE.txt))  
     - [Spring Security](https://docs.spring.io/spring-security/reference/index.html) ([_Apache 2.0 License_](https://github.com/spring-projects/spring-security/blob/main/LICENSE.txt))  
+  - [Redgate Flyway](https://www.red-gate.com/products/flyway/community/) ([_Apache 2.0 License_](https://github.com/flyway/flyway/blob/main/LICENSE.txt))
 - [A frontend](./frontend/)  
   - [Vue.JS](https://vuejs.org/) ([_MIT License_](https://github.com/vuejs/core/blob/main/LICENSE))  
 - [Single Sign-On (SSO)](./sso/)  
@@ -239,6 +240,7 @@ For their implementation, I used the following tutorials, which **I invite you t
 - [Vue version 3 tutorial](https://vuejs.org/tutorial/#step-1) (_official Vue 3 tutorial_)
 - [Keycloak JavaScript adapter](https://www.keycloak.org/securing-apps/javascript-adapter) (_official Keycloak documentation_)
 - [Spring Boot Keycloak role-based authorization with JWT](https://medium.com/@kspoyraz7/spring-boot-keycloak-role-based-authorization-with-jwt-3bd29bdd9016) (_tutorial on roles in JWT with Spring/Keycloak_)
+- [Database Migrations for Beginners | Flyway Tutorial](https://www.youtube.com/watch?v=dJDBP7pPA-o) (_YouTube video_)
 - [Spring Boot with Docker](https://spring.io/guides/gs/spring-boot-docker) (_official Spring documentation_)
 - [Dockerize Vue.js App](https://v2.vuejs.org/v2/cookbook/dockerize-vuejs-app.html?redirect=true) (_official Vue documentation_)
 
