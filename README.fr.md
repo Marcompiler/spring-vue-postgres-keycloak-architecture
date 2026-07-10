@@ -39,6 +39,7 @@ L'architecture est donc constituée de la façon suivante :
     - [Spring Web](https://docs.spring.io/spring-framework/reference/web/webmvc.html) ([_licence Apache 2.0_](https://github.com/spring-projects/spring-ws/blob/main/LICENSE.txt))
     - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/index.html) ([_licence Apache 2.0_](https://github.com/spring-projects/spring-data-jpa/blob/main/LICENSE.txt))
     - [Spring Security](https://docs.spring.io/spring-security/reference/index.html) ([_licence Apache 2.0_](https://github.com/spring-projects/spring-security/blob/main/LICENSE.txt))
+  - [Redgate Flyway](https://www.red-gate.com/products/flyway/community/) ([_Apache 2.0 License_](https://github.com/flyway/flyway/blob/main/LICENSE.txt))
 - [Un frontend](./frontend/)
   - [Vue.JS](https://vuejs.org/) ([_licence MIT_](https://github.com/vuejs/core/blob/main/LICENSE))
 - [Une authentification unique (SSO)](./sso/)
