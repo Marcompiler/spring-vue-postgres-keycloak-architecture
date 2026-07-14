@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/helloworld")
 public class HelloWorldController {
 
-    private final HelloWorldRepository helloWorldRepository;
+    private final HelloWorldService helloWorldService;
 
-    public HelloWorldController(HelloWorldRepository helloWorldRepository) {
-        this.helloWorldRepository = helloWorldRepository;
+    public HelloWorldController(HelloWorldService helloWorldService) {
+        this.helloWorldService = helloWorldService;
     }
 
     @GetMapping
@@ -23,7 +23,7 @@ public class HelloWorldController {
 
     @GetMapping("/{id}")
     public ResponseEntity<HelloWorld> getHelloWorldById(@PathVariable Long id) {
-        return helloWorldRepository.findById(id)
+        return helloWorldService.getHelloWorldById(id)
             .map(ResponseEntity::ok)
             .orElse(ResponseEntity.notFound().build());
     }

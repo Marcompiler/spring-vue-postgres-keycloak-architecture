@@ -14,35 +14,35 @@ import java.util.Map;
 @RequestMapping("/api/users")
 public class MyUserController {
 
-    private final MyUserRepository userRepository;
+    private final MyUserService myUserService;
 
-    public MyUserController(MyUserRepository userRepository) {
-        this.userRepository = userRepository;
+    public MyUserController(MyUserService myUserService) {
+        this.myUserService = myUserService;
     }
 
     @GetMapping
     public ResponseEntity<List<MyUser>> getUsers() {
-        List<MyUser> users = userRepository.findAll();
+        List<MyUser> users = myUserService.getUsers();
         return ResponseEntity.ok(users);
     }
 
     @GetMapping("/id/{id}")
     public ResponseEntity<MyUser> getUserById(@PathVariable Long id) {
-        return userRepository.findById(id)
+        return myUserService.getUserById(id)
             .map(ResponseEntity::ok)
             .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/sub/{sub}")
     public ResponseEntity<MyUser> getUserBySub(@PathVariable String sub) {
-        return userRepository.findBySub(sub)
+        return myUserService.getUserBySub(sub)
             .map(ResponseEntity::ok)
             .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/surname/{surname}")
     public ResponseEntity<MyUser> getUserBySurname(@PathVariable String surname) {
-        return userRepository.findBySurname(surname)
+        return myUserService.getUserBySurname(surname)
             .map(ResponseEntity::ok)
             .orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -57,7 +57,7 @@ public class MyUserController {
 
             MyUser newUser = new MyUser(sub, surname);
 
-            MyUser result = userRepository.save(newUser);
+            MyUser result = myUserService.saveUser(newUser);
 
             return ResponseEntity.ok(result.getId());
         }
@@ -78,8 +78,8 @@ public class MyUserController {
     @PreAuthorize("hasRole('demo:write:users')")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
 
-        if (userRepository.existsById(id)) {
-            userRepository.deleteById(id);
+        if (myUserService.isUserExists(id)) {
+            myUserService.deleteUserById(id);
         } else {
             return ResponseEntity.notFound().build();
         }
