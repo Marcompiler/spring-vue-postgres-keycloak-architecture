@@ -20,7 +20,7 @@ public abstract class BaseJpaEntity<T> implements IIdentifiableEntity<T>, IVersi
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
-    LocalDateTime createdAt;
+    LocalDateTime createdAt = LocalDateTime.now();
 
     @LastModifiedDate
     @Column(name = "lastmodified_at")
