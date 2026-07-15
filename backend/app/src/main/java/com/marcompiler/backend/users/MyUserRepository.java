@@ -10,6 +10,4 @@ public interface MyUserRepository extends JpaRepository<MyUser, Long>  {
     Optional<MyUser> findBySub(String sub);
 
     Optional<MyUser> findBySurname(String surname);
-
-    long deleteById(long id);
 }
