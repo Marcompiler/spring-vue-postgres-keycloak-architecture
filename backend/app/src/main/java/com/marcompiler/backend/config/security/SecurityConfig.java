@@ -51,7 +51,7 @@ public class SecurityConfig {
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
-                    .jwt(Customizer.withDefaults())
+                    .jwt(jwt -> jwt.jwtAuthenticationConverter(myJwtAuthenticationConverter()))
                 );
 
         return httpSecurity.build();
@@ -59,7 +59,7 @@ public class SecurityConfig {
 
     @Bean
     @SuppressWarnings("unchecked") // We assume that the Keycloak data structure is known.
-    public JwtAuthenticationConverter jwtAuthenticationConverter() {
+    public JwtAuthenticationConverter myJwtAuthenticationConverter() {
         JwtGrantedAuthoritiesConverter defaultConverter = new JwtGrantedAuthoritiesConverter();
 
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
