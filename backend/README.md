@@ -21,7 +21,7 @@ Thus, **if you want**, I invite you to refer to **[this same documentation](http
 
 ### Project Creation
 
-First, the project had to be **created**, so I used the **[following configuration](https://start.spring.io/#!type=maven-project&language=java&platformVersion=4.1.0&packaging=jar&configurationFileFormat=properties&jvmVersion=21&groupId=com.yourdomain&artifactId=backend&packageName=com.yourdomain.backend&dependencies=web,devtools,validation,data-jpa,configuration-processor,oauth2-resource-server,postgresql,security,flyway)** via [Spring Initializr](https://start.spring.io).
+First, the project had to be **created**, so I used the **[following configuration](https://start.spring.io/#!type=maven-project&language=java&platformVersion=4.1.0&packaging=jar&configurationFileFormat=properties&jvmVersion=21&groupId=com.yourdomain&artifactId=backend&packageName=com.yourdomain.backend&dependencies=web,devtools,validation,data-jpa,configuration-processor,oauth2-resource-server,postgresql,security,flyway,h2)** via [Spring Initializr](https://start.spring.io).
 
 ### Starting the Project
 
