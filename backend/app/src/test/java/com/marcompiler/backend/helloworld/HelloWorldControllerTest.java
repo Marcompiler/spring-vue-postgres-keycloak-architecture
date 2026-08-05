@@ -45,6 +45,17 @@ public class HelloWorldControllerTest {
     }
 
     @Test
+    void testGetHelloWorldById_ShouldGetUnauthorized() throws Exception {
+        HelloWorld helloWorld = new HelloWorld("test");
+
+        when(helloWorldService.getHelloWorldById(1L)).thenReturn(Optional.of(helloWorld));
+
+        mockMvc.perform(get("/api/helloworld/1")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isUnauthorized());
+    }
+
+    @Test
     void testHelloWorldUser() throws Exception {
         // JWT example for passing it by parameter to the method
         mockMvc.perform(get("/api/helloworld/user")
