@@ -8,6 +8,7 @@ To create them, I used the following software:
 
 - [draw.io](https://www.drawio.com/)
 - [GIMP](https://www.gimp.org/)
+- [OpenGraph](https://www.opengraph.xyz)
 
 You will find them used throughout the repository.
 
