@@ -24,7 +24,7 @@ public class MyUserServiceTest {
     private MyUserService service;
 
     @Test
-    void shouldCreateUser() {
+    void testCreateUser() {
         String sub = UUID.randomUUID().toString();
         String surname = "test";
 
@@ -39,7 +39,7 @@ public class MyUserServiceTest {
     }
 
     @Test
-    void shouldGetUserById() {
+    void testGetUserById() {
         Long id = 1L;
         String sub = UUID.randomUUID().toString();
         String surname = "test";
@@ -55,7 +55,7 @@ public class MyUserServiceTest {
     }
 
     @Test
-    void shouldGetUserBySurname() {
+    void testGetUserBySurname() {
         String sub = UUID.randomUUID().toString();
         String surname = "test";
 
@@ -69,7 +69,7 @@ public class MyUserServiceTest {
     }
 
     @Test
-    void shouldGetUserBySub() {
+    void testGetUserBySub() {
         String sub = UUID.randomUUID().toString();
         String surname = "test";
 
