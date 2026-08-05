@@ -43,8 +43,8 @@ public class SecurityConfig {
                 // .csrf(csrf -> csrf.ignoringRequestMatchers("/api/helloworld/**")) // Use it instead if you want to disable CSRF only on certain RequestMapping
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(PUBLIC_PATHS).permitAll() // Use it for public endpoints
-                        .requestMatchers("/api/helloworld/user/**").hasAnyRole("demo-role-users", "demo-role-admins")
-                        .requestMatchers("/api/helloworld/admin/**").hasRole("demo-role-admins")
+                        .requestMatchers("/api/helloworld/user/**").hasAnyRole("demo-role-users", "demo-role-admins") // Example for role on paths
+                        .requestMatchers("/api/helloworld/admin/**").hasRole("demo-role-admins") // Example for role on paths
                         .anyRequest().authenticated() // All other requests need to be authenticated
                 )
                 .sessionManagement(session ->
