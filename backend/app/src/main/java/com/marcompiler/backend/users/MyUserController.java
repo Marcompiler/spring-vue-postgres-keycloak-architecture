@@ -3,7 +3,6 @@ package com.marcompiler.backend.users;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.core.oidc.StandardClaimNames;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
@@ -48,7 +47,6 @@ public class MyUserController {
     }
 
     @PostMapping("/register")
-    @PreAuthorize("hasRole('demo:write:users')")
     public ResponseEntity<?> register(JwtAuthenticationToken auth, @RequestBody Map<String, String> payload)
     {
         try {
@@ -75,7 +73,6 @@ public class MyUserController {
     }
 
     @DeleteMapping("/delete/{id}")
-    @PreAuthorize("hasRole('demo:write:users')")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
 
         if (myUserService.userExistsById(id)) {
