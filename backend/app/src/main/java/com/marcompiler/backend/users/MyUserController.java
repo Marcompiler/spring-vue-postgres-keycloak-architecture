@@ -78,7 +78,7 @@ public class MyUserController {
     @PreAuthorize("hasRole('demo:write:users')")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
 
-        if (myUserService.isUserExists(id)) {
+        if (myUserService.userExistsById(id)) {
             myUserService.deleteUserById(id);
         } else {
             return ResponseEntity.notFound().build();

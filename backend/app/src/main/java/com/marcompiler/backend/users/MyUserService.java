@@ -40,7 +40,7 @@ public class MyUserService {
         return myUserRepository.save(myUser);
     }
 
-    public boolean isUserExists(Long id) {
+    public boolean userExistsById(Long id) {
         return myUserRepository.existsById(id);
     }
 
