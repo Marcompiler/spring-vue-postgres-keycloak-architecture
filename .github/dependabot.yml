@@ -1,0 +1,37 @@
+version: 2
+updates:
+  # Maven (Spring backend)
+  - package-ecosystem: "maven"
+    directory: "/backend/app"
+    schedule:
+      interval: "daily"
+    target-branch: "dev/dependencies"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "Marcompiler"
+    assignees:
+      - "Marcompiler"
+    labels:
+      - "dependencies"
+      - "backend"
+    commit-message:
+      prefix: "backend"
+      include: "scope"
+
+  # npm (Vue.js frontend)
+  - package-ecosystem: "npm"
+    directory: "/frontend/app"
+    schedule:
+      interval: "daily"
+    target-branch: "dev/dependencies"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "Marcompiler"
+    assignees:
+      - "Marcompiler"
+    labels:
+      - "dependencies"
+      - "frontend"
+    commit-message:
+      prefix: "frontend"
+      include: "scope"
