@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Flyway dependency in the [`pom.xml`](./backend/app/pom.xml).
   - [README files](./backend/app/src/main/resources/db/migrations) explaining how to use the database migration scripts.
   - [V001__create_base_tables.sql](./backend/app/src/main/resources/db/migrations/V001__create_base_tables.sql) : first database migration script.
+- Ability to delete a user by ID in backend/frontend.
 
 ### Changed
 
